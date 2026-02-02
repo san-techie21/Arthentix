@@ -140,101 +140,234 @@ body.theme-light .mobile-menu a {
 }
 
 /* ============================================
-   HERO SECTION - MOBILE
+   HERO SECTION - MOBILE (COMPLETELY REDESIGNED)
    ============================================ */
 
 @media (max-width: 992px) {
     .hero-gallery {
-        min-height: auto;
-        padding-top: 80px;
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding-top: 70px;
     }
 
     .hero-gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 200px 150px;
-        gap: 12px;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 180px 140px !important;
+        gap: 8px !important;
+        width: 100% !important;
+        height: auto !important;
         padding: 16px;
+        order: 1;
+    }
+
+    .hero-artwork {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     .hero-artwork.featured {
-        grid-column: span 2;
-        grid-row: span 1;
+        grid-column: span 2 !important;
+        grid-row: span 1 !important;
     }
 
     .hero-content-overlay {
-        position: relative;
-        padding: 32px 16px;
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        background: transparent !important;
+        padding: 32px 20px 48px !important;
+        order: 2;
+        width: 100%;
     }
 
     .hero-text {
-        text-align: center;
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 !important;
     }
 
     .hero-text h1 {
-        font-size: 2rem;
-        line-height: 1.2;
+        font-size: 2rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 16px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .hero-text h1 .hero-line,
+    .hero-text h1 .text-reveal,
+    .hero-text h1 .text-reveal-inner {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: none !important;
     }
 
     .hero-text p {
-        font-size: 1rem;
-        margin: 16px auto;
-        max-width: 400px;
+        font-size: 1rem !important;
+        margin: 16px auto 24px !important;
+        max-width: 100% !important;
+        padding: 0 10px;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .hero-cta {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .hero-cta .btn {
+        width: 100% !important;
+        max-width: 300px !important;
+        justify-content: center !important;
+        text-align: center !important;
     }
 }
 
 @media (max-width: 768px) {
+    .hero-gallery {
+        padding-top: 65px;
+    }
+
     .hero-gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 120px);
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+        gap: 8px !important;
+        padding: 12px;
     }
 
     .hero-artwork.featured {
-        grid-column: span 1;
-        height: 180px;
+        grid-column: span 1 !important;
+        height: 200px !important;
     }
 
     .hero-artwork:not(.featured) {
-        display: none;
+        height: 120px !important;
     }
 
-    .hero-artwork.featured + .hero-artwork {
-        display: block;
+    /* Show only featured and one more artwork on smaller tablets */
+    .hero-artwork:nth-child(n+4) {
+        display: none !important;
     }
 
     .hero-text h1 {
-        font-size: 1.75rem;
+        font-size: 1.75rem !important;
     }
 
     .hero-line {
-        display: block;
+        display: block !important;
+    }
+
+    .hero-content-overlay {
+        padding: 24px 16px 40px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-gallery {
+        padding-top: 60px;
+    }
+
+    .hero-gallery-grid {
+        padding: 10px !important;
+    }
+
+    .hero-artwork.featured {
+        height: 180px !important;
+    }
+
+    /* Show only featured artwork on phones */
+    .hero-artwork:not(.featured) {
+        display: none !important;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero-content-overlay {
+        padding: 20px 16px 36px !important;
+    }
+
+    .hero-cta .btn {
+        padding: 14px 24px !important;
+        font-size: 0.95rem !important;
     }
 }
 
 @media (max-width: 480px) {
     .hero-gallery-grid {
-        padding: 12px;
+        padding: 8px !important;
+    }
+
+    .hero-artwork.featured {
+        height: 160px !important;
+        border-radius: 12px;
     }
 
     .hero-content-overlay {
-        padding: 24px 12px;
+        padding: 16px 12px 32px !important;
     }
 
     .hero-text h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem !important;
     }
 
     .hero-text p {
-        font-size: 0.9rem;
+        font-size: 0.9rem !important;
+        padding: 0 5px;
     }
 
     .hero-cta {
-        flex-direction: column;
-        gap: 12px;
+        gap: 10px !important;
     }
 
     .hero-cta .btn {
-        width: 100%;
-        justify-content: center;
+        max-width: 280px !important;
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-artwork.featured {
+        height: 140px !important;
+    }
+
+    .hero-text h1 {
+        font-size: 1.25rem !important;
+    }
+
+    .hero-text p {
+        font-size: 0.85rem !important;
+    }
+
+    .hero-cta .btn {
+        max-width: 260px !important;
+        padding: 11px 18px !important;
+        font-size: 0.85rem !important;
     }
 }
 
@@ -1133,6 +1266,44 @@ body.theme-light .mobile-menu a {
    AWWWARDS EFFECTS - MOBILE ADJUSTMENTS
    ============================================ */
 
+@media (max-width: 992px) {
+    /* CRITICAL: Force all animated content to be visible on mobile
+       This prevents content from being hidden if JS doesn't load or animations fail */
+
+    /* Force scroll-reveal elements to be visible */
+    .scroll-reveal,
+    .scroll-reveal-left,
+    .scroll-reveal-right,
+    .scroll-reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+    }
+
+    /* Force text-reveal elements to be visible */
+    .text-reveal,
+    .text-reveal-inner,
+    .text-reveal-stagger,
+    .text-reveal-stagger .word,
+    .text-reveal-stagger .char {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+        clip-path: none !important;
+    }
+
+    /* Hero specific animation resets */
+    .hero-text h1,
+    .hero-text h1 *,
+    .hero-text p,
+    .hero-cta,
+    .hero-cta * {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+    }
+}
+
 @media (max-width: 768px) {
     /* Disable custom cursor on touch devices */
     .custom-cursor {
@@ -1163,14 +1334,21 @@ body.theme-light .mobile-menu a {
     /* Reduce parallax intensity */
     .parallax-slow,
     .parallax-medium {
-        transform: none;
+        transform: none !important;
     }
 
-    /* Faster scroll reveals */
+    /* Disable all scroll-triggered animations for performance */
     .scroll-reveal,
     .scroll-reveal-left,
-    .scroll-reveal-right {
-        transition-duration: 0.5s;
+    .scroll-reveal-right,
+    .scroll-reveal-scale {
+        transition: none !important;
+    }
+
+    /* Disable text reveal animations */
+    .text-reveal-inner,
+    .text-reveal-stagger .char {
+        transition: none !important;
     }
 }
 
