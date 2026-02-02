@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | Arthentix - Curated Art Collections</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="marketplace.html">Browse Art</a>
+                <a href="collections.html" class="active">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">3</span>
+                </a>
+                <a href="cart.html" class="nav-icon-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge">2</span>
+                </a>
+                <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header-section">
+        <div class="container">
+            <div class="page-header-content reveal">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Collections</span>
+                </nav>
+                <h1 class="page-title">Curated <span class="text-gradient">Collections</span></h1>
+                <p class="page-subtitle">Discover thoughtfully curated art collections by theme, style, and mood. Each collection tells a unique story.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="featured-collection-section">
+        <div class="container">
+            <div class="featured-collection-card reveal">
+                <div class="featured-collection-image">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&h=600&fit=crop" alt="Contemporary Masters">
+                    <div class="featured-overlay"></div>
+                </div>
+                <div class="featured-collection-content">
+                    <span class="collection-badge">Featured Collection</span>
+                    <h2>Contemporary Masters of India</h2>
+                    <p>A stunning showcase of India's most influential contemporary artists, featuring works that bridge traditional techniques with modern expression.</p>
+                    <div class="collection-stats">
+                        <span><i class="fas fa-image"></i> 48 Artworks</span>
+                        <span><i class="fas fa-user"></i> 12 Artists</span>
+                        <span><i class="fas fa-tag"></i> ₹15,000 - ₹8,50,000</span>
+                    </div>
+                    <a href="collection-detail.html" class="btn btn-primary">
+                        Explore Collection <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Filter -->
+    <section class="collections-filter-section">
+        <div class="container">
+            <div class="filter-bar reveal">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All Collections</button>
+                    <button class="filter-tab" data-filter="style">By Style</button>
+                    <button class="filter-tab" data-filter="theme">By Theme</button>
+                    <button class="filter-tab" data-filter="room">By Room</button>
+                    <button class="filter-tab" data-filter="price">By Price</button>
+                </div>
+                <div class="filter-sort">
+                    <select class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="artworks">Most Artworks</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Grid -->
+    <section class="collections-grid-section">
+        <div class="container">
+            <div class="collections-grid">
+                <!-- Collection Card 1 -->
+                <article class="collection-card reveal" data-category="style">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=500&fit=crop" alt="Abstract Expressions">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Abstract Expressions</h3>
+                            <p>Bold colors and dynamic forms that evoke emotion</p>
+                            <div class="collection-meta">
+                                <span>32 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 2 -->
+                <article class="collection-card reveal" data-category="theme">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=500&fit=crop" alt="Nature & Landscapes">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Nature & Landscapes</h3>
+                            <p>Breathtaking views from mountains to oceans</p>
+                            <div class="collection-meta">
+                                <span>56 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 3 -->
+                <article class="collection-card reveal" data-category="room">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35a6?w=400&h=500&fit=crop" alt="Living Room Ready">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Living Room Ready</h3>
+                            <p>Statement pieces perfect for your living space</p>
+                            <div class="collection-meta">
+                                <span>44 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 4 -->
+                <article class="collection-card reveal" data-category="style">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=400&h=500&fit=crop" alt="Traditional Indian">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Traditional Indian Art</h3>
+                            <p>Madhubani, Warli, Tanjore & more heritage styles</p>
+                            <div class="collection-meta">
+                                <span>78 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 5 -->
+                <article class="collection-card reveal" data-category="price">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=500&fit=crop" alt="Under ₹25,000">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1549289524-06cf8837ace5?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Under ₹25,000</h3>
+                            <p>Affordable originals from emerging artists</p>
+                            <div class="collection-meta">
+                                <span>124 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 6 -->
+                <article class="collection-card reveal" data-category="theme">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=400&h=500&fit=crop" alt="Minimalist">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1509909756405-be0199881695?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Minimalist & Modern</h3>
+                            <p>Clean lines and subtle elegance</p>
+                            <div class="collection-meta">
+                                <span>38 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 7 -->
+                <article class="collection-card reveal" data-category="room">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&h=500&fit=crop" alt="Bedroom Serenity">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Bedroom Serenity</h3>
+                            <p>Calming pieces for peaceful spaces</p>
+                            <div class="collection-meta">
+                                <span>29 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 8 -->
+                <article class="collection-card reveal" data-category="theme">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=500&fit=crop" alt="Urban & Street">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1514539079130-25950c84af65?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1517697471339-4aa32003c11a?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Urban & Street Art</h3>
+                            <p>Edgy contemporary from city streets</p>
+                            <div class="collection-meta">
+                                <span>41 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Collection Card 9 -->
+                <article class="collection-card reveal" data-category="style">
+                    <a href="collection-detail.html" class="collection-card-inner">
+                        <div class="collection-images">
+                            <div class="collection-image-main">
+                                <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=400&h=500&fit=crop" alt="Portraits & Figures">
+                            </div>
+                            <div class="collection-image-stack">
+                                <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=200&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=200&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="collection-card-content">
+                            <h3>Portraits & Figures</h3>
+                            <p>Human form in all its expressions</p>
+                            <div class="collection-meta">
+                                <span>52 Artworks</span>
+                                <span class="collection-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more-section reveal">
+                <button class="btn btn-outline btn-lg" id="loadMoreCollections">
+                    Load More Collections
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Collection CTA -->
+    <section class="create-collection-cta">
+        <div class="container">
+            <div class="cta-card reveal">
+                <div class="cta-content">
+                    <h2>Create Your Own Collection</h2>
+                    <p>Curate your favorite artworks and share your unique taste with the world</p>
+                    <a href="login.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-plus"></i>
+                        Start Curating
+                    </a>
+                </div>
+                <div class="cta-visual">
+                    <div class="cta-images">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=200&h=200&fit=crop" alt="" class="cta-img cta-img-1">
+                        <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=200&h=200&fit=crop" alt="" class="cta-img cta-img-2">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=200&h=200&fit=crop" alt="" class="cta-img cta-img-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-marketplace">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-mark">A</span>
+                        <span class="logo-text">Arthentix</span>
+                    </a>
+                    <p>India's premier destination for authentic, curated art. Discover original artworks from emerging and established artists.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">All Artworks</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="rental.html">Rent Art</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>For Business</h4>
+                    <ul>
+                        <li><a href="for-business.html">Overview</a></li>
+                        <li><a href="for-business.html#hotels">Hotels</a></li>
+                        <li><a href="for-business.html#corporates">Corporates</a></li>
+                        <li><a href="for-business.html#designers">Designers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/home.js"></script>
+    <script>
+        // Collections page specific JS
+        document.addEventListener('DOMContentLoaded', () => {
+            // Filter tabs
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const collectionCards = document.querySelectorAll('.collection-card');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const filter = tab.dataset.filter;
+
+                    collectionCards.forEach((card, index) => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+
+                        setTimeout(() => {
+                            if (filter === 'all' || card.dataset.category === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 50);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

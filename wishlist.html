@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist | Arthentix</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .wishlist-section {
+            padding: 120px 0 80px;
+            min-height: 100vh;
+        }
+
+        .wishlist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .wishlist-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: white;
+        }
+
+        .wishlist-header h1 i {
+            color: #ef4444;
+            margin-right: 12px;
+        }
+
+        .wishlist-count {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .wishlist-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .wishlist-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.3);
+        }
+
+        .wishlist-image {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+        }
+
+        .wishlist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s var(--ease-out-expo);
+        }
+
+        .wishlist-card:hover .wishlist-image img {
+            transform: scale(1.05);
+        }
+
+        .wishlist-remove {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 50%;
+            color: #ef4444;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .wishlist-card:hover .wishlist-remove {
+            opacity: 1;
+        }
+
+        .wishlist-remove:hover {
+            background: #ef4444;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .wishlist-info {
+            padding: 20px;
+        }
+
+        .wishlist-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .wishlist-artist {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 16px;
+        }
+
+        .wishlist-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wishlist-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .add-to-cart-btn {
+            padding: 10px 20px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--accent-gold);
+            border-radius: 8px;
+            color: var(--accent-gold);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        /* Empty State */
+        .empty-wishlist {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .empty-wishlist-icon {
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+        }
+
+        .empty-wishlist-icon i {
+            font-size: 56px;
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        .empty-wishlist h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .empty-wishlist p {
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 32px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon">&#9670;</span><span class="logo-text">Arthentix</span></a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="marketplace.html">Browse Art</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search"><i class="fas fa-search"></i></button>
+                <a href="wishlist.html" class="nav-icon-btn active" title="Wishlist"><i class="far fa-heart"></i><span class="badge">0</span></a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart"><i class="fas fa-shopping-bag"></i><span class="badge">0</span></a>
+                <div class="nav-divider"></div>
+                <a href="login.html" class="nav-text-btn">Sign In</a>
+                <a href="seller-portal.html" class="btn btn-primary btn-sm">Sell Art</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Wishlist Section -->
+    <section class="wishlist-section">
+        <div class="container">
+            <div class="wishlist-header reveal">
+                <h1><i class="fas fa-heart"></i> My Wishlist</h1>
+                <span class="wishlist-count">3 saved artworks</span>
+            </div>
+
+            <div class="wishlist-grid reveal-stagger">
+                <!-- Wishlist Item 1 -->
+                <article class="wishlist-card">
+                    <a href="artwork.html" class="wishlist-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=500&fit=crop" alt="Sunset Over the Himalayas">
+                    </a>
+                    <button class="wishlist-remove" title="Remove from wishlist">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="wishlist-info">
+                        <h3 class="wishlist-title">Sunset Over the Himalayas</h3>
+                        <p class="wishlist-artist">by Priya Sharma</p>
+                        <div class="wishlist-price-row">
+                            <span class="wishlist-price">₹1,85,000</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Wishlist Item 2 -->
+                <article class="wishlist-card">
+                    <a href="artwork.html" class="wishlist-image">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=500&fit=crop" alt="Urban Dreams">
+                    </a>
+                    <button class="wishlist-remove" title="Remove from wishlist">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="wishlist-info">
+                        <h3 class="wishlist-title">Urban Dreams</h3>
+                        <p class="wishlist-artist">by Arjun Mehta</p>
+                        <div class="wishlist-price-row">
+                            <span class="wishlist-price">₹75,000</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Wishlist Item 3 -->
+                <article class="wishlist-card">
+                    <a href="artwork.html" class="wishlist-image">
+                        <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=400&h=500&fit=crop" alt="Traditional Motifs">
+                    </a>
+                    <button class="wishlist-remove" title="Remove from wishlist">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="wishlist-info">
+                        <h3 class="wishlist-title">Traditional Motifs</h3>
+                        <p class="wishlist-artist">by Kavitha Nair</p>
+                        <div class="wishlist-price-row">
+                            <span class="wishlist-price">₹42,000</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-marketplace">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-mark">A</span>
+                        <span class="logo-text">Arthentix</span>
+                    </a>
+                    <p>India's premier destination for authentic, curated art.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">All Artworks</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/error-handler.js"></script>
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/home.js"></script>
+    <script>
+        // Remove from wishlist
+        document.querySelectorAll('.wishlist-remove').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.wishlist-card');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.9)';
+                setTimeout(() => card.remove(), 300);
+            });
+        });
+
+        // Add to cart
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-check"></i> Added';
+                this.style.background = '#10b981';
+                this.style.borderColor = '#10b981';
+                this.style.color = 'white';
+            });
+        });
+    </script>
+</body>
+</html>

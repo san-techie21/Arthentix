@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similarity Check | Arthentix - Detect Art Copies</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-mark">A</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <a href="verify.html" class="nav-link-secondary">Verify Art</a>
+                <a href="seller-portal.html" class="btn btn-primary btn-sm">Sell Art</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Header -->
+        <section class="portal-header">
+            <div class="container">
+                <div class="portal-header-content reveal">
+                    <span class="section-badge">
+                        <i class="fas fa-search-plus"></i>
+                        AI Detection
+                    </span>
+                    <h1 class="portal-title">
+                        Similarity <span class="text-gradient">Check</span>
+                    </h1>
+                    <p class="portal-subtitle">
+                        Upload any artwork image to detect potential copies, forgeries, or similar works
+                        in our database of 2M+ registered artworks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="similarity-section">
+            <div class="container">
+                <!-- Upload Area -->
+                <div class="similarity-upload-container reveal">
+                    <div class="upload-zone" id="uploadZone">
+                        <div class="upload-content" id="uploadContent">
+                            <div class="upload-icon-large">
+                                <i class="fas fa-image"></i>
+                                <div class="upload-pulse"></div>
+                            </div>
+                            <h3>Upload Artwork for Analysis</h3>
+                            <p>Drag & drop your image here or click to browse</p>
+                            <span class="upload-formats">Supports PNG, JPG, WEBP up to 50MB</span>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-upload"></i>
+                                Choose Image
+                            </button>
+                        </div>
+                        <input type="file" id="similarityInput" accept="image/*" class="file-input">
+
+                        <!-- Preview State -->
+                        <div class="upload-preview-state" id="previewState" style="display: none;">
+                            <div class="preview-image-container">
+                                <img id="previewImage" src="" alt="Uploaded artwork">
+                                <button class="remove-preview" id="removePreview">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="preview-actions">
+                                <div class="file-info">
+                                    <i class="fas fa-file-image"></i>
+                                    <span id="fileName">image.jpg</span>
+                                </div>
+                                <button class="btn btn-primary" id="startAnalysis">
+                                    <i class="fas fa-search"></i>
+                                    Start Analysis
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Features -->
+                    <div class="analysis-features">
+                        <div class="feature-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Deep Learning AI</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-database"></i>
+                            <span>2M+ Artworks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>~5 Second Scan</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>99.7% Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Progress -->
+                <div class="similarity-analysis" id="analysisSection" style="display: none;">
+                    <div class="analysis-header">
+                        <div class="analyzing-image">
+                            <img id="analyzingImage" src="" alt="Analyzing">
+                            <div class="scan-effect">
+                                <div class="scan-beam"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-stages">
+                        <div class="stage" data-stage="extract">
+                            <div class="stage-icon">
+                                <i class="fas fa-fingerprint"></i>
+                            </div>
+                            <div class="stage-info">
+                                <h4>Extracting Features</h4>
+                                <p>Analyzing colors, patterns, and brushstrokes</p>
+                            </div>
+                            <div class="stage-progress">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+
+                        <div class="stage" data-stage="compare">
+                            <div class="stage-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="stage-info">
+                                <h4>Comparing Database</h4>
+                                <p>Matching against registered artworks</p>
+                            </div>
+                            <div class="stage-progress">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+
+                        <div class="stage" data-stage="match">
+                            <div class="stage-icon">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <div class="stage-info">
+                                <h4>Generating Results</h4>
+                                <p>Calculating similarity scores</p>
+                            </div>
+                            <div class="stage-progress">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="similarity-results" id="resultsSection" style="display: none;">
+                    <!-- No Match Result -->
+                    <div class="result-card no-match" id="noMatchResult" style="display: none;">
+                        <div class="result-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>No Similar Artworks Found</h2>
+                        <p>This artwork appears to be original. No matches found in our database.</p>
+                        <div class="originality-score">
+                            <div class="score-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle class="score-bg" cx="50" cy="50" r="45"/>
+                                    <circle class="score-fill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="0"/>
+                                </svg>
+                                <div class="score-value">100%</div>
+                            </div>
+                            <span>Originality Score</span>
+                        </div>
+                        <div class="result-actions">
+                            <a href="artist.html" class="btn btn-primary">
+                                <i class="fas fa-certificate"></i>
+                                Register This Artwork
+                            </a>
+                            <button class="btn btn-outline" id="newSearchNoMatch">
+                                <i class="fas fa-redo"></i>
+                                New Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Match Found Result -->
+                    <div class="result-card match-found" id="matchFoundResult" style="display: none;">
+                        <div class="result-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h2>Similar Artworks Detected</h2>
+                        <p>We found potential matches in our database. Please review carefully.</p>
+
+                        <!-- Comparison View -->
+                        <div class="comparison-view">
+                            <div class="comparison-item uploaded">
+                                <span class="comparison-label">Your Upload</span>
+                                <img id="comparisonUpload" src="" alt="Uploaded">
+                            </div>
+                            <div class="similarity-indicator">
+                                <div class="similarity-arrow">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="similarity-percent" id="similarityPercent">87%</div>
+                                <span>Similar</span>
+                            </div>
+                            <div class="comparison-item matched">
+                                <span class="comparison-label">Matched Artwork</span>
+                                <img id="comparisonMatch" src="" alt="Match">
+                            </div>
+                        </div>
+
+                        <!-- Match Details -->
+                        <div class="match-details">
+                            <h3 id="matchTitle">Sunset Over the Himalayas</h3>
+                            <div class="match-info-grid">
+                                <div class="match-info-item">
+                                    <label>Artist</label>
+                                    <span id="matchArtist">Priya Sharma</span>
+                                </div>
+                                <div class="match-info-item">
+                                    <label>Certificate ID</label>
+                                    <span id="matchCertId">ARTH-2026-00001</span>
+                                </div>
+                                <div class="match-info-item">
+                                    <label>Registered</label>
+                                    <span id="matchDate">January 2026</span>
+                                </div>
+                                <div class="match-info-item">
+                                    <label>Similarity Type</label>
+                                    <span class="similarity-type">Visual Match</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Warning Box -->
+                        <div class="match-warning">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <h4>What does this mean?</h4>
+                                <p>A high similarity score may indicate a copy, derivative work, or coincidental resemblance.
+                                   If you believe this is an error, please contact support with evidence of original creation.</p>
+                            </div>
+                        </div>
+
+                        <div class="result-actions">
+                            <a href="verify.html" class="btn btn-outline">
+                                <i class="fas fa-search"></i>
+                                View Original
+                            </a>
+                            <button class="btn btn-primary" id="reportDispute">
+                                <i class="fas fa-flag"></i>
+                                Report Dispute
+                            </button>
+                            <button class="btn btn-outline" id="newSearchMatch">
+                                <i class="fas fa-redo"></i>
+                                New Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How It Works -->
+                <div class="similarity-how-it-works reveal">
+                    <h3>How Similarity Check Works</h3>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">01</div>
+                            <h4>Upload Image</h4>
+                            <p>Upload any artwork image you want to verify for originality</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">02</div>
+                            <h4>AI Analysis</h4>
+                            <p>Our deep learning model extracts unique visual fingerprints</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">03</div>
+                            <h4>Database Match</h4>
+                            <p>Compare against 2M+ registered artworks in milliseconds</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">04</div>
+                            <h4>Get Results</h4>
+                            <p>Receive detailed similarity report with matched works</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                <p>India's First Blockchain Art Authentication Platform</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/similarity.js"></script>
+</body>
+</html>

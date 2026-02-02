@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Art | Arthentix - Premium Art Rental Service</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/rental.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="rental-page marketplace-home theme-light">
+    <!-- Light Theme Background -->
+    <div class="bg-subtle"></div>
+
+    <!-- Dark Theme Backgrounds (hidden in light mode) -->
+    <div class="bg-gradient" style="opacity: 0;"></div>
+    <div class="noise-overlay" style="opacity: 0;"></div>
+    <div class="float-shape shape-1" style="opacity: 0;"></div>
+    <div class="float-shape shape-2" style="opacity: 0;"></div>
+    <div class="float-shape shape-3" style="opacity: 0;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon">&#9670;</span><span class="logo-text">Arthentix</span></a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="marketplace.html">Browse Art</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html" class="active">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search"><i class="fas fa-search"></i></button>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist"><i class="far fa-heart"></i><span class="badge">0</span></a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart"><i class="fas fa-shopping-bag"></i><span class="badge">0</span></a>
+                <div class="nav-divider"></div>
+                <a href="login.html" class="nav-text-btn">Sign In</a>
+                <a href="seller-portal.html" class="btn btn-primary btn-sm">Sell Art</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="rental-main">
+        <!-- Hero Section -->
+        <section class="rental-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-badge">
+                        <i class="fas fa-key"></i>
+                        Premium Art Rental
+                    </span>
+                    <h1 class="hero-title">
+                        Transform Your Space with <span class="text-accent">Original Art</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Rent museum-quality artwork from India's finest artists. Flexible terms, full insurance,
+                        and the option to own your favorite pieces.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#browse" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search"></i>
+                            Browse Collection
+                        </a>
+                        <a href="#how-it-works" class="btn btn-outline btn-lg">
+                            How It Works
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-value">2,500+</span>
+                            <span class="stat-label">Artworks Available</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">500+</span>
+                            <span class="stat-label">Verified Artists</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Insurance Coverage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="artwork-showcase">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=800&fit=crop" alt="Featured Art" class="showcase-main">
+                        <div class="showcase-badge">
+                            <span class="badge-label">Starting from</span>
+                            <span class="badge-price">₹2,500/mo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="rental-benefits">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Flexible Duration</h3>
+                        <p>Rent from 3 months to 2 years. Change your art as often as you like.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Fully Insured</h3>
+                        <p>Every artwork is covered by comprehensive insurance during the rental period.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Easy Rotation</h3>
+                        <p>Swap artwork after minimum period. Keep your space fresh and inspiring.</p>
+                    </div>
+                    <div class="benefit-card highlight">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Rent-to-Own</h3>
+                        <p>Love it? Up to 50% of rent paid can be applied toward purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Simple Process</span>
+                    <h2 class="section-title">How Art Rental Works</h2>
+                    <p class="section-subtitle">Get original artwork in your space in just a few steps</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-visual">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Browse & Select</h3>
+                        <p>Explore our curated collection of authenticated artworks. Filter by style, size, price, or artist.</p>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-visual">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Choose Duration</h3>
+                        <p>Select your rental period from 3 months to 2 years. Longer terms get better rates.</p>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-visual">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>White-Glove Delivery</h3>
+                        <p>Professional installation included. We handle everything from packing to hanging.</p>
+                    </div>
+                    <div class="step-connector">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <div class="step-visual">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Enjoy & Rotate</h3>
+                        <p>Live with beautiful art. Swap for new pieces when you're ready for a change.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Rentals -->
+        <section class="featured-rentals" id="browse">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Curated Selection</span>
+                    <h2 class="section-title">Popular for Rent</h2>
+                </div>
+
+                <div class="rental-filters">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="abstract">Abstract</button>
+                    <button class="filter-pill" data-filter="contemporary">Contemporary</button>
+                    <button class="filter-pill" data-filter="landscape">Landscape</button>
+                    <button class="filter-pill" data-filter="traditional">Traditional</button>
+                </div>
+
+                <div class="rentals-grid">
+                    <!-- Rental Card 1 -->
+                    <div class="rental-card">
+                        <div class="rental-image">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=500&fit=crop" alt="Abstract Harmony">
+                            <div class="rental-badge">Popular</div>
+                            <div class="rental-actions">
+                                <button class="action-btn wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rental-content">
+                            <div class="rental-artist">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="Artist">
+                                <span>Arjun Mehta</span>
+                            </div>
+                            <h3 class="rental-title">Abstract Harmony</h3>
+                            <div class="rental-meta">
+                                <span>Acrylic on Canvas</span>
+                                <span>36 x 48 in</span>
+                            </div>
+                            <div class="rental-pricing">
+                                <div class="rent-price">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹3,200<small>/mo</small></span>
+                                </div>
+                                <div class="buy-price">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹78,000</span>
+                                </div>
+                            </div>
+                            <a href="artwork.html?id=1" class="btn btn-primary btn-block">
+                                Rent Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Rental Card 2 -->
+                    <div class="rental-card">
+                        <div class="rental-image">
+                            <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=400&h=500&fit=crop" alt="Urban Dreams">
+                            <div class="rental-badge rent-to-own">Rent-to-Own</div>
+                            <div class="rental-actions">
+                                <button class="action-btn wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rental-content">
+                            <div class="rental-artist">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Artist">
+                                <span>Priya Sharma</span>
+                            </div>
+                            <h3 class="rental-title">Urban Dreams</h3>
+                            <div class="rental-meta">
+                                <span>Mixed Media</span>
+                                <span>48 x 60 in</span>
+                            </div>
+                            <div class="rental-pricing">
+                                <div class="rent-price">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹4,500<small>/mo</small></span>
+                                </div>
+                                <div class="buy-price">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹1,25,000</span>
+                                </div>
+                            </div>
+                            <a href="artwork.html?id=2" class="btn btn-primary btn-block">
+                                Rent Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Rental Card 3 -->
+                    <div class="rental-card">
+                        <div class="rental-image">
+                            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400&h=500&fit=crop" alt="Golden Sunset">
+                            <div class="rental-actions">
+                                <button class="action-btn wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rental-content">
+                            <div class="rental-artist">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=40&h=40&fit=crop" alt="Artist">
+                                <span>Rahul Verma</span>
+                            </div>
+                            <h3 class="rental-title">Golden Sunset</h3>
+                            <div class="rental-meta">
+                                <span>Oil on Canvas</span>
+                                <span>24 x 36 in</span>
+                            </div>
+                            <div class="rental-pricing">
+                                <div class="rent-price">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹2,200<small>/mo</small></span>
+                                </div>
+                                <div class="buy-price">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹55,000</span>
+                                </div>
+                            </div>
+                            <a href="artwork.html?id=3" class="btn btn-primary btn-block">
+                                Rent Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Rental Card 4 -->
+                    <div class="rental-card">
+                        <div class="rental-image">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=500&fit=crop" alt="Monsoon Poetry">
+                            <div class="rental-badge">New</div>
+                            <div class="rental-actions">
+                                <button class="action-btn wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rental-content">
+                            <div class="rental-artist">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop" alt="Artist">
+                                <span>Ananya Das</span>
+                            </div>
+                            <h3 class="rental-title">Monsoon Poetry</h3>
+                            <div class="rental-meta">
+                                <span>Watercolor</span>
+                                <span>30 x 40 in</span>
+                            </div>
+                            <div class="rental-pricing">
+                                <div class="rent-price">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹2,800<small>/mo</small></span>
+                                </div>
+                                <div class="buy-price">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹68,000</span>
+                                </div>
+                            </div>
+                            <a href="artwork.html?id=4" class="btn btn-primary btn-block">
+                                Rent Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-more">
+                    <a href="index.html" class="btn btn-outline btn-lg">
+                        View All Artworks
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Plans -->
+        <section class="rental-pricing-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Flexible Plans</span>
+                    <h2 class="section-title">Rental Pricing</h2>
+                    <p class="section-subtitle">Simple, transparent pricing. No hidden fees.</p>
+                </div>
+
+                <div class="pricing-info">
+                    <div class="pricing-formula">
+                        <h3>How Rental Price is Calculated</h3>
+                        <div class="formula-box">
+                            <span class="formula">Monthly Rent = Artwork Value × 4%</span>
+                            <p>For a ₹1,00,000 artwork: ₹4,000/month</p>
+                        </div>
+                    </div>
+
+                    <div class="pricing-tiers">
+                        <div class="tier-card">
+                            <h4>3-6 Months</h4>
+                            <div class="tier-rate">4%</div>
+                            <span class="tier-label">of artwork value/mo</span>
+                            <ul class="tier-features">
+                                <li><i class="fas fa-check"></i> Free delivery & installation</li>
+                                <li><i class="fas fa-check"></i> Full insurance coverage</li>
+                                <li><i class="fas fa-check"></i> 25% rent-to-own credit</li>
+                            </ul>
+                        </div>
+                        <div class="tier-card featured">
+                            <div class="tier-badge">Best Value</div>
+                            <h4>6-12 Months</h4>
+                            <div class="tier-rate">3.5%</div>
+                            <span class="tier-label">of artwork value/mo</span>
+                            <ul class="tier-features">
+                                <li><i class="fas fa-check"></i> Free delivery & installation</li>
+                                <li><i class="fas fa-check"></i> Full insurance coverage</li>
+                                <li><i class="fas fa-check"></i> 40% rent-to-own credit</li>
+                                <li><i class="fas fa-check"></i> 1 free artwork swap</li>
+                            </ul>
+                        </div>
+                        <div class="tier-card">
+                            <h4>12-24 Months</h4>
+                            <div class="tier-rate">3%</div>
+                            <span class="tier-label">of artwork value/mo</span>
+                            <ul class="tier-features">
+                                <li><i class="fas fa-check"></i> Free delivery & installation</li>
+                                <li><i class="fas fa-check"></i> Full insurance coverage</li>
+                                <li><i class="fas fa-check"></i> 50% rent-to-own credit</li>
+                                <li><i class="fas fa-check"></i> 2 free artwork swaps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Business CTA -->
+        <section class="business-cta">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <span class="cta-badge">For Business</span>
+                        <h2>Art for Hotels, Offices & Commercial Spaces</h2>
+                        <p>Curated art programs with special bulk pricing, rotation schedules, and dedicated account management.</p>
+                        <div class="cta-features">
+                            <span><i class="fas fa-check"></i> Custom Curation</span>
+                            <span><i class="fas fa-check"></i> Volume Discounts</span>
+                            <span><i class="fas fa-check"></i> Flexible Contracts</span>
+                        </div>
+                        <a href="for-business.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-building"></i>
+                            Explore Business Solutions
+                        </a>
+                    </div>
+                    <div class="cta-visual">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=400&fit=crop" alt="Hotel Art">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="rental-faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Questions?</span>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4><i class="fas fa-question-circle"></i> What if the artwork gets damaged?</h4>
+                        <p>Every rental is fully insured. In case of accidental damage, our insurance covers repairs or replacement at no additional cost to you.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-question-circle"></i> Can I buy the artwork I'm renting?</h4>
+                        <p>Yes! With our Rent-to-Own program, up to 50% of your rental payments can be applied toward the purchase price.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-question-circle"></i> How does delivery work?</h4>
+                        <p>We provide white-glove delivery across major Indian cities. Our team handles packing, shipping, and professional installation.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-question-circle"></i> What's the minimum rental period?</h4>
+                        <p>The minimum rental period is 3 months. After that, you can swap artwork, extend your rental, or purchase the piece.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-question-circle"></i> Is the artwork authenticated?</h4>
+                        <p>Every artwork comes with a blockchain-verified certificate of authenticity from Arthentix, ensuring you're renting genuine original art.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-question-circle"></i> Can I swap artwork during my rental?</h4>
+                        <p>Yes, longer rental terms include free artwork swaps. You can also swap anytime by paying a small rotation fee.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-marketplace">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-mark">A</span>
+                        <span>Arthentix</span>
+                    </a>
+                    <p>India's premier marketplace for authenticated art. Buy, sell, and rent original artwork with confidence.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Marketplace</h4>
+                        <a href="index.html">Explore Art</a>
+                        <a href="collections.html">Collections</a>
+                        <a href="artists.html">Artists</a>
+                        <a href="rental.html">Rent Art</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>For Sellers</h4>
+                        <a href="seller-portal.html">Seller Portal</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Success Stories</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="verify.html">Verify Artwork</a>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                <p>India's First Blockchain Art Authentication Platform</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/error-handler.js"></script>
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/rental.js"></script>
+</body>
+</html>

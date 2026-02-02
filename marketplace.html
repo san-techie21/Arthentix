@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace | Arthentix - Buy, Sell & Rent Authentic Art</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="marketplace.html" class="active">Browse Art</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge">0</span>
+                </a>
+                <div class="nav-divider"></div>
+                <a href="login.html" class="nav-text-btn">Sign In</a>
+                <a href="seller-portal.html" class="btn btn-primary btn-sm">Sell Art</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="marketplace-main">
+        <!-- Hero Banner -->
+        <section class="marketplace-hero">
+            <div class="container">
+                <div class="hero-banner reveal">
+                    <div class="banner-content">
+                        <span class="banner-tag">New Collection</span>
+                        <h1>Discover Authentic <br><span class="text-gradient">Indian Art</span></h1>
+                        <p>Buy, sell, and rent blockchain-verified artworks from India's finest artists</p>
+                        <div class="banner-cta">
+                            <a href="#gallery" class="btn btn-primary">
+                                <i class="fas fa-th-large"></i>
+                                Explore Gallery
+                            </a>
+                            <a href="artist.html" class="btn btn-outline">
+                                <i class="fas fa-plus"></i>
+                                Sell Your Art
+                            </a>
+                        </div>
+                    </div>
+                    <div class="banner-featured">
+                        <div class="featured-artwork">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600" alt="Featured Art">
+                            <div class="featured-badge">
+                                <i class="fas fa-fire"></i>
+                                Trending
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="categories-scroll reveal">
+                    <button class="category-pill active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        All Art
+                    </button>
+                    <button class="category-pill" data-category="paintings">
+                        <i class="fas fa-palette"></i>
+                        Paintings
+                    </button>
+                    <button class="category-pill" data-category="sculptures">
+                        <i class="fas fa-cube"></i>
+                        Sculptures
+                    </button>
+                    <button class="category-pill" data-category="photography">
+                        <i class="fas fa-camera"></i>
+                        Photography
+                    </button>
+                    <button class="category-pill" data-category="digital">
+                        <i class="fas fa-laptop"></i>
+                        Digital Art
+                    </button>
+                    <button class="category-pill" data-category="traditional">
+                        <i class="fas fa-paint-brush"></i>
+                        Traditional
+                    </button>
+                    <button class="category-pill" data-category="folk">
+                        <i class="fas fa-feather-alt"></i>
+                        Folk Art
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters & Sort -->
+        <section class="filters-section" id="gallery">
+            <div class="container">
+                <div class="filters-bar reveal">
+                    <div class="filters-left">
+                        <button class="filter-btn" id="filterToggle">
+                            <i class="fas fa-sliders-h"></i>
+                            Filters
+                        </button>
+                        <div class="filter-tags">
+                            <span class="filter-tag">
+                                Price: ₹5K - ₹50K
+                                <button><i class="fas fa-times"></i></button>
+                            </span>
+                            <span class="filter-tag">
+                                For Rent
+                                <button><i class="fas fa-times"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="filters-right">
+                        <span class="results-count"><strong>248</strong> artworks</span>
+                        <select class="sort-select">
+                            <option value="popular">Most Popular</option>
+                            <option value="newest">Newest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rental">Available for Rent</option>
+                        </select>
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Sidebar (Hidden by default) -->
+        <aside class="filter-sidebar" id="filterSidebar">
+            <div class="sidebar-header">
+                <h3>Filters</h3>
+                <button class="close-sidebar" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <!-- Price Range -->
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min ₹" value="5000">
+                        <span>to</span>
+                        <input type="number" placeholder="Max ₹" value="50000">
+                    </div>
+                    <div class="price-range-slider">
+                        <input type="range" min="0" max="500000" value="5000" class="range-min">
+                        <input type="range" min="0" max="500000" value="50000" class="range-max">
+                    </div>
+                </div>
+
+                <!-- Availability -->
+                <div class="filter-group">
+                    <h4>Availability</h4>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        <span>Available for Purchase</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        <span>Available for Rent</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Auction Only</span>
+                    </label>
+                </div>
+
+                <!-- Medium -->
+                <div class="filter-group">
+                    <h4>Medium</h4>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Oil Painting</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Acrylic</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Watercolor</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Mixed Media</span>
+                    </label>
+                </div>
+
+                <!-- Size -->
+                <div class="filter-group">
+                    <h4>Size</h4>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Small (under 12")</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Medium (12" - 36")</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span>Large (over 36")</span>
+                    </label>
+                </div>
+
+                <!-- Verified -->
+                <div class="filter-group">
+                    <h4>Verification</h4>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        <span>Blockchain Verified Only</span>
+                    </label>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <button class="btn btn-outline">Clear All</button>
+                <button class="btn btn-primary">Apply Filters</button>
+            </div>
+        </aside>
+
+        <!-- Art Gallery Grid -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="art-grid" id="artGrid">
+                    <!-- Art Card 1 -->
+                    <div class="art-card reveal" data-category="paintings">
+                        <div class="art-image">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600" alt="Mountain Dreams">
+                            <div class="art-badges">
+                                <span class="badge verified"><i class="fas fa-shield-check"></i></span>
+                                <span class="badge rental"><i class="fas fa-clock"></i> Rentable</span>
+                            </div>
+                            <div class="art-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <div class="artist-row">
+                                <div class="artist-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=1" alt="Artist">
+                                </div>
+                                <div class="artist-name">
+                                    <span>Priya Sharma</span>
+                                    <small>Mumbai</small>
+                                </div>
+                            </div>
+                            <h3 class="art-title">Mountain Dreams at Dawn</h3>
+                            <p class="art-medium">Oil on Canvas • 36 x 48 inches</p>
+                            <div class="art-pricing">
+                                <div class="price-info">
+                                    <span class="price-label">Buy</span>
+                                    <span class="price-value">₹45,000</span>
+                                </div>
+                                <div class="rent-info">
+                                    <span class="rent-label">Rent</span>
+                                    <span class="rent-value">₹2,500/mo</span>
+                                </div>
+                            </div>
+                            <div class="art-footer">
+                                <a href="artwork.html" class="btn btn-primary btn-sm">View Details</a>
+                                <button class="btn btn-outline btn-sm add-cart">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Art Card 2 -->
+                    <div class="art-card reveal" data-category="traditional">
+                        <div class="art-image">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600" alt="Madhubani">
+                            <div class="art-badges">
+                                <span class="badge verified"><i class="fas fa-shield-check"></i></span>
+                            </div>
+                            <div class="art-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <div class="artist-row">
+                                <div class="artist-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=5" alt="Artist">
+                                </div>
+                                <div class="artist-name">
+                                    <span>Lakshmi Devi</span>
+                                    <small>Bihar</small>
+                                </div>
+                            </div>
+                            <h3 class="art-title">Madhubani Peacock Paradise</h3>
+                            <p class="art-medium">Natural Dyes on Handmade Paper • 24 x 30 inches</p>
+                            <div class="art-pricing">
+                                <div class="price-info">
+                                    <span class="price-label">Buy</span>
+                                    <span class="price-value">₹28,000</span>
+                                </div>
+                            </div>
+                            <div class="art-footer">
+                                <a href="artwork.html" class="btn btn-primary btn-sm">View Details</a>
+                                <button class="btn btn-outline btn-sm add-cart">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Art Card 3 -->
+                    <div class="art-card reveal" data-category="sculptures">
+                        <div class="art-image">
+                            <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=600" alt="Bronze Nataraja">
+                            <div class="art-badges">
+                                <span class="badge verified"><i class="fas fa-shield-check"></i></span>
+                                <span class="badge rental"><i class="fas fa-clock"></i> Rentable</span>
+                                <span class="badge hot"><i class="fas fa-fire"></i> Hot</span>
+                            </div>
+                            <div class="art-actions">
+                                <button class="action-btn wishlist active" title="Add to Wishlist">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <div class="artist-row">
+                                <div class="artist-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=8" alt="Artist">
+                                </div>
+                                <div class="artist-name">
+                                    <span>Karthik Venkatesh</span>
+                                    <small>Chennai</small>
+                                </div>
+                            </div>
+                            <h3 class="art-title">Bronze Nataraja - Cosmic Dance</h3>
+                            <p class="art-medium">Lost Wax Bronze • 24 inches height</p>
+                            <div class="art-pricing">
+                                <div class="price-info">
+                                    <span class="price-label">Buy</span>
+                                    <span class="price-value">₹1,85,000</span>
+                                </div>
+                                <div class="rent-info">
+                                    <span class="rent-label">Rent</span>
+                                    <span class="rent-value">₹8,500/mo</span>
+                                </div>
+                            </div>
+                            <div class="art-footer">
+                                <a href="artwork.html" class="btn btn-primary btn-sm">View Details</a>
+                                <button class="btn btn-outline btn-sm add-cart">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Art Card 4 -->
+                    <div class="art-card reveal" data-category="photography">
+                        <div class="art-image">
+                            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600" alt="Varanasi Ghats">
+                            <div class="art-badges">
+                                <span class="badge verified"><i class="fas fa-shield-check"></i></span>
+                                <span class="badge limited">1/10 Edition</span>
+                            </div>
+                            <div class="art-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <div class="artist-row">
+                                <div class="artist-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=12" alt="Artist">
+                                </div>
+                                <div class="artist-name">
+                                    <span>Rahul Kapoor</span>
+                                    <small>Delhi</small>
+                                </div>
+                            </div>
+                            <h3 class="art-title">Varanasi Ghats at Sunrise</h3>
+                            <p class="art-medium">Fine Art Print • 20 x 30 inches</p>
+                            <div class="art-pricing">
+                                <div class="price-info">
+                                    <span class="price-label">Buy</span>
+                                    <span class="price-value">₹15,000</span>
+                                </div>
+                            </div>
+                            <div class="art-footer">
+                                <a href="artwork.html" class="btn btn-primary btn-sm">View Details</a>
+                                <button class="btn btn-outline btn-sm add-cart">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Art Card 5 -->
+                    <div class="art-card reveal" data-category="paintings">
+                        <div class="art-image">
+                            <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600" alt="Abstract Joy">
+                            <div class="art-badges">
+                                <span class="badge verified"><i class="fas fa-shield-check"></i></span>
+                                <span class="badge rental"><i class="fas fa-clock"></i> Rentable</span>
+                            </div>
+                            <div class="art-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <div class="artist-row">
+                                <div class="artist-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=25" alt="Artist">
+                                </div>
+                                <div class="artist-name">
+                                    <span>Ananya Mehta</span>
+                                    <small>Bangalore</small>
+                                </div>
+                            </div>
+                            <h3 class="art-title">Abstract Joy in Color</h3>
+                            <p class="art-medium">Acrylic on Canvas • 40 x 40 inches</p>
+                            <div class="art-pricing">
+                                <div class="price-info">
+                                    <span class="price-label">Buy</span>
+                                    <span class="price-value">₹62,000</span>
+                                </div>
+                                <div class="rent-info">
+                                    <span class="rent-label">Rent</span>
+                                    <span class="rent-value">₹3,200/mo</span>
+                                </div>
+                            </div>
+                            <div class="art-footer">
+                                <a href="artwork.html" class="btn btn-primary btn-sm">View Details</a>
+                                <button class="btn btn-outline btn-sm add-cart">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Art Card 6 -->
+                    <div class="art-card reveal" data-category="folk">
+                        <div class="art-image">
+                            <img src="https://images.unsplash.com/photo-1582201942988-13e60e4556ee?w=600" alt="Warli Art">
+                            <div class="art-badges">
+                                <span class="badge verified"><i class="fas fa-shield-check"></i></span>
+                            </div>
+                            <div class="art-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <div class="artist-row">
+                                <div class="artist-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=32" alt="Artist">
+                                </div>
+                                <div class="artist-name">
+                                    <span>Sunita Mashe</span>
+                                    <small>Maharashtra</small>
+                                </div>
+                            </div>
+                            <h3 class="art-title">Warli Village Celebration</h3>
+                            <p class="art-medium">Rice Paste on Cow Dung Base • 18 x 24 inches</p>
+                            <div class="art-pricing">
+                                <div class="price-info">
+                                    <span class="price-label">Buy</span>
+                                    <span class="price-value">₹12,000</span>
+                                </div>
+                            </div>
+                            <div class="art-footer">
+                                <a href="artwork.html" class="btn btn-primary btn-sm">View Details</a>
+                                <button class="btn btn-outline btn-sm add-cart">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more reveal">
+                    <button class="btn btn-outline btn-lg">
+                        <i class="fas fa-plus"></i>
+                        Load More Artworks
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner Hotels Section -->
+        <section class="hotels-section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">
+                        <i class="fas fa-building"></i>
+                        Hotel Partners
+                    </span>
+                    <h2>Art for Your <span class="text-gradient">Hospitality</span> Space</h2>
+                    <p>Partner with us to bring authentic Indian art to your hotels, restaurants, and commercial spaces</p>
+                </div>
+
+                <div class="hotels-grid">
+                    <div class="hotel-card">
+                        <div class="hotel-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h3>Curated Collections</h3>
+                        <p>Get hand-picked artworks matched to your interior design and brand aesthetic</p>
+                    </div>
+                    <div class="hotel-card">
+                        <div class="hotel-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Rotating Art Program</h3>
+                        <p>Keep your spaces fresh with monthly rotation of authenticated artworks</p>
+                    </div>
+                    <div class="hotel-card">
+                        <div class="hotel-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Full Insurance</h3>
+                        <p>All rentals are fully insured against damage, theft, and natural disasters</p>
+                    </div>
+                    <div class="hotel-card">
+                        <div class="hotel-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>White Glove Service</h3>
+                        <p>Professional installation, maintenance, and replacement services included</p>
+                    </div>
+                </div>
+
+                <div class="hotels-cta">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        <i class="fas fa-handshake"></i>
+                        Partner With Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Arthentix</span>
+                    </div>
+                    <p>India's first blockchain-powered art marketplace. Buy, sell, and rent authenticated artworks with confidence.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Marketplace</h4>
+                    <ul>
+                        <li><a href="#">Browse Art</a></li>
+                        <li><a href="#">Sell Art</a></li>
+                        <li><a href="#">Rent Art</a></li>
+                        <li><a href="#">Auctions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>For Artists</h4>
+                    <ul>
+                        <li><a href="artist.html">Register Artwork</a></li>
+                        <li><a href="verify.html">Verify Certificate</a></li>
+                        <li><a href="#">Artist Dashboard</a></li>
+                        <li><a href="#">Pricing Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/marketplace.js"></script>
+</body>
+</html>

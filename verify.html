@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Artwork | Arthentix - Check Authenticity</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-mark">A</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <a href="verify.html" class="nav-link-secondary active">Verify Art</a>
+                <a href="seller-portal.html" class="btn btn-primary btn-sm">Sell Art</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Verify Header -->
+        <section class="portal-header">
+            <div class="container">
+                <div class="portal-header-content reveal">
+                    <span class="section-badge">
+                        <i class="fas fa-shield-check"></i>
+                        Verify Authenticity
+                    </span>
+                    <h1 class="portal-title">
+                        Verify <span class="text-gradient">Artwork</span> Authenticity
+                    </h1>
+                    <p class="portal-subtitle">
+                        Enter a certificate ID or scan the QR code to verify any artwork registered on Arthentix.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verification Section -->
+        <section class="verify-section">
+            <div class="container">
+                <!-- Search Box -->
+                <div class="verify-search-container reveal">
+                    <div class="verify-search-box">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="certificateInput" placeholder="Enter Certificate ID (e.g., ARTH-2026-12345)" autocomplete="off">
+                            <button class="btn btn-primary" id="verifyBtn">
+                                <span>Verify</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="search-divider">
+                            <span>or</span>
+                        </div>
+                        <div class="scan-option">
+                            <button class="scan-btn" id="scanQrBtn">
+                                <i class="fas fa-qrcode"></i>
+                                <span>Scan QR Code</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Demo Links -->
+                    <div class="demo-certificates">
+                        <p>Try these demo certificates:</p>
+                        <div class="demo-links">
+                            <button class="demo-link" data-id="ARTH-2026-00001">ARTH-2026-00001</button>
+                            <button class="demo-link" data-id="ARTH-2026-00002">ARTH-2026-00002</button>
+                            <button class="demo-link" data-id="ARTH-2026-00003">ARTH-2026-00003</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Result -->
+                <div class="verify-result" id="verifyResult" style="display: none;">
+                    <!-- Loading State -->
+                    <div class="verify-loading" id="verifyLoading">
+                        <div class="loading-animation">
+                            <div class="loading-ring"></div>
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h3>Verifying Certificate...</h3>
+                        <p>Checking blockchain records</p>
+                    </div>
+
+                    <!-- Success Result -->
+                    <div class="verify-success" id="verifySuccess" style="display: none;">
+                        <div class="result-header success">
+                            <div class="result-badge">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <div class="result-status">
+                                <h2>Verified Authentic</h2>
+                                <p>This artwork is registered on the blockchain</p>
+                            </div>
+                        </div>
+
+                        <div class="verified-artwork">
+                            <div class="artwork-display">
+                                <img id="verifiedArtworkImage" src="" alt="Verified Artwork">
+                                <div class="artwork-verified-badge">
+                                    <i class="fas fa-check-circle"></i>
+                                    Verified
+                                </div>
+                            </div>
+
+                            <div class="artwork-info-card">
+                                <div class="info-header">
+                                    <h3 id="verifiedTitle">Artwork Title</h3>
+                                    <span class="cert-badge" id="verifiedCertId">ARTH-2026-XXXXX</span>
+                                </div>
+
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <i class="fas fa-user-artist"></i>
+                                        <div>
+                                            <label>Artist</label>
+                                            <span id="verifiedArtist">Artist Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-palette"></i>
+                                        <div>
+                                            <label>Medium</label>
+                                            <span id="verifiedMedium">Oil Painting</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <div>
+                                            <label>Year Created</label>
+                                            <span id="verifiedYear">2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <div>
+                                            <label>Registered On</label>
+                                            <span id="verifiedDate">January 2026</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="blockchain-info">
+                                    <h4><i class="fas fa-link"></i> Blockchain Record</h4>
+                                    <div class="hash-display">
+                                        <code id="verifiedHash">0x...</code>
+                                        <button class="copy-hash" title="Copy Hash">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <div class="verification-stats">
+                                        <div class="verify-stat">
+                                            <span class="stat-icon"><i class="fas fa-check-double"></i></span>
+                                            <span>Verified <strong id="verifyCount">24</strong> times</span>
+                                        </div>
+                                        <div class="verify-stat">
+                                            <span class="stat-icon"><i class="fas fa-shield-alt"></i></span>
+                                            <span>Security: <strong>A+</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verify-actions">
+                            <button class="btn btn-outline" id="downloadReport">
+                                <i class="fas fa-file-pdf"></i>
+                                Download Report
+                            </button>
+                            <button class="btn btn-primary" id="contactArtist">
+                                <i class="fas fa-envelope"></i>
+                                Contact Artist
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Not Found Result -->
+                    <div class="verify-not-found" id="verifyNotFound" style="display: none;">
+                        <div class="result-header error">
+                            <div class="result-badge">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="result-status">
+                                <h2>Certificate Not Found</h2>
+                                <p>This certificate ID is not registered in our system</p>
+                            </div>
+                        </div>
+
+                        <div class="not-found-content">
+                            <div class="warning-box">
+                                <i class="fas fa-info-circle"></i>
+                                <div>
+                                    <h4>What does this mean?</h4>
+                                    <ul>
+                                        <li>The certificate ID may be incorrect</li>
+                                        <li>The artwork may not be registered on Arthentix</li>
+                                        <li>The certificate could be fraudulent</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="action-suggestions">
+                                <h4>Suggested Actions</h4>
+                                <div class="suggestion-cards">
+                                    <div class="suggestion-card">
+                                        <i class="fas fa-keyboard"></i>
+                                        <h5>Check the ID</h5>
+                                        <p>Ensure you've entered the certificate ID correctly</p>
+                                    </div>
+                                    <div class="suggestion-card">
+                                        <i class="fas fa-qrcode"></i>
+                                        <h5>Scan QR Code</h5>
+                                        <p>Use the QR code on the certificate directly</p>
+                                    </div>
+                                    <div class="suggestion-card">
+                                        <i class="fas fa-headset"></i>
+                                        <h5>Contact Support</h5>
+                                        <p>Reach out if you believe this is an error</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verify-actions">
+                            <button class="btn btn-outline" id="tryAgain">
+                                <i class="fas fa-redo"></i>
+                                Try Again
+                            </button>
+                            <button class="btn btn-primary" id="reportFraud">
+                                <i class="fas fa-flag"></i>
+                                Report Potential Fraud
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Verifications -->
+                <div class="recent-verifications reveal">
+                    <h3>Recent Public Verifications</h3>
+                    <div class="verification-feed">
+                        <div class="feed-item">
+                            <div class="feed-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="feed-content">
+                                <span class="feed-id">ARTH-2026-00001</span>
+                                <span class="feed-time">2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <div class="feed-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="feed-content">
+                                <span class="feed-id">ARTH-2025-87234</span>
+                                <span class="feed-time">5 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <div class="feed-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="feed-content">
+                                <span class="feed-id">ARTH-2026-00003</span>
+                                <span class="feed-time">12 minutes ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                <p>India's First Blockchain Art Authentication Platform</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/verify.js"></script>
+</body>
+</html>

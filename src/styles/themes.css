@@ -1,0 +1,575 @@
+/**
+ * Arthentix - Theme System
+ * Complete light/dark theme parity with WCAG compliance
+ * All semantic tokens for consistent theming
+ */
+
+/* ============================================
+   DARK THEME (Default)
+   Award-winning anthracite aesthetic
+   ============================================ */
+
+:root,
+[data-theme="dark"],
+body.theme-dark,
+body:not(.theme-light):not(.light-mode) {
+    /* Background colors */
+    --bg-primary: var(--color-primary);
+    --bg-secondary: var(--color-surface-elevated);
+    --bg-tertiary: var(--color-surface-overlay);
+    --bg-card: var(--color-surface-card);
+    --bg-hover: rgba(255, 255, 255, 0.05);
+    --bg-active: rgba(255, 255, 255, 0.08);
+    --bg-input: rgba(255, 255, 255, 0.03);
+    --bg-input-hover: rgba(255, 255, 255, 0.06);
+    --bg-subtle-1: rgba(255, 255, 255, 0.02);
+    --bg-subtle-2: rgba(255, 255, 255, 0.03);
+    --bg-subtle-3: rgba(255, 255, 255, 0.04);
+    --bg-subtle-4: rgba(255, 255, 255, 0.05);
+    --bg-subtle-5: rgba(255, 255, 255, 0.1);
+
+    /* Text colors - WCAG AA Compliant */
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --text-muted: var(--text-muted-dark);
+    --text-disabled: var(--text-disabled-dark);
+    --text-inverse: var(--color-charcoal);
+
+    /* Border colors */
+    --border-default: rgba(255, 255, 255, 0.1);
+    --border-light: rgba(255, 255, 255, 0.06);
+    --border-strong: rgba(255, 255, 255, 0.2);
+    --border-focus: var(--color-gold);
+    --border-color: var(--border-default);
+
+    /* Accent colors */
+    --accent-primary: var(--color-gold);
+    --accent-primary-hover: var(--color-gold-light);
+    --accent-primary-glow: var(--color-gold-glow);
+
+    /* Component backgrounds */
+    --navbar-bg: rgba(14, 14, 17, 0.8);
+    --navbar-bg-scrolled: rgba(14, 14, 17, 0.95);
+    --card-bg: var(--color-surface-card);
+    --modal-bg: var(--color-surface-elevated);
+    --dropdown-bg: var(--color-surface-overlay);
+    --tooltip-bg: var(--color-surface-pure);
+    --tooltip-text: var(--color-charcoal);
+
+    /* Shadows */
+    --shadow-card: var(--shadow-dark-md);
+    --shadow-dropdown: var(--shadow-dark-lg);
+    --shadow-modal: var(--shadow-dark-xl);
+    --shadow-btn-hover: 0 8px 30px var(--color-gold-glow);
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 20% -20%, var(--color-purple-glow) 0%, transparent 50%),
+                     radial-gradient(ellipse 60% 40% at 80% 0%, var(--color-gold-glow) 0%, transparent 50%),
+                     radial-gradient(ellipse 50% 30% at 50% 100%, var(--color-coral-glow) 0%, transparent 50%),
+                     var(--color-primary);
+    --gradient-gold: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+    --gradient-card: linear-gradient(180deg, var(--color-surface-elevated), var(--color-surface-card));
+
+    /* Glass effects */
+    --glass-background: var(--glass-bg);
+    --glass-border: var(--glass-border);
+
+    /* Button colors */
+    --btn-primary-bg: var(--gradient-gold);
+    --btn-primary-text: var(--color-primary);
+    --btn-primary-shadow: var(--shadow-gold-md);
+    --btn-secondary-bg: transparent;
+    --btn-secondary-text: var(--text-primary);
+    --btn-secondary-border: var(--border-default);
+    --btn-ghost-hover: var(--bg-hover);
+
+    /* Form colors */
+    --input-bg: var(--bg-input);
+    --input-border: var(--border-default);
+    --input-border-hover: var(--border-strong);
+    --input-border-focus: var(--color-gold);
+    --input-text: var(--text-primary);
+    --input-placeholder: var(--text-muted);
+
+    /* Status backgrounds */
+    --status-success-bg: rgba(16, 185, 129, 0.1);
+    --status-success-border: rgba(16, 185, 129, 0.3);
+    --status-warning-bg: rgba(245, 158, 11, 0.1);
+    --status-warning-border: rgba(245, 158, 11, 0.3);
+    --status-error-bg: rgba(239, 68, 68, 0.1);
+    --status-error-border: rgba(239, 68, 68, 0.3);
+    --status-info-bg: rgba(74, 123, 157, 0.1);
+    --status-info-border: rgba(74, 123, 157, 0.3);
+
+    /* Scrollbar */
+    --scrollbar-track: var(--color-primary);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
+
+    /* Filter for icons */
+    --icon-filter: none;
+}
+
+/* ============================================
+   LIGHT THEME
+   Premium gallery aesthetic
+   ============================================ */
+
+[data-theme="light"],
+body.light-mode,
+body.theme-light {
+    /* Background colors */
+    --bg-primary: var(--color-surface-light);
+    --bg-secondary: var(--color-surface-cream);
+    --bg-tertiary: var(--color-surface-warm);
+    --bg-card: var(--color-surface-pure);
+    --bg-hover: rgba(0, 0, 0, 0.03);
+    --bg-active: rgba(0, 0, 0, 0.06);
+    --bg-input: var(--color-surface-pure);
+    --bg-input-hover: var(--color-gray-50);
+    --bg-subtle-1: rgba(0, 0, 0, 0.02);
+    --bg-subtle-2: rgba(0, 0, 0, 0.03);
+    --bg-subtle-3: rgba(0, 0, 0, 0.04);
+    --bg-subtle-4: rgba(0, 0, 0, 0.05);
+    --bg-subtle-5: rgba(0, 0, 0, 0.08);
+
+    /* Text colors - WCAG AA Compliant */
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --text-muted: var(--text-muted-light);
+    --text-disabled: var(--text-disabled-light);
+    --text-inverse: var(--color-surface-light);
+
+    /* Border colors */
+    --border-default: rgba(0, 0, 0, 0.08);
+    --border-light: rgba(0, 0, 0, 0.04);
+    --border-strong: rgba(0, 0, 0, 0.15);
+    --border-focus: var(--color-charcoal);
+    --border-color: var(--border-default);
+
+    /* Accent colors */
+    --accent-primary: var(--color-charcoal);
+    --accent-primary-hover: var(--color-graphite);
+    --accent-primary-glow: rgba(26, 26, 26, 0.2);
+
+    /* Component backgrounds */
+    --navbar-bg: rgba(253, 251, 247, 0.85);
+    --navbar-bg-scrolled: rgba(253, 251, 247, 0.95);
+    --card-bg: var(--color-surface-pure);
+    --modal-bg: var(--color-surface-pure);
+    --dropdown-bg: var(--color-surface-pure);
+    --tooltip-bg: var(--color-charcoal);
+    --tooltip-text: var(--color-surface-light);
+
+    /* Shadows */
+    --shadow-card: var(--shadow-md);
+    --shadow-dropdown: var(--shadow-lg);
+    --shadow-modal: var(--shadow-xl);
+    --shadow-btn-hover: var(--shadow-lg);
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(ellipse at 20% 20%, rgba(201, 169, 98, 0.05) 0%, transparent 50%),
+                     radial-gradient(ellipse at 80% 80%, rgba(135, 168, 120, 0.05) 0%, transparent 50%),
+                     var(--color-surface-light);
+    --gradient-gold: linear-gradient(135deg, var(--color-gold-muted), var(--color-gold-dark));
+    --gradient-card: linear-gradient(180deg, var(--color-surface-pure), var(--color-surface-cream));
+
+    /* Glass effects */
+    --glass-background: var(--glass-light-bg);
+    --glass-border: rgba(0, 0, 0, 0.06);
+
+    /* Button colors */
+    --btn-primary-bg: var(--color-charcoal);
+    --btn-primary-text: var(--color-surface-pure);
+    --btn-primary-shadow: var(--shadow-md);
+    --btn-secondary-bg: transparent;
+    --btn-secondary-text: var(--color-charcoal);
+    --btn-secondary-border: var(--color-charcoal);
+    --btn-ghost-hover: var(--bg-hover);
+
+    /* Form colors */
+    --input-bg: var(--color-surface-pure);
+    --input-border: var(--color-mist);
+    --input-border-hover: var(--color-silver);
+    --input-border-focus: var(--color-charcoal);
+    --input-text: var(--color-charcoal);
+    --input-placeholder: var(--color-silver);
+
+    /* Status backgrounds */
+    --status-success-bg: rgba(46, 125, 74, 0.08);
+    --status-success-border: rgba(46, 125, 74, 0.2);
+    --status-warning-bg: rgba(212, 167, 84, 0.08);
+    --status-warning-border: rgba(212, 167, 84, 0.2);
+    --status-error-bg: rgba(197, 75, 75, 0.08);
+    --status-error-border: rgba(197, 75, 75, 0.2);
+    --status-info-bg: rgba(74, 123, 157, 0.08);
+    --status-info-border: rgba(74, 123, 157, 0.2);
+
+    /* Scrollbar */
+    --scrollbar-track: var(--color-surface-cream);
+    --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+    --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
+
+    /* Filter for icons */
+    --icon-filter: invert(1);
+}
+
+/* ============================================
+   COMPONENT THEME OVERRIDES
+   ============================================ */
+
+/* ----- Navigation ----- */
+.navbar,
+.navbar-marketplace {
+    background: var(--navbar-bg);
+    backdrop-filter: blur(var(--blur-xl)) saturate(180%);
+    -webkit-backdrop-filter: blur(var(--blur-xl)) saturate(180%);
+    border-bottom: 1px solid var(--border-light);
+    transition: background var(--duration-normal) var(--ease-out),
+                border-color var(--duration-normal) var(--ease-out);
+}
+
+.navbar.scrolled,
+.navbar-marketplace.scrolled {
+    background: var(--navbar-bg-scrolled);
+    border-color: var(--border-default);
+}
+
+.nav-links a,
+.nav-center a {
+    color: var(--text-secondary);
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav-links a:hover,
+.nav-center a:hover,
+.nav-links a.active,
+.nav-center a.active {
+    color: var(--text-primary);
+}
+
+.logo-text {
+    color: var(--text-primary);
+}
+
+.logo-icon {
+    color: var(--color-gold);
+}
+
+/* ----- Cards ----- */
+.card,
+.art-card,
+.artwork-card,
+.collection-card,
+.artist-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-all),
+                box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.card:hover,
+.art-card:hover,
+.artwork-card:hover {
+    border-color: var(--border-default);
+    box-shadow: var(--shadow-dropdown);
+}
+
+.card-title,
+.art-title {
+    color: var(--text-primary);
+}
+
+.card-description,
+.art-artist {
+    color: var(--text-secondary);
+}
+
+.card-meta,
+.art-price {
+    color: var(--text-muted);
+}
+
+/* ----- Buttons ----- */
+.btn-primary,
+.btn-dark {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: none;
+    box-shadow: var(--btn-primary-shadow);
+}
+
+.btn-primary:hover,
+.btn-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-btn-hover);
+}
+
+.btn-secondary,
+.btn-outline {
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 1px solid var(--btn-secondary-border);
+}
+
+.btn-secondary:hover,
+.btn-outline:hover {
+    background: var(--btn-ghost-hover);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+    background: var(--btn-ghost-hover);
+    color: var(--text-primary);
+}
+
+/* ----- Forms ----- */
+input,
+textarea,
+select,
+.form-input,
+.form-textarea,
+.form-select {
+    background: var(--input-bg);
+    color: var(--input-text);
+    border: var(--input-border-width) solid var(--input-border);
+    border-radius: var(--input-radius);
+    transition: border-color var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-fast) var(--ease-out);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: var(--input-border-hover);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--input-border-focus);
+    box-shadow: 0 0 0 3px var(--accent-primary-glow);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+/* ----- Modals & Overlays ----- */
+.modal,
+.modal-content {
+    background: var(--modal-bg);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-modal);
+}
+
+.modal-overlay,
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode .modal-overlay,
+body.light-mode .overlay {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* ----- Dropdowns ----- */
+.dropdown,
+.dropdown-menu {
+    background: var(--dropdown-bg);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-dropdown);
+}
+
+.dropdown-item {
+    color: var(--text-secondary);
+}
+
+.dropdown-item:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+/* ----- Tooltips ----- */
+.tooltip {
+    background: var(--tooltip-bg);
+    color: var(--tooltip-text);
+}
+
+/* ----- Badges & Tags ----- */
+.badge,
+.tag {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+.badge-gold,
+.tag-gold {
+    background: var(--color-gold-subtle);
+    color: var(--color-gold);
+    border-color: var(--color-gold-glow);
+}
+
+/* ----- Status Indicators ----- */
+.status-success {
+    background: var(--status-success-bg);
+    border-color: var(--status-success-border);
+    color: var(--color-success);
+}
+
+.status-warning {
+    background: var(--status-warning-bg);
+    border-color: var(--status-warning-border);
+    color: var(--color-warning);
+}
+
+.status-error {
+    background: var(--status-error-bg);
+    border-color: var(--status-error-border);
+    color: var(--color-error);
+}
+
+.status-info {
+    background: var(--status-info-bg);
+    border-color: var(--status-info-border);
+    color: var(--color-info);
+}
+
+/* ----- Tables ----- */
+table,
+.table {
+    background: var(--card-bg);
+}
+
+th {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-default);
+}
+
+td {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+tr:hover td {
+    background: var(--bg-hover);
+}
+
+/* ----- Dividers ----- */
+hr,
+.divider {
+    border-color: var(--border-light);
+}
+
+/* ----- Footer ----- */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-text {
+    color: var(--text-muted);
+}
+
+.footer-link {
+    color: var(--text-secondary);
+}
+
+.footer-link:hover {
+    color: var(--text-primary);
+}
+
+/* ----- Search ----- */
+.search-overlay,
+.search-modal {
+    background: var(--bg-primary);
+}
+
+body.light-mode .search-overlay,
+body.light-mode .search-modal {
+    background: rgba(253, 251, 247, 0.98);
+}
+
+.search-input {
+    background: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+}
+
+/* ----- Scrollbar Styling ----- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* ============================================
+   THEME TRANSITION
+   Smooth theme switching
+   ============================================ */
+
+body {
+    transition: background-color var(--duration-slow) var(--ease-out),
+                color var(--duration-slow) var(--ease-out);
+}
+
+/* Disable transitions during theme change to prevent flash */
+body.theme-transitioning * {
+    transition: none !important;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Text colors */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-disabled { color: var(--text-disabled); }
+.text-gold { color: var(--color-gold); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+.text-info { color: var(--color-info); }
+
+/* Background colors */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+.bg-card { background-color: var(--card-bg); }
+.bg-hover { background-color: var(--bg-hover); }
+
+/* Border colors */
+.border-default { border-color: var(--border-default); }
+.border-light { border-color: var(--border-light); }
+.border-strong { border-color: var(--border-strong); }
+.border-gold { border-color: var(--color-gold); }

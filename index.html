@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthentix - India's Premium Art Marketplace | Buy, Sell & Rent Authentic Art</title>
+    <meta name="description" content="Discover and collect authenticated original artwork from India's finest artists. Buy, sell, or rent premium art for homes, hotels, and corporate spaces.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css?v=20260202">
+    <link rel="stylesheet" href="src/styles/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+</head>
+<body class="marketplace-home theme-light">
+    <!-- Light Theme Background -->
+    <div class="bg-subtle"></div>
+
+    <!-- Dark Theme Backgrounds (hidden in light mode) -->
+    <div class="bg-gradient" style="opacity: 0;"></div>
+    <div class="noise-overlay" style="opacity: 0;"></div>
+    <div class="float-shape shape-1" style="opacity: 0;"></div>
+    <div class="float-shape shape-2" style="opacity: 0;"></div>
+    <div class="float-shape shape-3" style="opacity: 0;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+
+            <div class="nav-center">
+                <a href="index.html" class="active">Explore</a>
+                <a href="marketplace.html">Browse Art</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge">0</span>
+                </a>
+                <div class="nav-divider"></div>
+                <a href="login.html" class="nav-text-btn">Sign In</a>
+                <a href="seller-portal.html" class="btn btn-dark btn-sm">Sell Art</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Global Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="search-content">
+                <h2>Search Arthentix</h2>
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search artists, artworks, styles..." id="globalSearch">
+                </div>
+                <div class="search-suggestions">
+                    <span class="suggestion-label">Popular:</span>
+                    <button class="suggestion-tag">Abstract</button>
+                    <button class="suggestion-tag">Landscape</button>
+                    <button class="suggestion-tag">Contemporary</button>
+                    <button class="suggestion-tag">Under ₹50,000</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section - Gallery Style -->
+    <section class="hero-gallery">
+        <div class="hero-gallery-grid">
+            <div class="hero-artwork featured" style="background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800')">
+                <div class="artwork-overlay">
+                    <span class="artwork-tag">Featured</span>
+                    <div class="artwork-info">
+                        <h3>"Monsoon Dreams"</h3>
+                        <p>Priya Sharma</p>
+                        <span class="artwork-price">₹1,25,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-artwork" style="background-image: url('https://images.unsplash.com/photo-1549490349-8643362247b5?w=600')">
+                <div class="artwork-overlay">
+                    <div class="artwork-info">
+                        <h3>"Urban Rhythm"</h3>
+                        <p>Arjun Menon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-artwork" style="background-image: url('https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=600')">
+                <div class="artwork-overlay">
+                    <div class="artwork-info">
+                        <h3>"Golden Hour"</h3>
+                        <p>Kavitha Reddy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-artwork" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600')">
+                <div class="artwork-overlay">
+                    <div class="artwork-info">
+                        <h3>"Silent Poetry"</h3>
+                        <p>Vikram Das</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-content-overlay">
+            <div class="hero-text">
+                <h1>
+                    <span class="hero-line">Discover</span>
+                    <span class="hero-line accent">Authentic Indian Art</span>
+                </h1>
+                <p>Buy, sell, or rent original artwork from India's finest contemporary artists. Every piece authenticated and protected.</p>
+                <div class="hero-cta">
+                    <a href="#explore" class="btn btn-primary btn-lg">
+                        Explore Art
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="rental.html" class="btn btn-outline-light btn-lg">
+                        Rent for Your Space
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>Blockchain Authenticated</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Secure Shipping</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Insurance Included</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-undo"></i>
+                    <span>7-Day Returns</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Payments</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="category-nav" id="explore">
+        <div class="container">
+            <div class="section-header-minimal">
+                <h2>Browse by Category</h2>
+                <a href="marketplace.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="category-scroll">
+                <a href="marketplace.html?cat=paintings" class="category-card">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400')"></div>
+                    <span>Paintings</span>
+                </a>
+                <a href="marketplace.html?cat=sculptures" class="category-card">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1544413660-299165566b1d?w=400')"></div>
+                    <span>Sculptures</span>
+                </a>
+                <a href="marketplace.html?cat=photography" class="category-card">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400')"></div>
+                    <span>Photography</span>
+                </a>
+                <a href="marketplace.html?cat=prints" class="category-card">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400')"></div>
+                    <span>Prints</span>
+                </a>
+                <a href="marketplace.html?cat=digital" class="category-card">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400')"></div>
+                    <span>Digital Art</span>
+                </a>
+                <a href="marketplace.html?cat=traditional" class="category-card">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=400')"></div>
+                    <span>Traditional</span>
+                </a>
+                <a href="marketplace.html?cat=mixed-media" class="category-card">
+                    <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1549490349-8643362247b5?w=400')"></div>
+                    <span>Mixed Media</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artworks Grid -->
+    <section class="featured-artworks">
+        <div class="container">
+            <div class="section-header-elegant">
+                <div class="header-left">
+                    <span class="section-eyebrow">Curated Selection</span>
+                    <h2>Featured Artworks</h2>
+                </div>
+                <div class="header-right">
+                    <div class="filter-pills">
+                        <button class="filter-pill active" data-filter="all">All</button>
+                        <button class="filter-pill" data-filter="new">New Arrivals</button>
+                        <button class="filter-pill" data-filter="trending">Trending</button>
+                        <button class="filter-pill" data-filter="under-50k">Under ₹50K</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artworks-grid" id="featuredGrid">
+                <!-- Artwork Card 1 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=1" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600" alt="Monsoon Dreams">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="artwork-badge verified">
+                                <i class="fas fa-check-circle"></i> Verified
+                            </span>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Priya Sharma" class="artist-avatar">
+                                <span>Priya Sharma</span>
+                            </div>
+                            <h3 class="artwork-title">"Monsoon Dreams"</h3>
+                            <p class="artwork-medium">Oil on Canvas • 36 × 48 in</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹1,25,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹4,500/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Artwork Card 2 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=2" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600" alt="Urban Rhythm">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="artwork-badge new">New</span>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Arjun Menon" class="artist-avatar">
+                                <span>Arjun Menon</span>
+                            </div>
+                            <h3 class="artwork-title">"Urban Rhythm"</h3>
+                            <p class="artwork-medium">Acrylic on Canvas • 30 × 40 in</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹85,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹3,200/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Artwork Card 3 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=3" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=600" alt="Golden Hour">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="artwork-badge verified">
+                                <i class="fas fa-check-circle"></i> Verified
+                            </span>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Kavitha Reddy" class="artist-avatar">
+                                <span>Kavitha Reddy</span>
+                            </div>
+                            <h3 class="artwork-title">"Golden Hour"</h3>
+                            <p class="artwork-medium">Watercolor on Paper • 24 × 30 in</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹45,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹1,800/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Artwork Card 4 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=4" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600" alt="Silent Poetry">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Vikram Das" class="artist-avatar">
+                                <span>Vikram Das</span>
+                            </div>
+                            <h3 class="artwork-title">"Silent Poetry"</h3>
+                            <p class="artwork-medium">Mixed Media • 28 × 36 in</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹72,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹2,800/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Artwork Card 5 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=5" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Himalayan Serenity">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="artwork-badge trending">Trending</span>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Rahul Joshi" class="artist-avatar">
+                                <span>Rahul Joshi</span>
+                            </div>
+                            <h3 class="artwork-title">"Himalayan Serenity"</h3>
+                            <p class="artwork-medium">Photography • Limited Edition</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹35,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹1,400/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Artwork Card 6 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=6" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=600" alt="Traditional Motifs">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="artwork-badge verified">
+                                <i class="fas fa-check-circle"></i> Verified
+                            </span>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" alt="Lakshmi Iyer" class="artist-avatar">
+                                <span>Lakshmi Iyer</span>
+                            </div>
+                            <h3 class="artwork-title">"Traditional Motifs"</h3>
+                            <p class="artwork-medium">Tanjore Painting • 18 × 24 in</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹95,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹3,600/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Artwork Card 7 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=7" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=600" alt="Digital Dreams">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="artwork-badge new">New</span>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100" alt="Karan Singh" class="artist-avatar">
+                                <span>Karan Singh</span>
+                            </div>
+                            <h3 class="artwork-title">"Digital Dreams"</h3>
+                            <p class="artwork-medium">Digital Art • NFT Available</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹28,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹1,200/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Artwork Card 8 -->
+                <article class="artwork-card reveal">
+                    <a href="artwork.html?id=8" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="https://images.unsplash.com/photo-1544413660-299165566b1d?w=600" alt="Bronze Elegance">
+                            <div class="artwork-actions">
+                                <button class="action-btn wishlist" title="Add to Wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="action-btn quick-view" title="Quick View">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="artwork-badge verified">
+                                <i class="fas fa-check-circle"></i> Verified
+                            </span>
+                        </div>
+                        <div class="artwork-details">
+                            <div class="artwork-artist">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Suresh Kumar" class="artist-avatar">
+                                <span>Suresh Kumar</span>
+                            </div>
+                            <h3 class="artwork-title">"Bronze Elegance"</h3>
+                            <p class="artwork-medium">Bronze Sculpture • 24 in</p>
+                            <div class="artwork-pricing">
+                                <div class="price-buy">
+                                    <span class="label">Buy</span>
+                                    <span class="amount">₹2,50,000</span>
+                                </div>
+                                <div class="price-rent">
+                                    <span class="label">Rent</span>
+                                    <span class="amount">₹8,500/mo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="load-more-container">
+                <a href="marketplace.html" class="btn btn-outline btn-lg">
+                    View All Artworks
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Art Rental Section -->
+    <section class="rental-section">
+        <div class="container">
+            <div class="rental-hero">
+                <div class="rental-content">
+                    <span class="section-eyebrow">Art Rental Program</span>
+                    <h2>Transform Any Space<br>Without the Commitment</h2>
+                    <p>Rent authentic artwork for your home, office, or hotel. Flexible terms, insurance included, and the option to buy at any time.</p>
+
+                    <div class="rental-features">
+                        <div class="rental-feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Flexible Duration</strong>
+                                <span>3 months minimum</span>
+                            </div>
+                        </div>
+                        <div class="rental-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Fully Insured</strong>
+                                <span>Comprehensive coverage</span>
+                            </div>
+                        </div>
+                        <div class="rental-feature">
+                            <i class="fas fa-exchange-alt"></i>
+                            <div>
+                                <strong>Easy Rotation</strong>
+                                <span>Swap art quarterly</span>
+                            </div>
+                        </div>
+                        <div class="rental-feature">
+                            <i class="fas fa-tag"></i>
+                            <div>
+                                <strong>Rent-to-Own</strong>
+                                <span>50% rent credit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rental-cta">
+                        <a href="rental.html" class="btn btn-primary btn-lg">
+                            Explore Rental Options
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="for-business.html" class="btn btn-outline btn-lg">
+                            For Hotels & Businesses
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rental-visual">
+                    <div class="rental-image-stack">
+                        <div class="rental-image img-1">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600" alt="Art in living room">
+                        </div>
+                        <div class="rental-image img-2">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600" alt="Art in office">
+                        </div>
+                        <div class="rental-image img-3">
+                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600" alt="Art in hotel">
+                        </div>
+                    </div>
+                    <div class="rental-pricing-card">
+                        <span class="pricing-label">Starting from</span>
+                        <span class="pricing-amount">₹1,200<small>/month</small></span>
+                        <span class="pricing-note">Insurance included</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artists -->
+    <section class="featured-artists">
+        <div class="container">
+            <div class="section-header-elegant">
+                <div class="header-left">
+                    <span class="section-eyebrow">Meet Our Artists</span>
+                    <h2>Featured Artists</h2>
+                </div>
+                <div class="header-right">
+                    <a href="artists.html" class="view-all">View All Artists <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="artists-grid">
+                <a href="artist-profile.html?id=1" class="artist-card reveal">
+                    <div class="artist-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" alt="Priya Sharma">
+                        <div class="artist-overlay">
+                            <span class="view-profile">View Profile</span>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Priya Sharma</h3>
+                        <p class="artist-specialty">Contemporary, Abstract</p>
+                        <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Mumbai</p>
+                        <div class="artist-stats">
+                            <span><strong>48</strong> Works</span>
+                            <span><strong>₹45K-2L</strong> Range</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="artist-profile.html?id=2" class="artist-card reveal">
+                    <div class="artist-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Arjun Menon">
+                        <div class="artist-overlay">
+                            <span class="view-profile">View Profile</span>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Arjun Menon</h3>
+                        <p class="artist-specialty">Urban Art, Mixed Media</p>
+                        <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Bangalore</p>
+                        <div class="artist-stats">
+                            <span><strong>32</strong> Works</span>
+                            <span><strong>₹35K-1.5L</strong> Range</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="artist-profile.html?id=3" class="artist-card reveal">
+                    <div class="artist-image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400" alt="Kavitha Reddy">
+                        <div class="artist-overlay">
+                            <span class="view-profile">View Profile</span>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Kavitha Reddy</h3>
+                        <p class="artist-specialty">Watercolor, Landscape</p>
+                        <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Hyderabad</p>
+                        <div class="artist-stats">
+                            <span><strong>65</strong> Works</span>
+                            <span><strong>₹25K-80K</strong> Range</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="artist-profile.html?id=4" class="artist-card reveal">
+                    <div class="artist-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400" alt="Vikram Das">
+                        <div class="artist-overlay">
+                            <span class="view-profile">View Profile</span>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3>Vikram Das</h3>
+                        <p class="artist-specialty">Mixed Media, Sculpture</p>
+                        <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Kolkata</p>
+                        <div class="artist-stats">
+                            <span><strong>28</strong> Works</span>
+                            <span><strong>₹50K-3L</strong> Range</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Business Section -->
+    <section class="business-section">
+        <div class="container">
+            <div class="business-grid">
+                <div class="business-card hotels reveal">
+                    <div class="business-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>For Hotels</h3>
+                    <p>Transform your property with curated art collections. Gallery partnerships, room art, and rotating exhibitions.</p>
+                    <ul class="business-features">
+                        <li><i class="fas fa-check"></i> Curated collections</li>
+                        <li><i class="fas fa-check"></i> Installation support</li>
+                        <li><i class="fas fa-check"></i> Revenue sharing on sales</li>
+                        <li><i class="fas fa-check"></i> Quarterly rotation</li>
+                    </ul>
+                    <a href="for-hotels.html" class="btn btn-outline">Learn More</a>
+                </div>
+
+                <div class="business-card corporates reveal">
+                    <div class="business-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>For Corporates</h3>
+                    <p>Elevate your workspace with authentic art. Bulk rental programs, CSR initiatives, and corporate gifting.</p>
+                    <ul class="business-features">
+                        <li><i class="fas fa-check"></i> Bulk rental discounts</li>
+                        <li><i class="fas fa-check"></i> GST invoicing</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i> Custom curation</li>
+                    </ul>
+                    <a href="for-corporates.html" class="btn btn-outline">Learn More</a>
+                </div>
+
+                <div class="business-card designers reveal">
+                    <div class="business-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>For Interior Designers</h3>
+                    <p>Access exclusive collections for your projects. Trade discounts, client management tools, and white-label options.</p>
+                    <ul class="business-features">
+                        <li><i class="fas fa-check"></i> 15-20% trade discount</li>
+                        <li><i class="fas fa-check"></i> Client billing tools</li>
+                        <li><i class="fas fa-check"></i> Project management</li>
+                        <li><i class="fas fa-check"></i> Approval requests</li>
+                    </ul>
+                    <a href="for-designers.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Feature (Secondary) -->
+    <section class="authentication-feature">
+        <div class="container">
+            <div class="auth-content">
+                <div class="auth-text">
+                    <span class="section-eyebrow">Every Artwork Protected</span>
+                    <h2>Triple-Layer Authentication</h2>
+                    <p>Every artwork on Arthentix is verified and protected with our proprietary authentication system.</p>
+
+                    <div class="auth-layers">
+                        <div class="auth-layer">
+                            <div class="layer-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div class="layer-info">
+                                <h4>Blockchain Certificate</h4>
+                                <p>Immutable record of authenticity on Polygon blockchain</p>
+                            </div>
+                        </div>
+                        <div class="auth-layer">
+                            <div class="layer-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="layer-info">
+                                <h4>NFC Physical Tag</h4>
+                                <p>Tap to verify with any smartphone</p>
+                            </div>
+                        </div>
+                        <div class="auth-layer">
+                            <div class="layer-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="layer-info">
+                                <h4>AI Monitoring</h4>
+                                <p>24/7 scanning for unauthorized copies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auth-cta">
+                        <a href="verify.html" class="btn btn-outline">
+                            <i class="fas fa-search"></i>
+                            Verify an Artwork
+                        </a>
+                        <a href="how-it-works.html" class="text-link">
+                            Learn how it works <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="auth-visual">
+                    <div class="certificate-preview">
+                        <div class="cert-header">
+                            <span class="cert-logo">◆ Arthentix</span>
+                            <span class="cert-verified">
+                                <i class="fas fa-check-circle"></i>
+                                Verified
+                            </span>
+                        </div>
+                        <div class="cert-artwork">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400" alt="Sample">
+                        </div>
+                        <div class="cert-details">
+                            <h4>"Monsoon Dreams"</h4>
+                            <p>by Priya Sharma</p>
+                            <div class="cert-id">
+                                <i class="fas fa-fingerprint"></i>
+                                ARTH-2026-00142
+                            </div>
+                        </div>
+                        <div class="cert-nfc">
+                            <div class="nfc-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <span>Tap to verify</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-eyebrow">What People Say</span>
+                <h2>Trusted by Collectors & Artists</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Finally, a platform that gives Indian artists the visibility they deserve. The authentication feature gives my buyers complete confidence."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Priya Sharma">
+                        <div>
+                            <strong>Priya Sharma</strong>
+                            <span>Artist, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"The rental program transformed our hotel's aesthetic. Guests love the rotating art, and several have purchased pieces during their stay."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Rajesh Gupta">
+                        <div>
+                            <strong>Rajesh Gupta</strong>
+                            <span>GM, Taj West End</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"As a first-time collector, I was nervous about authenticity. The blockchain certificate and NFC tag gave me complete peace of mind."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Ananya Mehta">
+                        <div>
+                            <strong>Ananya Mehta</strong>
+                            <span>Collector, Bangalore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-card buyers reveal">
+                    <h3>Start Your Collection</h3>
+                    <p>Discover authenticated artwork from India's finest artists.</p>
+                    <a href="marketplace.html" class="btn btn-primary">
+                        Browse Art
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="cta-card sellers reveal">
+                    <h3>Sell Your Art</h3>
+                    <p>Join thousands of artists selling and renting their work.</p>
+                    <a href="seller-portal.html" class="btn btn-light">
+                        Start Selling
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <span class="logo-icon">◆</span>
+                            <span class="logo-text">Arthentix</span>
+                        </div>
+                        <p>India's premium marketplace for authenticated original artwork. Buy, sell, or rent art with confidence.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/arthentix" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com/arthentix" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/arthentix" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com/company/arthentix" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://youtube.com/@arthentix" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Marketplace</h4>
+                        <a href="marketplace.html">Browse Art</a>
+                        <a href="artists.html">Artists</a>
+                        <a href="collections.html">Collections</a>
+                        <a href="rental.html">Rent Art</a>
+                        <a href="new-arrivals.html">New Arrivals</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>For You</h4>
+                        <a href="buyer-guide.html">Buyer's Guide</a>
+                        <a href="seller-portal.html">Sell Art</a>
+                        <a href="for-business.html">For Business</a>
+                        <a href="verify.html">Verify Artwork</a>
+                        <a href="how-it-works.html">How It Works</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="careers.html">Careers</a>
+                        <a href="press.html">Press</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Support</h4>
+                        <a href="help.html">Help Center</a>
+                        <a href="shipping.html">Shipping Info</a>
+                        <a href="returns.html">Returns</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="trust-safety.html">Trust & Safety</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="cookies.html">Cookie Policy</a>
+                    </div>
+                    <p class="footer-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Made with love in Bangalore, India
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/utils/error-handler.js"></script>
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Portal | Arthentix - List, Sell & Rent Your Art</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/seller-portal.css?v=20260202">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="seller-portal-page marketplace-home theme-light">
+    <!-- Light Theme Background -->
+    <div class="bg-subtle"></div>
+
+    <!-- Dark Theme Backgrounds (hidden in light mode) -->
+    <div class="bg-gradient" style="opacity: 0;"></div>
+    <div class="noise-overlay" style="opacity: 0;"></div>
+    <div class="float-shape shape-1" style="opacity: 0;"></div>
+    <div class="float-shape shape-2" style="opacity: 0;"></div>
+    <div class="float-shape shape-3" style="opacity: 0;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-mark">A</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="seller-portal.html" class="btn btn-primary btn-sm active-portal">
+                    <i class="fas fa-store"></i>
+                    Seller Portal
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="seller-main">
+        <!-- Sidebar -->
+        <aside class="seller-sidebar" id="sellerSidebar">
+            <div class="sidebar-header">
+                <div class="seller-avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Seller">
+                    <span class="status-dot online"></span>
+                </div>
+                <div class="seller-info">
+                    <h4>Priya Sharma</h4>
+                    <span class="seller-badge">
+                        <i class="fas fa-certificate"></i>
+                        Verified Artist
+                    </span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#listings" class="nav-item" data-section="listings">
+                    <i class="fas fa-images"></i>
+                    <span>My Listings</span>
+                    <span class="nav-badge">12</span>
+                </a>
+                <a href="#orders" class="nav-item" data-section="orders">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Orders</span>
+                    <span class="nav-badge highlight">3</span>
+                </a>
+                <a href="#rentals" class="nav-item" data-section="rentals">
+                    <i class="fas fa-key"></i>
+                    <span>Rentals</span>
+                    <span class="nav-badge">5</span>
+                </a>
+                <a href="#earnings" class="nav-item" data-section="earnings">
+                    <i class="fas fa-wallet"></i>
+                    <span>Earnings</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-section="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#certificates" class="nav-item" data-section="certificates">
+                    <i class="fas fa-shield-check"></i>
+                    <span>Certificates</span>
+                </a>
+                <a href="#settings" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-cta">
+                <button class="btn btn-primary btn-block" id="newListingBtn">
+                    <i class="fas fa-plus"></i>
+                    List New Artwork
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="seller-content">
+            <!-- Dashboard Section -->
+            <section class="content-section active" id="dashboard">
+                <div class="section-header">
+                    <div class="header-left">
+                        <h1>Welcome back, Priya</h1>
+                        <p>Here's what's happening with your art today</p>
+                    </div>
+                    <div class="header-actions">
+                        <select class="period-select">
+                            <option value="7">Last 7 days</option>
+                            <option value="30" selected>Last 30 days</option>
+                            <option value="90">Last 90 days</option>
+                            <option value="365">This Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon sales">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value">₹2,85,000</span>
+                            <span class="stat-label">Total Sales</span>
+                            <span class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 12.5%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon rentals">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value">₹45,500</span>
+                            <span class="stat-label">Rental Income</span>
+                            <span class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 28.3%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon views">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value">4,892</span>
+                            <span class="stat-label">Profile Views</span>
+                            <span class="stat-change positive">
+                                <i class="fas fa-arrow-up"></i> 8.7%
+                            </span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon active">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Active Listings</span>
+                            <span class="stat-change neutral">
+                                <i class="fas fa-minus"></i> Same
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Quick Actions -->
+                <div class="dashboard-grid">
+                    <!-- Recent Orders -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Recent Orders</h3>
+                            <a href="#orders" class="view-all">View All</a>
+                        </div>
+                        <div class="orders-list">
+                            <div class="order-item">
+                                <div class="order-artwork">
+                                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=80&h=80&fit=crop" alt="Artwork">
+                                </div>
+                                <div class="order-info">
+                                    <h4>Monsoon Dreams</h4>
+                                    <span class="order-type sale">Sale</span>
+                                    <span class="order-price">₹85,000</span>
+                                </div>
+                                <div class="order-status pending">
+                                    Pending Shipment
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-artwork">
+                                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=80&h=80&fit=crop" alt="Artwork">
+                                </div>
+                                <div class="order-info">
+                                    <h4>Urban Reflections</h4>
+                                    <span class="order-type rental">Rental</span>
+                                    <span class="order-price">₹3,500/mo</span>
+                                </div>
+                                <div class="order-status active">
+                                    Active Rental
+                                </div>
+                            </div>
+                            <div class="order-item">
+                                <div class="order-artwork">
+                                    <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=80&h=80&fit=crop" alt="Artwork">
+                                </div>
+                                <div class="order-info">
+                                    <h4>Abstract Symphony</h4>
+                                    <span class="order-type sale">Sale</span>
+                                    <span class="order-price">₹1,25,000</span>
+                                </div>
+                                <div class="order-status completed">
+                                    Delivered
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Chart -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Earnings Overview</h3>
+                            <div class="chart-toggle">
+                                <button class="active">Sales</button>
+                                <button>Rentals</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-placeholder">
+                                <div class="chart-bars">
+                                    <div class="chart-bar" style="height: 45%"><span>Jan</span></div>
+                                    <div class="chart-bar" style="height: 62%"><span>Feb</span></div>
+                                    <div class="chart-bar" style="height: 38%"><span>Mar</span></div>
+                                    <div class="chart-bar" style="height: 85%"><span>Apr</span></div>
+                                    <div class="chart-bar" style="height: 55%"><span>May</span></div>
+                                    <div class="chart-bar active" style="height: 72%"><span>Jun</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Performing -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Top Performing</h3>
+                            <a href="#analytics" class="view-all">Analytics</a>
+                        </div>
+                        <div class="top-artworks">
+                            <div class="top-artwork-item">
+                                <span class="rank">1</span>
+                                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=60&h=60&fit=crop" alt="">
+                                <div class="top-info">
+                                    <h4>Monsoon Dreams</h4>
+                                    <span>324 views this week</span>
+                                </div>
+                            </div>
+                            <div class="top-artwork-item">
+                                <span class="rank">2</span>
+                                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=60&h=60&fit=crop" alt="">
+                                <div class="top-info">
+                                    <h4>Urban Reflections</h4>
+                                    <span>286 views this week</span>
+                                </div>
+                            </div>
+                            <div class="top-artwork-item">
+                                <span class="rank">3</span>
+                                <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=60&h=60&fit=crop" alt="">
+                                <div class="top-info">
+                                    <h4>Abstract Symphony</h4>
+                                    <span>198 views this week</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card quick-actions">
+                        <div class="card-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <div class="actions-grid">
+                            <button class="action-btn-large" id="quickNewListing">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>List New Art</span>
+                            </button>
+                            <button class="action-btn-large">
+                                <i class="fas fa-tag"></i>
+                                <span>Update Prices</span>
+                            </button>
+                            <button class="action-btn-large">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Promote Art</span>
+                            </button>
+                            <button class="action-btn-large">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Withdraw</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Listings Section -->
+            <section class="content-section" id="listings">
+                <div class="section-header">
+                    <div class="header-left">
+                        <h1>My Listings</h1>
+                        <p>Manage your artwork listings</p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="all">All (12)</button>
+                            <button class="filter-tab" data-filter="active">Active (8)</button>
+                            <button class="filter-tab" data-filter="rented">Rented (3)</button>
+                            <button class="filter-tab" data-filter="sold">Sold (1)</button>
+                        </div>
+                        <button class="btn btn-primary" id="addListingBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Listing
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Listings Grid -->
+                <div class="listings-grid">
+                    <!-- Listing Card -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=400&fit=crop" alt="Monsoon Dreams">
+                            <div class="listing-status active">Active</div>
+                            <div class="listing-actions">
+                                <button class="listing-action" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="listing-action" title="Analytics">
+                                    <i class="fas fa-chart-line"></i>
+                                </button>
+                                <button class="listing-action" title="More">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="listing-content">
+                            <h3>Monsoon Dreams</h3>
+                            <div class="listing-meta">
+                                <span><i class="fas fa-palette"></i> Oil on Canvas</span>
+                                <span><i class="fas fa-ruler"></i> 36 x 48 in</span>
+                            </div>
+                            <div class="listing-pricing">
+                                <div class="price-row">
+                                    <span class="price-label">Buy Price</span>
+                                    <span class="price-value">₹85,000</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">Rent Price</span>
+                                    <span class="price-value">₹3,200/mo</span>
+                                </div>
+                            </div>
+                            <div class="listing-stats">
+                                <span><i class="fas fa-eye"></i> 324</span>
+                                <span><i class="fas fa-heart"></i> 28</span>
+                                <span><i class="fas fa-shield-check"></i> Certified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listing Card - Rented -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop" alt="Urban Reflections">
+                            <div class="listing-status rented">On Rent</div>
+                            <div class="listing-actions">
+                                <button class="listing-action" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="listing-action" title="Analytics">
+                                    <i class="fas fa-chart-line"></i>
+                                </button>
+                                <button class="listing-action" title="More">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="listing-content">
+                            <h3>Urban Reflections</h3>
+                            <div class="listing-meta">
+                                <span><i class="fas fa-palette"></i> Acrylic</span>
+                                <span><i class="fas fa-ruler"></i> 24 x 36 in</span>
+                            </div>
+                            <div class="listing-pricing">
+                                <div class="price-row">
+                                    <span class="price-label">Buy Price</span>
+                                    <span class="price-value">₹62,000</span>
+                                </div>
+                                <div class="price-row highlight">
+                                    <span class="price-label">Earning</span>
+                                    <span class="price-value">₹3,500/mo</span>
+                                </div>
+                            </div>
+                            <div class="rental-info">
+                                <i class="fas fa-calendar"></i>
+                                <span>Rented until Mar 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listing Card -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=400&h=400&fit=crop" alt="Abstract Symphony">
+                            <div class="listing-status active">Active</div>
+                            <div class="listing-actions">
+                                <button class="listing-action" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="listing-action" title="Analytics">
+                                    <i class="fas fa-chart-line"></i>
+                                </button>
+                                <button class="listing-action" title="More">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="listing-content">
+                            <h3>Abstract Symphony</h3>
+                            <div class="listing-meta">
+                                <span><i class="fas fa-palette"></i> Mixed Media</span>
+                                <span><i class="fas fa-ruler"></i> 48 x 60 in</span>
+                            </div>
+                            <div class="listing-pricing">
+                                <div class="price-row">
+                                    <span class="price-label">Buy Price</span>
+                                    <span class="price-value">₹1,25,000</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">Rent Price</span>
+                                    <span class="price-value">₹4,800/mo</span>
+                                </div>
+                            </div>
+                            <div class="listing-stats">
+                                <span><i class="fas fa-eye"></i> 198</span>
+                                <span><i class="fas fa-heart"></i> 45</span>
+                                <span><i class="fas fa-shield-check"></i> Certified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listing Card -->
+                    <div class="listing-card">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=400&h=400&fit=crop" alt="Golden Hour">
+                            <div class="listing-status active">Active</div>
+                            <div class="listing-actions">
+                                <button class="listing-action" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="listing-action" title="Analytics">
+                                    <i class="fas fa-chart-line"></i>
+                                </button>
+                                <button class="listing-action" title="More">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="listing-content">
+                            <h3>Golden Hour</h3>
+                            <div class="listing-meta">
+                                <span><i class="fas fa-palette"></i> Watercolor</span>
+                                <span><i class="fas fa-ruler"></i> 18 x 24 in</span>
+                            </div>
+                            <div class="listing-pricing">
+                                <div class="price-row">
+                                    <span class="price-label">Buy Price</span>
+                                    <span class="price-value">₹35,000</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">Rent Price</span>
+                                    <span class="price-value">₹1,400/mo</span>
+                                </div>
+                            </div>
+                            <div class="listing-stats">
+                                <span><i class="fas fa-eye"></i> 156</span>
+                                <span><i class="fas fa-heart"></i> 19</span>
+                                <span><i class="fas fa-shield-check"></i> Certified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listing Card - Sold -->
+                    <div class="listing-card sold">
+                        <div class="listing-image">
+                            <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=400&h=400&fit=crop" alt="Serene Valley">
+                            <div class="listing-status sold">Sold</div>
+                        </div>
+                        <div class="listing-content">
+                            <h3>Serene Valley</h3>
+                            <div class="listing-meta">
+                                <span><i class="fas fa-palette"></i> Oil on Canvas</span>
+                                <span><i class="fas fa-ruler"></i> 30 x 40 in</span>
+                            </div>
+                            <div class="listing-pricing">
+                                <div class="price-row">
+                                    <span class="price-label">Sold For</span>
+                                    <span class="price-value sold">₹75,000</span>
+                                </div>
+                            </div>
+                            <div class="sold-info">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Sold on Jan 15, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add New Listing Card -->
+                    <div class="listing-card add-new" id="addNewCard">
+                        <div class="add-new-content">
+                            <div class="add-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3>List New Artwork</h3>
+                            <p>Add your artwork to the marketplace</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section class="content-section" id="orders">
+                <div class="section-header">
+                    <div class="header-left">
+                        <h1>Orders</h1>
+                        <p>Manage your sales and shipments</p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="filter-tabs">
+                            <button class="filter-tab active">All Orders</button>
+                            <button class="filter-tab">Pending (2)</button>
+                            <button class="filter-tab">Shipped (1)</button>
+                            <button class="filter-tab">Delivered (5)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="orders-table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Artwork</th>
+                                <th>Buyer</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="order-id">#ORD-2026-0042</td>
+                                <td class="order-artwork-cell">
+                                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=50&h=50&fit=crop" alt="">
+                                    <span>Monsoon Dreams</span>
+                                </td>
+                                <td>Rahul Mehta</td>
+                                <td class="amount">₹85,000</td>
+                                <td>Jan 28, 2026</td>
+                                <td><span class="status-badge pending">Pending Shipment</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-sm btn-primary">Ship Now</button>
+                                    <button class="btn btn-sm btn-outline">Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="order-id">#ORD-2026-0038</td>
+                                <td class="order-artwork-cell">
+                                    <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=50&h=50&fit=crop" alt="">
+                                    <span>Abstract Symphony</span>
+                                </td>
+                                <td>Anita Reddy</td>
+                                <td class="amount">₹1,25,000</td>
+                                <td>Jan 22, 2026</td>
+                                <td><span class="status-badge shipped">In Transit</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-sm btn-outline">Track</button>
+                                    <button class="btn btn-sm btn-outline">Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="order-id">#ORD-2026-0035</td>
+                                <td class="order-artwork-cell">
+                                    <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=50&h=50&fit=crop" alt="">
+                                    <span>Serene Valley</span>
+                                </td>
+                                <td>Vikram Singh</td>
+                                <td class="amount">₹75,000</td>
+                                <td>Jan 15, 2026</td>
+                                <td><span class="status-badge delivered">Delivered</span></td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-sm btn-outline">Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Rentals Section -->
+            <section class="content-section" id="rentals">
+                <div class="section-header">
+                    <div class="header-left">
+                        <h1>Rentals</h1>
+                        <p>Track your rented artworks</p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="rental-stats-mini">
+                            <div class="mini-stat">
+                                <span class="value">5</span>
+                                <span class="label">Active</span>
+                            </div>
+                            <div class="mini-stat">
+                                <span class="value">₹17,500</span>
+                                <span class="label">Monthly Income</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rentals-grid">
+                    <!-- Active Rental Card -->
+                    <div class="rental-card">
+                        <div class="rental-artwork">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=200&h=200&fit=crop" alt="">
+                        </div>
+                        <div class="rental-details">
+                            <h3>Urban Reflections</h3>
+                            <div class="rental-renter">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="">
+                                <div>
+                                    <span class="renter-name">Arun Kapoor</span>
+                                    <span class="renter-type">Individual</span>
+                                </div>
+                            </div>
+                            <div class="rental-period">
+                                <div class="period-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Dec 1, 2025 - Mar 1, 2026</span>
+                                </div>
+                                <div class="period-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>28 days remaining</span>
+                                </div>
+                            </div>
+                            <div class="rental-earnings">
+                                <span class="label">Monthly Earning</span>
+                                <span class="amount">₹3,500</span>
+                            </div>
+                            <div class="rental-progress">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="rental-actions">
+                            <button class="btn btn-outline btn-sm">Contact Renter</button>
+                            <button class="btn btn-outline btn-sm">View Contract</button>
+                        </div>
+                    </div>
+
+                    <!-- Hotel Rental Card -->
+                    <div class="rental-card hotel">
+                        <div class="rental-artwork">
+                            <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=200&h=200&fit=crop" alt="">
+                        </div>
+                        <div class="rental-details">
+                            <h3>Golden Sunset Series (3 pieces)</h3>
+                            <div class="rental-renter">
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=40&h=40&fit=crop" alt="">
+                                <div>
+                                    <span class="renter-name">Taj Palace Hotel</span>
+                                    <span class="renter-type business">Business Partner</span>
+                                </div>
+                            </div>
+                            <div class="rental-period">
+                                <div class="period-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>6-month contract</span>
+                                </div>
+                                <div class="period-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Lobby & Conference Room</span>
+                                </div>
+                            </div>
+                            <div class="rental-earnings">
+                                <span class="label">Monthly Earning</span>
+                                <span class="amount">₹8,500</span>
+                            </div>
+                            <div class="rental-progress">
+                                <div class="progress-bar" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div class="rental-actions">
+                            <button class="btn btn-outline btn-sm">Contact Partner</button>
+                            <button class="btn btn-outline btn-sm">View Contract</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Earnings Section -->
+            <section class="content-section" id="earnings">
+                <div class="section-header">
+                    <div class="header-left">
+                        <h1>Earnings</h1>
+                        <p>Track your revenue and withdrawals</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-wallet"></i>
+                            Withdraw Funds
+                        </button>
+                    </div>
+                </div>
+
+                <div class="earnings-overview">
+                    <div class="earnings-card main">
+                        <div class="earnings-content">
+                            <h3>Available Balance</h3>
+                            <span class="balance">₹1,85,500</span>
+                            <p>Ready to withdraw</p>
+                        </div>
+                        <button class="btn btn-light">Withdraw</button>
+                    </div>
+                    <div class="earnings-card">
+                        <h3>Pending</h3>
+                        <span class="amount">₹85,000</span>
+                        <p>Awaiting delivery confirmation</p>
+                    </div>
+                    <div class="earnings-card">
+                        <h3>This Month</h3>
+                        <span class="amount">₹45,500</span>
+                        <p>Rental income</p>
+                    </div>
+                    <div class="earnings-card">
+                        <h3>Total Earned</h3>
+                        <span class="amount">₹8,45,000</span>
+                        <p>All time</p>
+                    </div>
+                </div>
+
+                <div class="earnings-breakdown">
+                    <h3>Earnings Breakdown</h3>
+                    <div class="breakdown-chart">
+                        <div class="breakdown-item">
+                            <div class="breakdown-bar sales" style="width: 65%"></div>
+                            <div class="breakdown-info">
+                                <span class="type">Art Sales</span>
+                                <span class="value">₹5,50,000 (65%)</span>
+                            </div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-bar rentals" style="width: 30%"></div>
+                            <div class="breakdown-info">
+                                <span class="type">Rentals</span>
+                                <span class="value">₹2,55,000 (30%)</span>
+                            </div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-bar other" style="width: 5%"></div>
+                            <div class="breakdown-info">
+                                <span class="type">Commissions</span>
+                                <span class="value">₹40,000 (5%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section class="content-section" id="certificates">
+                <div class="section-header">
+                    <div class="header-left">
+                        <h1>Certificates</h1>
+                        <p>Authentication certificates for your artworks</p>
+                    </div>
+                    <div class="header-actions">
+                        <a href="verify.html" class="btn btn-outline">
+                            <i class="fas fa-search"></i>
+                            Verify Certificate
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                        <div class="cert-preview">
+                            <div class="cert-badge">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=150&h=150&fit=crop" alt="">
+                        </div>
+                        <div class="cert-info">
+                            <h4>Monsoon Dreams</h4>
+                            <span class="cert-id">ARTH-2026-00042</span>
+                            <span class="cert-date">Issued: Jan 10, 2026</span>
+                        </div>
+                        <div class="cert-actions">
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-download"></i> PDF
+                            </button>
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-qrcode"></i> QR
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="cert-preview">
+                            <div class="cert-badge">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=150&h=150&fit=crop" alt="">
+                        </div>
+                        <div class="cert-info">
+                            <h4>Urban Reflections</h4>
+                            <span class="cert-id">ARTH-2026-00038</span>
+                            <span class="cert-date">Issued: Dec 15, 2025</span>
+                        </div>
+                        <div class="cert-actions">
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-download"></i> PDF
+                            </button>
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-qrcode"></i> QR
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="cert-preview">
+                            <div class="cert-badge">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=150&h=150&fit=crop" alt="">
+                        </div>
+                        <div class="cert-info">
+                            <h4>Abstract Symphony</h4>
+                            <span class="cert-id">ARTH-2025-00892</span>
+                            <span class="cert-date">Issued: Nov 20, 2025</span>
+                        </div>
+                        <div class="cert-actions">
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-download"></i> PDF
+                            </button>
+                            <button class="btn btn-sm btn-outline">
+                                <i class="fas fa-qrcode"></i> QR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- New Listing Modal -->
+    <div class="modal-overlay" id="newListingModal">
+        <div class="modal-container listing-modal">
+            <div class="modal-header">
+                <h2>List New Artwork</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Progress Steps -->
+                <div class="listing-steps">
+                    <div class="listing-step active" data-step="1">
+                        <span class="step-num">1</span>
+                        <span class="step-text">Details</span>
+                    </div>
+                    <div class="listing-step" data-step="2">
+                        <span class="step-num">2</span>
+                        <span class="step-text">Images</span>
+                    </div>
+                    <div class="listing-step" data-step="3">
+                        <span class="step-num">3</span>
+                        <span class="step-text">Pricing</span>
+                    </div>
+                    <div class="listing-step" data-step="4">
+                        <span class="step-num">4</span>
+                        <span class="step-text">Authenticate</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Details -->
+                <div class="listing-form-step active" data-step="1">
+                    <div class="form-section">
+                        <h3>Artwork Details</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Artwork Title <span class="required">*</span></label>
+                                <input type="text" placeholder="Enter artwork title" id="listingTitle">
+                            </div>
+                            <div class="form-group">
+                                <label>Medium <span class="required">*</span></label>
+                                <select id="listingMedium">
+                                    <option value="">Select medium</option>
+                                    <option value="oil">Oil Painting</option>
+                                    <option value="acrylic">Acrylic</option>
+                                    <option value="watercolor">Watercolor</option>
+                                    <option value="mixed">Mixed Media</option>
+                                    <option value="digital">Digital Art</option>
+                                    <option value="sculpture">Sculpture</option>
+                                    <option value="photography">Photography</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Year Created <span class="required">*</span></label>
+                                <input type="number" placeholder="2025" id="listingYear" min="1800" max="2026">
+                            </div>
+                            <div class="form-group">
+                                <label>Dimensions</label>
+                                <input type="text" placeholder="e.g., 24 x 36 inches" id="listingDimensions">
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select id="listingCategory">
+                                    <option value="">Select category</option>
+                                    <option value="abstract">Abstract</option>
+                                    <option value="contemporary">Contemporary</option>
+                                    <option value="traditional">Traditional Indian</option>
+                                    <option value="landscape">Landscape</option>
+                                    <option value="portrait">Portrait</option>
+                                    <option value="wildlife">Wildlife</option>
+                                    <option value="folk">Folk Art</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Description</label>
+                                <textarea placeholder="Describe your artwork - inspiration, story, technique..." rows="4" id="listingDescription"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Images -->
+                <div class="listing-form-step" data-step="2">
+                    <div class="form-section">
+                        <h3>Upload Images</h3>
+                        <p class="form-hint">High-quality images help buyers appreciate your artwork</p>
+
+                        <div class="upload-area-main">
+                            <div class="upload-dropzone" id="mainImageDropzone">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h4>Drop your main image here</h4>
+                                <p>or click to browse</p>
+                                <span class="upload-specs">PNG, JPG up to 50MB</span>
+                            </div>
+                        </div>
+
+                        <div class="upload-additional">
+                            <h4>Additional Images (Optional)</h4>
+                            <div class="additional-grid">
+                                <div class="additional-upload">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Detail Shot</span>
+                                </div>
+                                <div class="additional-upload">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Signature</span>
+                                </div>
+                                <div class="additional-upload">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Scale View</span>
+                                </div>
+                                <div class="additional-upload">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Back View</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Pricing -->
+                <div class="listing-form-step" data-step="3">
+                    <div class="form-section">
+                        <h3>Set Your Prices</h3>
+                        <p class="form-hint">You can offer your artwork for sale, rent, or both</p>
+
+                        <div class="pricing-options">
+                            <div class="pricing-card">
+                                <div class="pricing-header">
+                                    <label class="pricing-toggle">
+                                        <input type="checkbox" checked id="enableSale">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <div class="pricing-title">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <h4>Available for Sale</h4>
+                                    </div>
+                                </div>
+                                <div class="pricing-body">
+                                    <div class="form-group">
+                                        <label>Sale Price (INR)</label>
+                                        <div class="price-input">
+                                            <span class="currency">₹</span>
+                                            <input type="number" placeholder="85,000" id="salePrice">
+                                        </div>
+                                    </div>
+                                    <div class="price-breakdown">
+                                        <div class="breakdown-row">
+                                            <span>Platform Fee (8%)</span>
+                                            <span>-₹6,800</span>
+                                        </div>
+                                        <div class="breakdown-row final">
+                                            <span>You'll Receive</span>
+                                            <span>₹78,200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pricing-card">
+                                <div class="pricing-header">
+                                    <label class="pricing-toggle">
+                                        <input type="checkbox" checked id="enableRental">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <div class="pricing-title">
+                                        <i class="fas fa-key"></i>
+                                        <h4>Available for Rent</h4>
+                                    </div>
+                                </div>
+                                <div class="pricing-body">
+                                    <div class="form-group">
+                                        <label>Monthly Rent (INR)</label>
+                                        <div class="price-input">
+                                            <span class="currency">₹</span>
+                                            <input type="number" placeholder="3,200" id="rentPrice">
+                                        </div>
+                                    </div>
+                                    <div class="rental-options">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Allow Rent-to-Own</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" checked>
+                                            <span>Available for Business Rental</span>
+                                        </label>
+                                    </div>
+                                    <div class="price-breakdown">
+                                        <div class="breakdown-row">
+                                            <span>Platform Fee (12%)</span>
+                                            <span>-₹384</span>
+                                        </div>
+                                        <div class="breakdown-row final">
+                                            <span>You'll Receive/mo</span>
+                                            <span>₹2,816</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Authenticate -->
+                <div class="listing-form-step" data-step="4">
+                    <div class="form-section">
+                        <h3>Authenticate Your Artwork</h3>
+                        <p class="form-hint">Our AI will verify originality and create a blockchain certificate</p>
+
+                        <div class="auth-process">
+                            <div class="auth-step pending" data-auth="scan">
+                                <div class="auth-icon">
+                                    <i class="fas fa-fingerprint"></i>
+                                </div>
+                                <div class="auth-info">
+                                    <h4>Digital Fingerprint</h4>
+                                    <p>Creating unique artwork identifier</p>
+                                </div>
+                                <div class="auth-status">
+                                    <div class="spinner"></div>
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="auth-step pending" data-auth="compare">
+                                <div class="auth-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="auth-info">
+                                    <h4>Similarity Check</h4>
+                                    <p>Checking against 2M+ registered artworks</p>
+                                </div>
+                                <div class="auth-status">
+                                    <div class="spinner"></div>
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="auth-step pending" data-auth="blockchain">
+                                <div class="auth-icon">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                                <div class="auth-info">
+                                    <h4>Blockchain Registration</h4>
+                                    <p>Recording on immutable ledger</p>
+                                </div>
+                                <div class="auth-status">
+                                    <div class="spinner"></div>
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-result" id="authResult" style="display: none;">
+                            <div class="result-success">
+                                <i class="fas fa-shield-check"></i>
+                                <h4>Artwork Authenticated!</h4>
+                                <p>Certificate ID: <strong>ARTH-2026-XXXXX</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="prevStepBtn" style="display: none;">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </button>
+                <button class="btn btn-primary" id="nextStepBtn">
+                    Continue
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/seller-portal.js"></script>
+</body>
+</html>

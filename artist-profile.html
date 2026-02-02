@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priya Sharma | Arthentix Artist</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Artist Profile Hero */
+        .artist-hero {
+            padding: 120px 0 60px;
+            position: relative;
+        }
+
+        .artist-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .artist-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(30px);
+            opacity: 0.3;
+            transform: scale(1.1);
+        }
+
+        .artist-hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(transparent, var(--bg-dark));
+        }
+
+        .artist-profile-card {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 40px;
+            align-items: flex-end;
+        }
+
+        @media (max-width: 768px) {
+            .artist-profile-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        .artist-avatar-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid var(--accent-gold);
+            flex-shrink: 0;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+        }
+
+        .artist-avatar-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artist-profile-info {
+            padding-bottom: 20px;
+        }
+
+        .artist-badges {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .artist-badges {
+                justify-content: center;
+            }
+        }
+
+        .artist-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .badge-verified {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-featured {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .artist-name-large {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: white;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .artist-location-large {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 16px;
+        }
+
+        .artist-location-large i {
+            margin-right: 8px;
+            color: var(--accent-gold);
+        }
+
+        .artist-stats-row {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .artist-stats-row {
+                justify-content: center;
+            }
+        }
+
+        .stat-block {
+            text-align: center;
+        }
+
+        .stat-block .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+
+        .stat-block .label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .artist-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .artist-actions {
+                justify-content: center;
+            }
+        }
+
+        .follow-btn {
+            padding: 12px 32px;
+            background: var(--accent-gold);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .follow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.4);
+        }
+
+        .follow-btn.following {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .contact-btn {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .contact-btn:hover {
+            border-color: white;
+        }
+
+        /* Bio Section */
+        .artist-bio-section {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .bio-content {
+            max-width: 800px;
+        }
+
+        .bio-content p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .artist-specialties {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .specialty-tag {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Artworks Section */
+        .artist-artworks-section {
+            padding: 60px 0;
+        }
+
+        .section-header-tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section-header-tabs h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: white;
+        }
+
+        .artwork-tabs {
+            display: flex;
+            gap: 8px;
+        }
+
+        .artwork-tab {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .artwork-tab.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .artwork-tab:hover:not(.active) {
+            border-color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Grid */
+        .artworks-masonry {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .artwork-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .artwork-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .artwork-card-image {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+        }
+
+        .artwork-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s var(--ease-out-expo);
+        }
+
+        .artwork-card:hover .artwork-card-image img {
+            transform: scale(1.05);
+        }
+
+        .artwork-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.8));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .artwork-card:hover .artwork-card-overlay {
+            opacity: 1;
+        }
+
+        .overlay-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .overlay-btn {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .overlay-btn:hover {
+            background: var(--accent-gold);
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .artwork-card-info {
+            padding: 20px;
+        }
+
+        .artwork-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .artwork-card-meta {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+        }
+
+        .artwork-card-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .sold-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 6px 12px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ef4444;
+        }
+
+        /* Load More */
+        .load-more-center {
+            text-align: center;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-mark">A</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html" class="active">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">3</span>
+                </a>
+                <a href="cart.html" class="nav-icon-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge">2</span>
+                </a>
+                <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Artist Hero -->
+    <section class="artist-hero">
+        <div class="artist-hero-bg">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=400&fit=crop" alt="">
+        </div>
+        <div class="container">
+            <div class="artist-profile-card reveal">
+                <div class="artist-avatar-large">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" alt="Priya Sharma">
+                </div>
+                <div class="artist-profile-info">
+                    <div class="artist-badges">
+                        <span class="artist-badge badge-verified"><i class="fas fa-check-circle"></i> Verified Artist</span>
+                        <span class="artist-badge badge-featured"><i class="fas fa-star"></i> Featured</span>
+                    </div>
+                    <h1 class="artist-name-large">Priya Sharma</h1>
+                    <p class="artist-location-large"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+                    <div class="artist-stats-row">
+                        <div class="stat-block">
+                            <div class="number">156</div>
+                            <div class="label">Artworks</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="number">2.4k</div>
+                            <div class="label">Followers</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="number">89</div>
+                            <div class="label">Sold</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="number">4.9</div>
+                            <div class="label">Rating</div>
+                        </div>
+                    </div>
+                    <div class="artist-actions">
+                        <button class="follow-btn" id="followBtn">
+                            <i class="fas fa-plus"></i> Follow
+                        </button>
+                        <button class="contact-btn">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio Section -->
+    <section class="artist-bio-section">
+        <div class="container">
+            <div class="bio-content reveal">
+                <p>Priya Sharma is a contemporary Indian artist whose work explores the intersection of traditional Indian aesthetics and modern abstract expressionism. Born and raised in Mumbai, her art reflects the vibrant chaos and serene beauty of urban Indian life.</p>
+                <p>After graduating from Sir J.J. School of Art, Priya spent several years traveling across India, studying various folk art forms including Madhubani, Warli, and Pattachitra. These influences are evident in her work, which combines bold colors with intricate patterns and deep emotional resonance.</p>
+                <div class="artist-specialties">
+                    <span class="specialty-tag">Contemporary Art</span>
+                    <span class="specialty-tag">Abstract Expressionism</span>
+                    <span class="specialty-tag">Landscapes</span>
+                    <span class="specialty-tag">Oil Painting</span>
+                    <span class="specialty-tag">Mixed Media</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artworks Section -->
+    <section class="artist-artworks-section">
+        <div class="container">
+            <div class="section-header-tabs reveal">
+                <h2>Artworks</h2>
+                <div class="artwork-tabs">
+                    <button class="artwork-tab active">All</button>
+                    <button class="artwork-tab">Available</button>
+                    <button class="artwork-tab">Sold</button>
+                </div>
+            </div>
+
+            <div class="artworks-masonry reveal-stagger">
+                <article class="artwork-card">
+                    <a href="artwork.html">
+                        <div class="artwork-card-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=500&fit=crop" alt="Sunset Over the Himalayas">
+                            <div class="artwork-card-overlay">
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn"><i class="far fa-heart"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-shopping-bag"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="artwork-card-info">
+                        <h3 class="artwork-card-title">Sunset Over the Himalayas</h3>
+                        <p class="artwork-card-meta">Oil on Canvas • 48" × 36"</p>
+                        <div class="artwork-card-price">₹1,85,000</div>
+                    </div>
+                </article>
+
+                <article class="artwork-card">
+                    <a href="artwork.html">
+                        <div class="artwork-card-image">
+                            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=500&fit=crop" alt="Morning Mist">
+                            <div class="artwork-card-overlay">
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn"><i class="far fa-heart"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-shopping-bag"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="artwork-card-info">
+                        <h3 class="artwork-card-title">Morning Mist in Coorg</h3>
+                        <p class="artwork-card-meta">Oil on Canvas • 36" × 24"</p>
+                        <div class="artwork-card-price">₹1,25,000</div>
+                    </div>
+                </article>
+
+                <article class="artwork-card">
+                    <a href="artwork.html">
+                        <div class="artwork-card-image">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=500&fit=crop" alt="Forest Light">
+                            <span class="sold-badge">Sold</span>
+                            <div class="artwork-card-overlay">
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn"><i class="far fa-heart"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="artwork-card-info">
+                        <h3 class="artwork-card-title">Light Through the Forest</h3>
+                        <p class="artwork-card-meta">Oil on Canvas • 40" × 30"</p>
+                        <div class="artwork-card-price price-sold">₹95,000 (Sold)</div>
+                    </div>
+                </article>
+
+                <article class="artwork-card">
+                    <a href="artwork.html">
+                        <div class="artwork-card-image">
+                            <img src="https://images.unsplash.com/photo-1518173946687-a4c036bc3e5c?w=400&h=500&fit=crop" alt="Monsoon Skies">
+                            <div class="artwork-card-overlay">
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn"><i class="far fa-heart"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-shopping-bag"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="artwork-card-info">
+                        <h3 class="artwork-card-title">Monsoon Skies</h3>
+                        <p class="artwork-card-meta">Acrylic on Canvas • 48" × 36"</p>
+                        <div class="artwork-card-price">₹1,45,000</div>
+                    </div>
+                </article>
+
+                <article class="artwork-card">
+                    <a href="artwork.html">
+                        <div class="artwork-card-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" alt="Valley Dreams">
+                            <div class="artwork-card-overlay">
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn"><i class="far fa-heart"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-shopping-bag"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="artwork-card-info">
+                        <h3 class="artwork-card-title">Valley Dreams</h3>
+                        <p class="artwork-card-meta">Mixed Media • 32" × 24"</p>
+                        <div class="artwork-card-price">₹1,10,000</div>
+                    </div>
+                </article>
+
+                <article class="artwork-card">
+                    <a href="artwork.html">
+                        <div class="artwork-card-image">
+                            <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=400&h=500&fit=crop" alt="Abstract Harmony">
+                            <span class="sold-badge">Sold</span>
+                            <div class="artwork-card-overlay">
+                                <div class="overlay-actions">
+                                    <button class="overlay-btn"><i class="far fa-heart"></i></button>
+                                    <button class="overlay-btn"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="artwork-card-info">
+                        <h3 class="artwork-card-title">Abstract Harmony</h3>
+                        <p class="artwork-card-meta">Oil on Canvas • 36" × 36"</p>
+                        <div class="artwork-card-price price-sold">₹1,65,000 (Sold)</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more-center reveal">
+                <button class="btn btn-outline btn-lg">
+                    Load More Artworks
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-marketplace">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-mark">A</span>
+                        <span class="logo-text">Arthentix</span>
+                    </a>
+                    <p>India's premier destination for authentic, curated art.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">All Artworks</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/home.js"></script>
+    <script>
+        // Follow button
+        const followBtn = document.getElementById('followBtn');
+        followBtn?.addEventListener('click', function() {
+            if (this.classList.contains('following')) {
+                this.classList.remove('following');
+                this.innerHTML = '<i class="fas fa-plus"></i> Follow';
+            } else {
+                this.classList.add('following');
+                this.innerHTML = '<i class="fas fa-check"></i> Following';
+            }
+        });
+
+        // Artwork tabs
+        document.querySelectorAll('.artwork-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.artwork-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

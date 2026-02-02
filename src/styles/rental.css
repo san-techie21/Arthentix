@@ -1,0 +1,1045 @@
+/**
+ * Arthentix - Art Rental Page Styles
+ * Award-winning premium art rental experience
+ * Fully theme-aware: Dark/Light mode compatible
+ */
+
+/* ============================================
+   RENTAL PAGE BASE & THEME VARIABLES
+   ============================================ */
+
+/* Dark Theme (Default) */
+.rental-page {
+    --rental-bg-primary: var(--color-primary);
+    --rental-bg-secondary: var(--color-surface-elevated);
+    --rental-bg-tertiary: var(--color-surface-overlay);
+    --rental-bg-card: var(--color-surface-card);
+    --rental-text-primary: var(--text-primary-dark);
+    --rental-text-secondary: rgba(255, 255, 255, 0.75);
+    --rental-text-muted: rgba(255, 255, 255, 0.55);
+    --rental-border: rgba(255, 255, 255, 0.1);
+    --rental-border-hover: rgba(255, 255, 255, 0.2);
+
+    background-color: var(--rental-bg-primary);
+    color: var(--rental-text-primary);
+}
+
+/* Light Theme */
+.rental-page.theme-light {
+    --rental-bg-primary: var(--color-surface-light);
+    --rental-bg-secondary: var(--color-surface-cream);
+    --rental-bg-tertiary: var(--color-surface-warm);
+    --rental-bg-card: var(--color-surface-pure);
+    --rental-text-primary: var(--text-primary-light);
+    --rental-text-secondary: var(--text-secondary-light);
+    --rental-text-muted: var(--text-muted-light);
+    --rental-border: rgba(0, 0, 0, 0.08);
+    --rental-border-hover: rgba(0, 0, 0, 0.15);
+
+    background-color: var(--rental-bg-primary);
+    color: var(--rental-text-primary);
+}
+
+.rental-main {
+    padding-top: 80px;
+}
+
+/* ============================================
+   RENTAL HERO SECTION
+   ============================================ */
+.rental-hero {
+    padding: var(--space-4xl) 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--rental-bg-primary);
+}
+
+.rental-hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-gold-subtle);
+    color: var(--color-gold);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-lg);
+}
+
+.text-accent {
+    color: var(--color-gold);
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--rental-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+    max-width: 500px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-3xl);
+}
+
+.hero-stats {
+    display: flex;
+    gap: var(--space-3xl);
+}
+
+.hero-stats .stat {
+    text-align: left;
+}
+
+.hero-stats .stat-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+}
+
+.hero-stats .stat-label {
+    font-size: 0.85rem;
+    color: var(--rental-text-muted);
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+}
+
+.artwork-showcase {
+    position: relative;
+    max-width: 450px;
+    margin-left: auto;
+}
+
+.showcase-main {
+    width: 100%;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+}
+
+.showcase-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: var(--color-charcoal);
+    color: #FFFFFF;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.badge-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.2rem;
+}
+
+.badge-price {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   BENEFITS SECTION
+   ============================================ */
+.rental-benefits {
+    padding: var(--space-3xl) 0;
+    background: var(--rental-bg-secondary);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.benefit-card {
+    background: var(--rental-bg-card);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--duration-normal) var(--ease-out);
+    border: 1px solid var(--rental-border);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--rental-border-hover);
+}
+
+.benefit-card.highlight {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    border: none;
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--space-md);
+    background: var(--color-gold-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-gold);
+}
+
+.benefit-card.highlight .benefit-icon {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--color-charcoal);
+}
+
+.benefit-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: var(--rental-text-primary);
+}
+
+.benefit-card.highlight h3 {
+    color: var(--color-charcoal);
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    color: var(--rental-text-muted);
+    line-height: 1.6;
+}
+
+.benefit-card.highlight p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================
+   HOW IT WORKS SECTION
+   ============================================ */
+.how-it-works {
+    padding: var(--space-4xl) 0;
+    background: var(--rental-bg-primary);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.section-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--color-gold-subtle);
+    color: var(--color-gold);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--rental-text-muted);
+}
+
+.steps-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+.step-card {
+    flex: 1;
+    max-width: 250px;
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--rental-bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--rental-border);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rental-page .step-card .step-number {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    font-family: var(--font-display);
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: #1A1A1A !important;
+    -webkit-text-fill-color: #1A1A1A !important;
+    background: #D4AF37 !important;
+    background-clip: padding-box !important;
+    -webkit-background-clip: padding-box !important;
+    padding: 0.3rem 0.6rem !important;
+    border-radius: var(--radius-sm) !important;
+    width: auto !important;
+    height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+}
+
+.step-visual {
+    width: 70px;
+    height: 70px;
+    margin: var(--space-lg) auto var(--space-md);
+    background: var(--rental-bg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--rental-text-primary);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.step-card:hover .step-visual {
+    background: var(--color-gold);
+    color: var(--color-charcoal);
+    transform: scale(1.1);
+}
+
+.step-card h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.step-card p {
+    font-size: 0.85rem;
+    color: var(--rental-text-muted);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.step-connector {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-xs);
+    color: var(--rental-text-muted);
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   FEATURED RENTALS SECTION
+   ============================================ */
+.featured-rentals {
+    padding: var(--space-4xl) 0;
+    background: var(--rental-bg-secondary);
+}
+
+.rental-filters {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-3xl);
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--rental-bg-card);
+    border: 1px solid var(--rental-border);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: var(--rental-text-muted);
+    cursor: pointer;
+    transition: all var(--duration-fast) ease;
+}
+
+.filter-pill:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+.filter-pill.active {
+    background: var(--color-charcoal);
+    border-color: var(--color-charcoal);
+    color: #FFFFFF;
+}
+
+.rentals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+}
+
+/* Rental Card */
+.rental-card {
+    background: var(--rental-bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--duration-normal) var(--ease-out);
+    border: 1px solid var(--rental-border);
+}
+
+.rental-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--rental-border-hover);
+}
+
+.rental-image {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+}
+
+.rental-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.rental-card:hover .rental-image img {
+    transform: scale(1.08);
+}
+
+.rental-badge {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    padding: 0.35rem 0.75rem;
+    background: var(--color-charcoal);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rental-badge.rent-to-own {
+    background: var(--color-gold);
+    color: var(--color-charcoal);
+}
+
+.rental-actions {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.rental-card:hover .rental-actions {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--duration-fast) ease;
+    color: var(--color-charcoal);
+}
+
+.action-btn i {
+    color: var(--color-charcoal);
+}
+
+.action-btn:hover {
+    background: var(--color-charcoal);
+    color: #FFFFFF;
+}
+
+.action-btn:hover i {
+    color: #FFFFFF;
+}
+
+.action-btn.wishlist.active {
+    background: #E53935;
+    color: #FFFFFF;
+}
+
+.action-btn.wishlist.active i {
+    color: #FFFFFF;
+}
+
+.rental-content {
+    padding: var(--space-lg);
+}
+
+.rental-artist {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.rental-artist img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.rental-artist span {
+    font-size: 0.85rem;
+    color: var(--rental-text-muted);
+}
+
+.rental-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.rental-meta {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 0.8rem;
+    color: var(--rental-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.rental-pricing {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-md);
+    border-top: 1px solid var(--rental-border);
+    border-bottom: 1px solid var(--rental-border);
+}
+
+.rent-price,
+.buy-price {
+    text-align: center;
+}
+
+.rental-pricing .label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--rental-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+}
+
+.rent-price .amount {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-gold);
+}
+
+.buy-price .amount {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+}
+
+.rental-pricing small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--rental-text-muted);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+.view-more {
+    text-align: center;
+    margin-top: var(--space-3xl);
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+.rental-pricing-section {
+    padding: var(--space-4xl) 0;
+    background: var(--rental-bg-primary);
+}
+
+.pricing-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+.pricing-formula h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-lg);
+}
+
+.formula-box {
+    background: var(--rental-bg-secondary);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-gold);
+}
+
+.formula {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.formula-box p {
+    font-size: 0.9rem;
+    color: var(--rental-text-muted);
+}
+
+.pricing-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.tier-card {
+    background: var(--rental-bg-card);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--rental-border);
+    text-align: center;
+    position: relative;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.tier-card:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-md);
+}
+
+.tier-card.featured {
+    border-color: var(--color-gold);
+    background: linear-gradient(to bottom, var(--color-gold-subtle), var(--rental-bg-card));
+}
+
+.tier-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.35rem 1rem;
+    background: var(--color-gold);
+    color: var(--color-charcoal);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.tier-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.tier-rate {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-gold);
+}
+
+.tier-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--rental-text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.tier-features {
+    list-style: none;
+    text-align: left;
+}
+
+.tier-features li {
+    padding: var(--space-sm) 0;
+    font-size: 0.9rem;
+    color: var(--rental-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.tier-features i {
+    color: var(--color-success);
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   BUSINESS CTA SECTION
+   The CTA card has an intentionally dark background
+   regardless of page theme, so text must ALWAYS be white
+   ============================================ */
+.business-cta {
+    padding: var(--space-4xl) 0;
+    background: var(--rental-bg-secondary);
+}
+
+.rental-page .business-cta .cta-card,
+.rental-page.theme-light .business-cta .cta-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    background: linear-gradient(135deg, #1A1A1A, #2D2D2D) !important;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.rental-page .business-cta .cta-content,
+.rental-page.theme-light .business-cta .cta-content {
+    padding: var(--space-4xl);
+    color: #FFFFFF !important;
+}
+
+.rental-page .business-cta .cta-badge,
+.rental-page.theme-light .business-cta .cta-badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(212, 175, 55, 0.2);
+    color: #D4AF37 !important;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+}
+
+/* CRITICAL: Force white text on dark CTA background in ALL themes */
+.rental-page .business-cta .cta-content h2,
+.rental-page.theme-light .business-cta .cta-content h2,
+body.rental-page .cta-content h2,
+body.rental-page.theme-light .cta-content h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+    color: #FFFFFF !important;
+}
+
+/* CRITICAL: Force light text on dark CTA background in ALL themes */
+.rental-page .business-cta .cta-content p,
+.rental-page.theme-light .business-cta .cta-content p,
+body.rental-page .cta-content p,
+body.rental-page.theme-light .cta-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+}
+
+.rental-page .business-cta .cta-features,
+.rental-page.theme-light .business-cta .cta-features {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.rental-page .business-cta .cta-features span,
+.rental-page.theme-light .business-cta .cta-features span {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.rental-page .business-cta .cta-features i,
+.rental-page.theme-light .business-cta .cta-features i {
+    color: #D4AF37 !important;
+}
+
+.rental-page .business-cta .btn-light,
+.rental-page.theme-light .business-cta .btn-light {
+    background: #FFFFFF !important;
+    color: #1A1A1A !important;
+    border: none;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    font-weight: 600;
+}
+
+.rental-page .business-cta .btn-light:hover,
+.rental-page.theme-light .business-cta .btn-light:hover {
+    background: #F8F5F0 !important;
+    color: #1A1A1A !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.rental-page .business-cta .cta-visual,
+.rental-page.theme-light .business-cta .cta-visual {
+    position: relative;
+}
+
+.rental-page .business-cta .cta-visual img,
+.rental-page.theme-light .business-cta .cta-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.rental-faq {
+    padding: var(--space-4xl) 0;
+    background: var(--rental-bg-primary);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+}
+
+.faq-item {
+    background: var(--rental-bg-card);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--rental-border);
+    transition: all var(--duration-fast) ease;
+}
+
+.faq-item:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item h4 {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--rental-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.faq-item h4 i {
+    color: var(--color-gold);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.faq-item p {
+    font-size: 0.9rem;
+    color: var(--rental-text-muted);
+    line-height: 1.7;
+    padding-left: 1.75rem;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+@media (max-width: 1200px) {
+    .rental-hero .container {
+        gap: var(--space-3xl);
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+    }
+
+    .rentals-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-info {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+}
+
+@media (max-width: 992px) {
+    .rental-hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        max-width: none;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .artwork-showcase {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-container {
+        flex-wrap: wrap;
+    }
+
+    .step-connector {
+        display: none;
+    }
+
+    .rentals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-tiers {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .cta-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-visual {
+        height: 300px;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-card {
+        max-width: 100%;
+    }
+
+    .rentals-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rental-hero {
+        padding: var(--space-3xl) 0;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .showcase-badge {
+        bottom: -10px;
+        left: -10px;
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .badge-price {
+        font-size: 1.25rem;
+    }
+
+    .cta-content {
+        padding: var(--space-xl);
+    }
+
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+}

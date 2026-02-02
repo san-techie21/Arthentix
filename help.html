@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | Arthentix</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .help-section {
+            padding: 120px 0 80px;
+            min-height: 100vh;
+        }
+
+        .help-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .help-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .help-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        .help-search {
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 20px 24px 20px 56px;
+            background: var(--bg-subtle-2);
+            border: 1px solid var(--border-default);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input-wrapper input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: var(--bg-subtle-3);
+        }
+
+        .search-input-wrapper input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .help-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .help-category {
+            background: var(--bg-subtle-1);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s var(--ease-out-expo);
+            cursor: pointer;
+        }
+
+        .help-category:hover {
+            background: var(--bg-subtle-3);
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+        }
+
+        .help-category-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .help-category-icon i {
+            font-size: 26px;
+            color: var(--accent-gold);
+        }
+
+        .help-category h3 {
+            color: var(--text-primary);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .help-category p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .popular-articles {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .popular-articles h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .article-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-subtle-1);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .article-item:hover {
+            background: var(--bg-subtle-3);
+            border-color: var(--border-default);
+            transform: translateX(8px);
+        }
+
+        .article-item i.fa-file-alt {
+            color: var(--accent-gold);
+            font-size: 18px;
+        }
+
+        .article-item span {
+            flex: 1;
+            color: var(--text-primary);
+            font-size: 15px;
+        }
+
+        .article-item i.fa-chevron-right {
+            color: var(--text-muted);
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px;
+            background: var(--bg-subtle-1);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+        }
+
+        .contact-cta h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .contact-cta p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-mark">A</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon-btn" id="searchToggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon-btn">
+                    <i class="far fa-heart"></i>
+                </a>
+                <a href="cart.html" class="nav-icon-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </a>
+                <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Help Section -->
+    <section class="help-section">
+        <div class="container">
+            <div class="help-header reveal">
+                <h1>How can we <span class="text-gradient">help</span>?</h1>
+                <p>Find answers to common questions or get in touch with our support team.</p>
+            </div>
+
+            <div class="help-search reveal">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for help articles...">
+                </div>
+            </div>
+
+            <div class="help-categories reveal-stagger">
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Orders & Shipping</h3>
+                    <p>Track orders, shipping info, delivery times</p>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Returns & Refunds</h3>
+                    <p>Return policy, refund process, exchanges</p>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Payments</h3>
+                    <p>Payment methods, EMI, invoices</p>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Authentication</h3>
+                    <p>Certificates, verification, blockchain</p>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>For Artists</h3>
+                    <p>Selling, commissions, artist accounts</p>
+                </div>
+
+                <div class="help-category">
+                    <div class="help-category-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>For Business</h3>
+                    <p>Corporate solutions, bulk orders, rental</p>
+                </div>
+            </div>
+
+            <div class="popular-articles reveal">
+                <h2>Popular Articles</h2>
+                <div class="article-list">
+                    <a href="#" class="article-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>How to verify your artwork's Certificate of Authenticity</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="article-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Understanding our 14-day return policy</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="article-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>How to rent art for your home or office</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="article-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Getting started as a seller on Arthentix</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="article-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Shipping times and delivery information</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-cta reveal">
+                <h3>Still need help?</h3>
+                <p>Our support team is ready to assist you</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-envelope"></i> Contact Support
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-marketplace">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-mark">A</span>
+                        <span class="logo-text">Arthentix</span>
+                    </a>
+                    <p>India's premier destination for authentic, curated art.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">All Artworks</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/home.js"></script>
+</body>
+</html>

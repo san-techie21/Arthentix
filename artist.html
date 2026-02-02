@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portal | Arthentix - Register Your Artwork</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="marketplace.html">Marketplace</a>
+                <a href="artist.html" class="active">Artist Portal</a>
+                <a href="verify.html">Verify Art</a>
+                <a href="similarity.html">Similarity Check</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline btn-sm">Connect Wallet</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Portal Header -->
+        <section class="portal-header">
+            <div class="container">
+                <div class="portal-header-content reveal">
+                    <span class="section-badge">
+                        <i class="fas fa-palette"></i>
+                        Artist Portal
+                    </span>
+                    <h1 class="portal-title">
+                        Register Your <span class="text-gradient">Masterpiece</span>
+                    </h1>
+                    <p class="portal-subtitle">
+                        Secure your artwork on the blockchain with our AI-powered authentication system.
+                        Get your certificate in minutes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multi-Step Form -->
+        <section class="registration-section">
+            <div class="container">
+                <!-- Progress Steps -->
+                <div class="progress-steps reveal">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span class="step-label">Artwork Details</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span class="step-label">Upload Images</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span class="step-label">AI Analysis</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <span class="step-label">Certificate</span>
+                    </div>
+                </div>
+
+                <!-- Form Container -->
+                <div class="form-container reveal">
+                    <form id="artworkForm" class="artwork-form">
+                        <!-- Step 1: Artwork Details -->
+                        <div class="form-step active" data-step="1">
+                            <div class="form-step-header">
+                                <h2>Artwork Information</h2>
+                                <p>Tell us about your masterpiece</p>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group span-2">
+                                    <label for="artworkTitle">Artwork Title <span class="required">*</span></label>
+                                    <input type="text" id="artworkTitle" name="artworkTitle" placeholder="e.g., Sunset Over the Himalayas" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="artistName">Artist Name <span class="required">*</span></label>
+                                    <input type="text" id="artistName" name="artistName" placeholder="Your full name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="artistEmail">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="artistEmail" name="artistEmail" placeholder="artist@email.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="artworkMedium">Medium / Technique <span class="required">*</span></label>
+                                    <select id="artworkMedium" name="artworkMedium" required>
+                                        <option value="">Select medium</option>
+                                        <option value="oil">Oil Painting</option>
+                                        <option value="acrylic">Acrylic</option>
+                                        <option value="watercolor">Watercolor</option>
+                                        <option value="mixed">Mixed Media</option>
+                                        <option value="digital">Digital Art</option>
+                                        <option value="sculpture">Sculpture</option>
+                                        <option value="photography">Photography</option>
+                                        <option value="charcoal">Charcoal/Pencil</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="artworkYear">Year Created <span class="required">*</span></label>
+                                    <input type="number" id="artworkYear" name="artworkYear" placeholder="2024" min="1800" max="2026" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="artworkDimensions">Dimensions</label>
+                                    <input type="text" id="artworkDimensions" name="artworkDimensions" placeholder="e.g., 24 x 36 inches">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="estimatedValue">Estimated Value (INR)</label>
+                                    <input type="text" id="estimatedValue" name="estimatedValue" placeholder="e.g., 50,000">
+                                </div>
+
+                                <div class="form-group span-2">
+                                    <label for="artworkDescription">Description</label>
+                                    <textarea id="artworkDescription" name="artworkDescription" rows="4" placeholder="Describe your artwork - inspiration, story, technique..."></textarea>
+                                </div>
+
+                                <div class="form-group span-2">
+                                    <label>Art Style</label>
+                                    <div class="style-tags">
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="abstract">
+                                            <span>Abstract</span>
+                                        </label>
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="contemporary">
+                                            <span>Contemporary</span>
+                                        </label>
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="traditional">
+                                            <span>Traditional</span>
+                                        </label>
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="realism">
+                                            <span>Realism</span>
+                                        </label>
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="impressionism">
+                                            <span>Impressionism</span>
+                                        </label>
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="surrealism">
+                                            <span>Surrealism</span>
+                                        </label>
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="folk">
+                                            <span>Folk Art</span>
+                                        </label>
+                                        <label class="style-tag">
+                                            <input type="checkbox" name="artStyle" value="minimalist">
+                                            <span>Minimalist</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary btn-lg next-step">
+                                    Continue to Upload
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Upload Images -->
+                        <div class="form-step" data-step="2">
+                            <div class="form-step-header">
+                                <h2>Upload Artwork Images</h2>
+                                <p>High-quality images help our AI analyze your artwork accurately</p>
+                            </div>
+
+                            <div class="upload-section">
+                                <!-- Main Image Upload -->
+                                <div class="upload-card main-upload">
+                                    <div class="upload-icon">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                    </div>
+                                    <h3>Primary Artwork Image</h3>
+                                    <p>Drag & drop or click to upload</p>
+                                    <span class="upload-hint">PNG, JPG up to 50MB • Minimum 2000x2000px recommended</span>
+                                    <input type="file" id="mainImage" name="mainImage" accept="image/*" class="file-input">
+                                    <div class="upload-preview" id="mainPreview"></div>
+                                </div>
+
+                                <!-- Additional Images -->
+                                <div class="additional-uploads">
+                                    <h4>Additional Views (Optional)</h4>
+                                    <p class="upload-tip">Add multiple angles, close-ups, and signature details for better authentication</p>
+
+                                    <div class="upload-grid">
+                                        <div class="upload-card small-upload">
+                                            <div class="upload-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                                            <span>Detail Shot</span>
+                                            <input type="file" name="detailImage" accept="image/*" class="file-input">
+                                            <div class="upload-preview"></div>
+                                        </div>
+                                        <div class="upload-card small-upload">
+                                            <div class="upload-icon"><i class="fas fa-signature"></i></div>
+                                            <span>Signature</span>
+                                            <input type="file" name="signatureImage" accept="image/*" class="file-input">
+                                            <div class="upload-preview"></div>
+                                        </div>
+                                        <div class="upload-card small-upload">
+                                            <div class="upload-icon"><i class="fas fa-layer-group"></i></div>
+                                            <span>Texture</span>
+                                            <input type="file" name="textureImage" accept="image/*" class="file-input">
+                                            <div class="upload-preview"></div>
+                                        </div>
+                                        <div class="upload-card small-upload">
+                                            <div class="upload-icon"><i class="fas fa-image"></i></div>
+                                            <span>Back View</span>
+                                            <input type="file" name="backImage" accept="image/*" class="file-input">
+                                            <div class="upload-preview"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline btn-lg prev-step">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back
+                                </button>
+                                <button type="button" class="btn btn-primary btn-lg next-step">
+                                    Analyze Artwork
+                                    <i class="fas fa-magic"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: AI Analysis -->
+                        <div class="form-step" data-step="3">
+                            <div class="form-step-header">
+                                <h2>AI Authentication in Progress</h2>
+                                <p>Our algorithms are analyzing your artwork</p>
+                            </div>
+
+                            <div class="analysis-container">
+                                <div class="analysis-visual">
+                                    <div class="artwork-scan">
+                                        <div class="scan-overlay">
+                                            <div class="scan-line"></div>
+                                        </div>
+                                        <img id="analysisImage" src="" alt="Artwork being analyzed">
+                                    </div>
+                                </div>
+
+                                <div class="analysis-progress">
+                                    <div class="analysis-item" data-analysis="fingerprint">
+                                        <div class="analysis-icon">
+                                            <i class="fas fa-fingerprint"></i>
+                                        </div>
+                                        <div class="analysis-info">
+                                            <h4>Generating Digital Fingerprint</h4>
+                                            <p>Creating unique artwork identifier</p>
+                                        </div>
+                                        <div class="analysis-status">
+                                            <div class="status-spinner"></div>
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="analysis-item" data-analysis="similarity">
+                                        <div class="analysis-icon">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <div class="analysis-info">
+                                            <h4>Similarity Analysis</h4>
+                                            <p>Checking against 2M+ artworks</p>
+                                        </div>
+                                        <div class="analysis-status">
+                                            <div class="status-spinner"></div>
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="analysis-item" data-analysis="style">
+                                        <div class="analysis-icon">
+                                            <i class="fas fa-palette"></i>
+                                        </div>
+                                        <div class="analysis-info">
+                                            <h4>Style Recognition</h4>
+                                            <p>Identifying artistic patterns</p>
+                                        </div>
+                                        <div class="analysis-status">
+                                            <div class="status-spinner"></div>
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="analysis-item" data-analysis="blockchain">
+                                        <div class="analysis-icon">
+                                            <i class="fas fa-link"></i>
+                                        </div>
+                                        <div class="analysis-info">
+                                            <h4>Blockchain Registration</h4>
+                                            <p>Recording on immutable ledger</p>
+                                        </div>
+                                        <div class="analysis-status">
+                                            <div class="status-spinner"></div>
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="analysis-result" id="analysisResult">
+                                    <div class="result-icon success">
+                                        <i class="fas fa-shield-check"></i>
+                                    </div>
+                                    <h3>Artwork Authenticated Successfully!</h3>
+                                    <p>No duplicates found. Your artwork is unique.</p>
+                                    <div class="result-stats">
+                                        <div class="result-stat">
+                                            <span class="stat-value">100%</span>
+                                            <span class="stat-label">Originality Score</span>
+                                        </div>
+                                        <div class="result-stat">
+                                            <span class="stat-value">0</span>
+                                            <span class="stat-label">Similar Works</span>
+                                        </div>
+                                        <div class="result-stat">
+                                            <span class="stat-value">A+</span>
+                                            <span class="stat-label">Image Quality</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions" id="analysisActions" style="display: none;">
+                                <button type="button" class="btn btn-primary btn-lg next-step">
+                                    Generate Certificate
+                                    <i class="fas fa-certificate"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Certificate -->
+                        <div class="form-step" data-step="4">
+                            <div class="form-step-header">
+                                <h2>Your Certificate of Authenticity</h2>
+                                <p>Blockchain-verified and tamper-proof</p>
+                            </div>
+
+                            <div class="certificate-section">
+                                <!-- Certificate Preview -->
+                                <div class="certificate-preview" id="certificatePreview">
+                                    <div class="certificate-document">
+                                        <div class="cert-header">
+                                            <div class="cert-logo">◆ Arthentix</div>
+                                            <div class="cert-title">Certificate of Authenticity</div>
+                                            <div class="cert-subtitle">Blockchain Verified</div>
+                                        </div>
+
+                                        <div class="cert-body">
+                                            <div class="cert-artwork-image">
+                                                <img id="certArtworkImage" src="" alt="Artwork">
+                                            </div>
+
+                                            <div class="cert-details">
+                                                <div class="cert-field">
+                                                    <label>Certificate ID</label>
+                                                    <span id="certId" class="cert-id">ARTH-2026-XXXXX</span>
+                                                </div>
+                                                <div class="cert-field">
+                                                    <label>Artwork Title</label>
+                                                    <span id="certTitle">-</span>
+                                                </div>
+                                                <div class="cert-field">
+                                                    <label>Artist</label>
+                                                    <span id="certArtist">-</span>
+                                                </div>
+                                                <div class="cert-field">
+                                                    <label>Medium</label>
+                                                    <span id="certMedium">-</span>
+                                                </div>
+                                                <div class="cert-field">
+                                                    <label>Year Created</label>
+                                                    <span id="certYear">-</span>
+                                                </div>
+                                                <div class="cert-field">
+                                                    <label>Registration Date</label>
+                                                    <span id="certDate">-</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="cert-security">
+                                                <div class="cert-qr">
+                                                    <img id="certQR" src="" alt="QR Code">
+                                                </div>
+                                                <div class="cert-hash">
+                                                    <label>Blockchain Hash</label>
+                                                    <span id="certHash">0x...</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="cert-footer">
+                                            <div class="cert-seal">
+                                                <i class="fas fa-shield-check"></i>
+                                            </div>
+                                            <div class="cert-verified">
+                                                <span>Verified Authentic</span>
+                                                <small>This certificate is immutably recorded on the blockchain</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Certificate Actions -->
+                                <div class="certificate-actions">
+                                    <div class="action-card">
+                                        <i class="fas fa-download"></i>
+                                        <h4>Download Certificate</h4>
+                                        <p>Get a high-resolution PDF for print</p>
+                                        <button class="btn btn-primary" id="downloadCert">
+                                            <i class="fas fa-file-pdf"></i>
+                                            Download PDF
+                                        </button>
+                                    </div>
+
+                                    <div class="action-card">
+                                        <i class="fas fa-share-nodes"></i>
+                                        <h4>Share Certificate</h4>
+                                        <p>Send verification link to buyers</p>
+                                        <div class="share-buttons">
+                                            <button class="share-btn" title="Copy Link">
+                                                <i class="fas fa-link"></i>
+                                            </button>
+                                            <button class="share-btn" title="WhatsApp">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </button>
+                                            <button class="share-btn" title="Email">
+                                                <i class="fas fa-envelope"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="action-card">
+                                        <i class="fas fa-tag"></i>
+                                        <h4>Order NFC Tag</h4>
+                                        <p>Physical tag for your artwork</p>
+                                        <button class="btn btn-outline">
+                                            Order Tag ₹499
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <a href="index.html" class="btn btn-outline btn-lg">
+                                    <i class="fas fa-home"></i>
+                                    Back to Home
+                                </a>
+                                <button type="button" class="btn btn-primary btn-lg" onclick="location.reload()">
+                                    <i class="fas fa-plus"></i>
+                                    Register Another Artwork
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                <p>India's First Blockchain Art Authentication Platform</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/artist-portal.js"></script>
+</body>
+</html>

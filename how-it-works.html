@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | Arthentix - Buy, Sell & Rent Authenticated Art</title>
+    <meta name="description" content="Learn how Arthentix works - from discovering art to blockchain authentication, secure transactions, and delivery.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+
+    <style>
+        .hiw-hero {
+            padding: calc(var(--navbar-height) + var(--space-3xl)) var(--space-xl) var(--space-3xl);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hiw-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .hiw-hero p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .hiw-section {
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        .hiw-section:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+
+        .hiw-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hiw-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .hiw-header .section-label {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-md);
+            background: var(--color-gold-subtle);
+            color: var(--color-gold);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-lg);
+        }
+
+        .hiw-header h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .hiw-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-2xl);
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            text-align: center;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-dropdown);
+            border-color: var(--border-default);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--color-gold);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--color-gold);
+            margin: 0 auto var(--space-lg);
+        }
+
+        .step-card h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+        }
+
+        .feature-item i {
+            width: 48px;
+            height: 48px;
+            background: var(--color-gold-subtle);
+            color: var(--color-gold);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        .feature-item h4 {
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .feature-item p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+        }
+
+        .process-timeline {
+            position: relative;
+            padding: var(--space-2xl) 0;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-default);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .timeline-spacer {
+            flex: 1;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: var(--color-gold);
+            border-radius: 50%;
+            border: 4px solid var(--bg-primary);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: var(--space-4xl) var(--space-xl);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-surface-elevated) 100%);
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: var(--space-xl);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .process-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                padding-left: 50px;
+            }
+
+            .timeline-spacer {
+                display: none;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="marketplace-home theme-light">
+    <!-- Light Theme Background -->
+    <div class="bg-subtle"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient" style="opacity: 0;"></div>
+    <div class="noise-overlay" style="opacity: 0;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="marketplace.html">Browse Art</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge">0</span>
+                </a>
+                <div class="nav-divider"></div>
+                <a href="login.html" class="nav-text-btn">Sign In</a>
+                <a href="seller-portal.html" class="btn btn-dark btn-sm">Sell Art</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hiw-hero reveal">
+        <h1>How Arthentix Works</h1>
+        <p>From discovering your perfect artwork to receiving it at your doorstep - we make collecting authentic Indian art simple, secure, and delightful.</p>
+    </section>
+
+    <!-- For Buyers Section -->
+    <section class="hiw-section">
+        <div class="hiw-container">
+            <div class="hiw-header reveal">
+                <span class="section-label">For Buyers</span>
+                <h2>Discover & Collect Art</h2>
+                <p>Finding and owning authenticated original artwork has never been easier.</p>
+            </div>
+
+            <div class="steps-grid reveal">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                    <h3>Explore & Discover</h3>
+                    <p>Browse our curated collection of authenticated artworks from India's finest artists. Filter by style, price, size, or artist.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Verify Authenticity</h3>
+                    <p>Every artwork comes with blockchain-backed authentication. View provenance, certificates, and artist verification instantly.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>Secure Purchase</h3>
+                    <p>Pay securely with multiple payment options. Your transaction is protected, and the artist is paid fairly.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Insured Delivery</h3>
+                    <p>Your artwork is professionally packed and shipped with full insurance. Track your delivery in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Artists Section -->
+    <section class="hiw-section">
+        <div class="hiw-container">
+            <div class="hiw-header reveal">
+                <span class="section-label">For Artists</span>
+                <h2>Sell Your Art</h2>
+                <p>Join India's premier marketplace and reach collectors who appreciate authentic art.</p>
+            </div>
+
+            <div class="steps-grid reveal">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                    <h3>Create Your Profile</h3>
+                    <p>Sign up and build your artist portfolio. Share your story, inspiration, and artistic journey with collectors.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-upload"></i></div>
+                    <h3>Upload Artwork</h3>
+                    <p>List your original artworks with high-quality images, detailed descriptions, and pricing. Our AI helps optimize your listings.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Get Authenticated</h3>
+                    <p>We verify and authenticate your artwork, creating a permanent blockchain certificate that protects your work.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3>Receive Payment</h3>
+                    <p>When your artwork sells, receive secure payment directly to your account. Fair commission, transparent process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Section -->
+    <section class="hiw-section">
+        <div class="hiw-container">
+            <div class="hiw-header reveal">
+                <span class="section-label">Our Technology</span>
+                <h2>Blockchain Authentication</h2>
+                <p>Every artwork on Arthentix is protected by cutting-edge blockchain technology.</p>
+            </div>
+
+            <div class="features-row reveal">
+                <div class="feature-item">
+                    <i class="fas fa-link"></i>
+                    <div>
+                        <h4>Immutable Records</h4>
+                        <p>Provenance and ownership history stored permanently on the blockchain.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-qrcode"></i>
+                    <div>
+                        <h4>QR Verification</h4>
+                        <p>Scan the certificate QR code anytime to verify authenticity instantly.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-fingerprint"></i>
+                    <div>
+                        <h4>Digital Fingerprint</h4>
+                        <p>AI-powered image analysis creates a unique fingerprint for each artwork.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fas fa-history"></i>
+                    <div>
+                        <h4>Ownership Transfer</h4>
+                        <p>Secure transfer of ownership recorded on blockchain when artwork is sold.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section reveal">
+        <h2>Ready to Get Started?</h2>
+        <p>Join thousands of art lovers and artists on India's most trusted art marketplace.</p>
+        <div class="cta-buttons">
+            <a href="marketplace.html" class="btn btn-primary btn-lg">
+                <i class="fas fa-th-large"></i>
+                Browse Art
+            </a>
+            <a href="seller-portal.html" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-plus"></i>
+                Sell Your Art
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <span class="logo-icon">◆</span>
+                            <span class="logo-text">Arthentix</span>
+                        </div>
+                        <p>India's premium marketplace for authenticated original artwork.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/arthentix" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com/arthentix" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/arthentix" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Marketplace</h4>
+                        <a href="marketplace.html">Browse Art</a>
+                        <a href="collections.html">Collections</a>
+                        <a href="artists.html">Artists</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="help.html">Help</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/utils/error-handler.js"></script>
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+</body>
+</html>

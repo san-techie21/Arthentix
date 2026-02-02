@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists | Arthentix - Discover Talented Artists</title>
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css?v=20260202">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="marketplace-home theme-dark">
+    <!-- Light Theme Background (hidden in dark mode) -->
+    <div class="bg-subtle" style="opacity: 0;"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="float-shape shape-2"></div>
+    <div class="float-shape shape-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon">&#9670;</span><span class="logo-text">Arthentix</span></a>
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="marketplace.html">Browse Art</a>
+                <a href="collections.html">Collections</a>
+                <a href="artists.html" class="active">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search"><i class="fas fa-search"></i></button>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist"><i class="far fa-heart"></i><span class="badge">0</span></a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart"><i class="fas fa-shopping-bag"></i><span class="badge">0</span></a>
+                <div class="nav-divider"></div>
+                <a href="login.html" class="nav-text-btn">Sign In</a>
+                <a href="seller-portal.html" class="btn btn-primary btn-sm">Sell Art</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header-section">
+        <div class="container">
+            <div class="page-header-content reveal">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Artists</span>
+                </nav>
+                <h1 class="page-title">Discover <span class="text-gradient">Artists</span></h1>
+                <p class="page-subtitle">Connect with 2,500+ talented artists from across India. From emerging talents to established masters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artists -->
+    <section class="featured-artists-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Featured Artists</h2>
+                <p>Handpicked creators making waves in the art world</p>
+            </div>
+
+            <div class="featured-artists-grid">
+                <!-- Featured Artist 1 -->
+                <article class="featured-artist-card reveal">
+                    <a href="artist-profile.html" class="featured-artist-inner">
+                        <div class="featured-artist-bg">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=400&fit=crop" alt="Artwork">
+                        </div>
+                        <div class="featured-artist-content">
+                            <div class="featured-artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop" alt="Priya Sharma">
+                            </div>
+                            <h3>Priya Sharma</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                            <p class="artist-specialty">Contemporary & Abstract</p>
+                            <div class="artist-stats">
+                                <span><strong>156</strong> Works</span>
+                                <span><strong>2.4k</strong> Followers</span>
+                                <span><strong>89</strong> Sold</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Featured Artist 2 -->
+                <article class="featured-artist-card reveal">
+                    <a href="artist-profile.html" class="featured-artist-inner">
+                        <div class="featured-artist-bg">
+                            <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&h=400&fit=crop" alt="Artwork">
+                        </div>
+                        <div class="featured-artist-content">
+                            <div class="featured-artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Arjun Mehta">
+                            </div>
+                            <h3>Arjun Mehta</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                            <p class="artist-specialty">Traditional & Folk Art</p>
+                            <div class="artist-stats">
+                                <span><strong>98</strong> Works</span>
+                                <span><strong>1.8k</strong> Followers</span>
+                                <span><strong>67</strong> Sold</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Featured Artist 3 -->
+                <article class="featured-artist-card reveal">
+                    <a href="artist-profile.html" class="featured-artist-inner">
+                        <div class="featured-artist-bg">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=400&fit=crop" alt="Artwork">
+                        </div>
+                        <div class="featured-artist-content">
+                            <div class="featured-artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop" alt="Ananya Reddy">
+                            </div>
+                            <h3>Ananya Reddy</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</p>
+                            <p class="artist-specialty">Landscapes & Nature</p>
+                            <div class="artist-stats">
+                                <span><strong>124</strong> Works</span>
+                                <span><strong>3.1k</strong> Followers</span>
+                                <span><strong>112</strong> Sold</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Filter -->
+    <section class="artists-filter-section">
+        <div class="container">
+            <div class="filter-bar reveal">
+                <div class="filter-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search artists by name or style..." id="artistSearch">
+                </div>
+                <div class="filter-dropdowns">
+                    <select class="filter-select" id="styleFilter">
+                        <option value="">All Styles</option>
+                        <option value="abstract">Abstract</option>
+                        <option value="contemporary">Contemporary</option>
+                        <option value="traditional">Traditional</option>
+                        <option value="folk">Folk Art</option>
+                        <option value="landscape">Landscape</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="minimalist">Minimalist</option>
+                    </select>
+                    <select class="filter-select" id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="kolkata">Kolkata</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="pune">Pune</option>
+                        <option value="jaipur">Jaipur</option>
+                    </select>
+                    <select class="filter-select" id="sortFilter">
+                        <option value="featured">Featured</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest</option>
+                        <option value="artworks">Most Artworks</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Grid -->
+    <section class="artists-grid-section">
+        <div class="container">
+            <div class="artists-grid">
+                <!-- Artist Card Template - Repeated -->
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Rahul Verma">
+                            </div>
+                            <h3>Rahul Verma</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Delhi</p>
+                            <span class="artist-style-tag">Abstract Expressionism</span>
+                            <div class="artist-mini-stats">
+                                <span>78 Works</span>
+                                <span>•</span>
+                                <span>1.2k Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹15,000 - ₹2,50,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Meera Iyer">
+                            </div>
+                            <h3>Meera Iyer</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Chennai</p>
+                            <span class="artist-style-tag">Tanjore Painting</span>
+                            <div class="artist-mini-stats">
+                                <span>45 Works</span>
+                                <span>•</span>
+                                <span>890 Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹25,000 - ₹4,00,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Vikram Singh">
+                            </div>
+                            <h3>Vikram Singh</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Jaipur</p>
+                            <span class="artist-style-tag">Landscape Artist</span>
+                            <div class="artist-mini-stats">
+                                <span>92 Works</span>
+                                <span>•</span>
+                                <span>2.1k Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹8,000 - ₹1,20,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Kavitha Nair">
+                            </div>
+                            <h3>Kavitha Nair</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Kochi</p>
+                            <span class="artist-style-tag">Madhubani Art</span>
+                            <div class="artist-mini-stats">
+                                <span>67 Works</span>
+                                <span>•</span>
+                                <span>1.5k Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹12,000 - ₹85,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1509909756405-be0199881695?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Aditya Kapoor">
+                            </div>
+                            <h3>Aditya Kapoor</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Pune</p>
+                            <span class="artist-style-tag">Minimalist Modern</span>
+                            <div class="artist-mini-stats">
+                                <span>54 Works</span>
+                                <span>•</span>
+                                <span>980 Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹20,000 - ₹1,80,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1514539079130-25950c84af65?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1517697471339-4aa32003c11a?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop" alt="Shreya Das">
+                            </div>
+                            <h3>Shreya Das</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Kolkata</p>
+                            <span class="artist-style-tag">Urban & Street Art</span>
+                            <div class="artist-mini-stats">
+                                <span>38 Works</span>
+                                <span>•</span>
+                                <span>2.8k Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹5,000 - ₹75,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=100&h=100&fit=crop" alt="Rohan Gupta">
+                            </div>
+                            <h3>Rohan Gupta</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Lucknow</p>
+                            <span class="artist-style-tag">Portrait Artist</span>
+                            <div class="artist-mini-stats">
+                                <span>82 Works</span>
+                                <span>•</span>
+                                <span>1.9k Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹30,000 - ₹3,50,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-card reveal">
+                    <a href="artist-profile.html" class="artist-card-inner">
+                        <div class="artist-card-header">
+                            <div class="artist-works-preview">
+                                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35a6?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=150&h=150&fit=crop" alt="">
+                                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=150&h=150&fit=crop" alt="">
+                            </div>
+                        </div>
+                        <div class="artist-card-body">
+                            <div class="artist-avatar">
+                                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop" alt="Nisha Patel">
+                            </div>
+                            <h3>Nisha Patel</h3>
+                            <p class="artist-location"><i class="fas fa-map-marker-alt"></i> Ahmedabad</p>
+                            <span class="artist-style-tag">Warli Art</span>
+                            <div class="artist-mini-stats">
+                                <span>61 Works</span>
+                                <span>•</span>
+                                <span>1.3k Followers</span>
+                            </div>
+                        </div>
+                        <div class="artist-card-footer">
+                            <span class="price-range">₹8,000 - ₹65,000</span>
+                            <span class="view-profile">View Profile <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more-section reveal">
+                <button class="btn btn-outline btn-lg" id="loadMoreArtists">
+                    Load More Artists
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <p class="load-more-count">Showing 11 of 2,547 artists</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Become an Artist CTA -->
+    <section class="become-artist-cta">
+        <div class="container">
+            <div class="cta-card large reveal">
+                <div class="cta-content">
+                    <span class="cta-badge">Join Our Community</span>
+                    <h2>Are You an Artist?</h2>
+                    <p>Join India's fastest growing art marketplace. Showcase your work to thousands of collectors, set your own prices, and earn 85% on every sale.</p>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free to join</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>85% commission</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Blockchain certificates</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Global exposure</span>
+                        </div>
+                    </div>
+                    <a href="seller-portal.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-palette"></i>
+                        Start Selling Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-marketplace">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-mark">A</span>
+                        <span class="logo-text">Arthentix</span>
+                    </a>
+                    <p>India's premier destination for authentic, curated art. Discover original artworks from emerging and established artists.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">All Artworks</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="rental.html">Rent Art</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>For Business</h4>
+                    <ul>
+                        <li><a href="for-business.html">Overview</a></li>
+                        <li><a href="for-business.html#hotels">Hotels</a></li>
+                        <li><a href="for-business.html#corporates">Corporates</a></li>
+                        <li><a href="for-business.html#designers">Designers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/utils/error-handler.js"></script>
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+    <script src="src/utils/home.js"></script>
+</body>
+</html>

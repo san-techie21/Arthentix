@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contemporary Masters of India | Arthentix Collections</title>
+    <meta name="description" content="Explore the Contemporary Masters of India collection - featuring works from India's most influential contemporary artists.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/styles/tokens.css">
+    <link rel="stylesheet" href="src/styles/themes.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/marketplace-home.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+
+    <style>
+        .collection-hero {
+            height: 60vh;
+            min-height: 400px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-3xl);
+            margin-top: var(--navbar-height);
+        }
+
+        .collection-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .collection-hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+        }
+
+        .collection-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: white;
+        }
+
+        .collection-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--color-gold);
+            color: var(--color-primary);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+        }
+
+        .collection-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            line-height: 1.1;
+        }
+
+        .collection-hero p {
+            font-size: var(--text-lg);
+            opacity: 0.9;
+            margin-bottom: var(--space-xl);
+            max-width: 600px;
+        }
+
+        .collection-stats {
+            display: flex;
+            gap: var(--space-2xl);
+            flex-wrap: wrap;
+        }
+
+        .collection-stat {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: var(--text-base);
+            opacity: 0.8;
+        }
+
+        .collection-stat i {
+            color: var(--color-gold);
+        }
+
+        .collection-main {
+            padding: var(--space-3xl) 0;
+        }
+
+        .collection-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .collection-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-2xl);
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+        }
+
+        .collection-header h2 {
+            font-family: var(--font-display);
+            font-size: var(--text-3xl);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .collection-filters {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-full);
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-out);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-primary);
+            color: var(--text-inverse);
+            border-color: var(--accent-primary);
+        }
+
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .artwork-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .artwork-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-dropdown);
+            border-color: var(--border-default);
+        }
+
+        .artwork-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .artwork-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--duration-slow) var(--ease-out-expo);
+        }
+
+        .artwork-card:hover .artwork-image img {
+            transform: scale(1.05);
+        }
+
+        .artwork-actions {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            display: flex;
+            gap: var(--space-sm);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all var(--duration-normal) var(--ease-out);
+        }
+
+        .artwork-card:hover .artwork-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all var(--duration-fast) var(--ease-out);
+            box-shadow: var(--shadow-md);
+        }
+
+        .action-btn:hover {
+            background: var(--accent-primary);
+            color: var(--text-inverse);
+            transform: scale(1.1);
+        }
+
+        .artwork-info {
+            padding: var(--space-lg);
+        }
+
+        .artwork-title {
+            font-family: var(--font-display);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .artwork-artist {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .artwork-artist a {
+            color: var(--color-gold);
+            text-decoration: none;
+        }
+
+        .artwork-artist a:hover {
+            text-decoration: underline;
+        }
+
+        .artwork-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .artwork-price {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .artwork-medium {
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: var(--space-3xl);
+        }
+
+        .curator-section {
+            background: var(--bg-secondary);
+            padding: var(--space-3xl) 0;
+            margin-top: var(--space-3xl);
+        }
+
+        .curator-card {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .curator-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .curator-info h3 {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-sm);
+        }
+
+        .curator-info h4 {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .curator-info p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .curator-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="marketplace-home theme-light">
+    <!-- Light Theme Background -->
+    <div class="bg-subtle"></div>
+
+    <!-- Dark Theme Backgrounds -->
+    <div class="bg-gradient" style="opacity: 0;"></div>
+    <div class="noise-overlay" style="opacity: 0;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-marketplace" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Arthentix</span>
+            </a>
+
+            <div class="nav-center">
+                <a href="index.html">Explore</a>
+                <a href="marketplace.html">Browse Art</a>
+                <a href="collections.html" class="active">Collections</a>
+                <a href="artists.html">Artists</a>
+                <a href="rental.html">Rent Art</a>
+                <a href="for-business.html">For Business</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-trigger" title="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge">0</span>
+                </a>
+                <div class="nav-divider"></div>
+                <a href="login.html" class="nav-text-btn">Sign In</a>
+                <a href="seller-portal.html" class="btn btn-dark btn-sm">Sell Art</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Collection Hero -->
+    <section class="collection-hero">
+        <div class="collection-hero-bg"></div>
+        <div class="collection-hero-content reveal">
+            <span class="collection-badge"><i class="fas fa-star"></i> Featured Collection</span>
+            <h1>Contemporary Masters of India</h1>
+            <p>A stunning showcase of India's most influential contemporary artists, featuring works that bridge traditional techniques with modern expression.</p>
+            <div class="collection-stats">
+                <div class="collection-stat">
+                    <i class="fas fa-image"></i>
+                    <span>48 Artworks</span>
+                </div>
+                <div class="collection-stat">
+                    <i class="fas fa-user"></i>
+                    <span>12 Artists</span>
+                </div>
+                <div class="collection-stat">
+                    <i class="fas fa-tag"></i>
+                    <span>₹15,000 - ₹8,50,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Main -->
+    <main class="collection-main">
+        <div class="collection-container">
+            <div class="collection-header reveal">
+                <h2>Artworks in this Collection</h2>
+                <div class="collection-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Paintings</button>
+                    <button class="filter-btn">Mixed Media</button>
+                    <button class="filter-btn">Digital</button>
+                    <button class="filter-btn">Price: Low to High</button>
+                </div>
+            </div>
+
+            <div class="artwork-grid reveal">
+                <!-- Artwork 1 -->
+                <article class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600" alt="Monsoon Dreams">
+                        <div class="artwork-actions">
+                            <button class="action-btn" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Monsoon Dreams</h3>
+                        <p class="artwork-artist">by <a href="artist-profile.html">Priya Sharma</a></p>
+                        <div class="artwork-meta">
+                            <span class="artwork-price">₹1,25,000</span>
+                            <span class="artwork-medium">Oil on Canvas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 2 -->
+                <article class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600" alt="Urban Rhythm">
+                        <div class="artwork-actions">
+                            <button class="action-btn" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Urban Rhythm</h3>
+                        <p class="artwork-artist">by <a href="artist-profile.html">Arjun Menon</a></p>
+                        <div class="artwork-meta">
+                            <span class="artwork-price">₹85,000</span>
+                            <span class="artwork-medium">Acrylic on Canvas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 3 -->
+                <article class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=600" alt="Golden Hour">
+                        <div class="artwork-actions">
+                            <button class="action-btn" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Golden Hour</h3>
+                        <p class="artwork-artist">by <a href="artist-profile.html">Kavitha Reddy</a></p>
+                        <div class="artwork-meta">
+                            <span class="artwork-price">₹1,45,000</span>
+                            <span class="artwork-medium">Mixed Media</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 4 -->
+                <article class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600" alt="Silent Poetry">
+                        <div class="artwork-actions">
+                            <button class="action-btn" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Silent Poetry</h3>
+                        <p class="artwork-artist">by <a href="artist-profile.html">Vikram Das</a></p>
+                        <div class="artwork-meta">
+                            <span class="artwork-price">₹65,000</span>
+                            <span class="artwork-medium">Watercolor</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 5 -->
+                <article class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1544413660-299165566b1d?w=600" alt="Eternal Dance">
+                        <div class="artwork-actions">
+                            <button class="action-btn" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Eternal Dance</h3>
+                        <p class="artwork-artist">by <a href="artist-profile.html">Meera Patel</a></p>
+                        <div class="artwork-meta">
+                            <span class="artwork-price">₹2,15,000</span>
+                            <span class="artwork-medium">Bronze Sculpture</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 6 -->
+                <article class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600" alt="Digital Meditation">
+                        <div class="artwork-actions">
+                            <button class="action-btn" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Digital Meditation</h3>
+                        <p class="artwork-artist">by <a href="artist-profile.html">Rahul Verma</a></p>
+                        <div class="artwork-meta">
+                            <span class="artwork-price">₹45,000</span>
+                            <span class="artwork-medium">Digital Art</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="load-more">
+                <button class="btn btn-outline">
+                    Load More Artworks
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Curator Section -->
+    <section class="curator-section">
+        <div class="collection-container">
+            <div class="curator-card reveal">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200" alt="Curator" class="curator-image">
+                <div class="curator-info">
+                    <h3>Curated By</h3>
+                    <h4>Anjali Mehta</h4>
+                    <p>With over 15 years of experience in the Indian art world, Anjali has a keen eye for identifying emerging talent and established masters alike. This collection represents her vision of contemporary Indian art at its finest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <span class="logo-icon">◆</span>
+                            <span class="logo-text">Arthentix</span>
+                        </div>
+                        <p>India's premium marketplace for authenticated original artwork.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/arthentix" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com/arthentix" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/arthentix" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Marketplace</h4>
+                        <a href="marketplace.html">Browse Art</a>
+                        <a href="collections.html">Collections</a>
+                        <a href="artists.html">Artists</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="help.html">Help</a>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Arthentix. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/utils/error-handler.js"></script>
+    <script src="src/utils/main.js"></script>
+    <script src="src/utils/animations.js"></script>
+</body>
+</html>
