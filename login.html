@@ -370,6 +370,108 @@
             display: block;
             animation: fadeInUp 0.4s var(--ease-out-expo);
         }
+
+        /* ============================================
+           LIGHT MODE STYLES FOR AUTH PAGE
+           ============================================ */
+        body.theme-light .auth-form-section {
+            background: var(--color-warm-white, #FAF9F7);
+        }
+
+        body.theme-light .auth-logo .logo-text {
+            color: #1A1A1A;
+        }
+
+        body.theme-light .auth-header h1 {
+            color: #1A1A1A;
+        }
+
+        body.theme-light .auth-header p {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.theme-light .social-btn {
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.03);
+            color: #1A1A1A;
+        }
+
+        body.theme-light .social-btn:hover {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+
+        body.theme-light .divider::before,
+        body.theme-light .divider::after {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        body.theme-light .divider span {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        body.theme-light .auth-form label {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        body.theme-light .input-wrapper i {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        body.theme-light .auth-form input {
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            color: #1A1A1A;
+        }
+
+        body.theme-light .auth-form input:focus {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        body.theme-light .auth-form input::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        body.theme-light .password-toggle {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        body.theme-light .password-toggle:hover {
+            color: #1A1A1A;
+        }
+
+        body.theme-light .checkbox-wrapper span {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.theme-light .auth-tabs {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        body.theme-light .auth-tab {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        body.theme-light .auth-tab.active {
+            background: rgba(0, 0, 0, 0.08);
+            color: #1A1A1A;
+        }
+
+        body.theme-light .auth-tab:hover:not(.active) {
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        body.theme-light .auth-footer p {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        body.theme-light .auth-footer a {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        body.theme-light .auth-footer a:hover {
+            color: #1A1A1A;
+        }
     </style>
 </head>
 <body class="marketplace-home theme-dark">
