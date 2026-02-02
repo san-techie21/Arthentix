@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="src/styles/main.css">
     <link rel="stylesheet" href="src/styles/marketplace-home.css?v=20260202">
     <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="src/styles/awwwards-effects.css?v=20260202">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
@@ -139,18 +140,18 @@
 
         <div class="hero-content-overlay">
             <div class="hero-text">
-                <h1>
-                    <span class="hero-line">Discover</span>
-                    <span class="hero-line accent">Authentic Indian Art</span>
+                <h1 class="text-reveal-stagger">
+                    <span class="hero-line text-reveal"><span class="text-reveal-inner">Discover</span></span>
+                    <span class="hero-line accent text-reveal"><span class="text-reveal-inner">Authentic Indian Art</span></span>
                 </h1>
-                <p>Buy, sell, or rent original artwork from India's finest contemporary artists. Every piece authenticated and protected.</p>
-                <div class="hero-cta">
-                    <a href="#explore" class="btn btn-primary btn-lg">
-                        Explore Art
+                <p class="scroll-reveal">Buy, sell, or rent original artwork from India's finest contemporary artists. Every piece authenticated and protected.</p>
+                <div class="hero-cta scroll-reveal">
+                    <a href="#explore" class="btn btn-primary btn-lg btn-magnetic ripple-effect">
+                        <span class="btn-text">Explore Art</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="rental.html" class="btn btn-outline-light btn-lg">
-                        Rent for Your Space
+                    <a href="rental.html" class="btn btn-outline-light btn-lg btn-magnetic ripple-effect">
+                        <span class="btn-text">Rent for Your Space</span>
                     </a>
                 </div>
             </div>
@@ -1005,5 +1006,6 @@
     <script src="src/utils/main.js"></script>
     <script src="src/utils/animations.js"></script>
     <script src="src/utils/home.js"></script>
+    <script src="src/utils/awwwards-effects.js?v=20260202"></script>
 </body>
 </html>
