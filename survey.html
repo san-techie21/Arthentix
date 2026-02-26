@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthentix - Indian Artist Survey 2026</title>
+    <title>Indian Artist Community Research 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -55,19 +55,6 @@
             height: 200%;
             background: radial-gradient(ellipse at center, rgba(200, 169, 126, 0.06) 0%, transparent 60%);
             pointer-events: none;
-        }
-
-        .header-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 6px;
-            letter-spacing: 2px;
-        }
-
-        .header-logo span {
-            color: var(--text-primary);
         }
 
         .survey-header h1 {
@@ -656,10 +643,9 @@
 
     <!-- Header -->
     <header class="survey-header">
-        <div class="header-logo">ARTH<span>ENTIX</span></div>
-        <div class="survey-badge">Artist Research 2026</div>
-        <h1>Help Us Build the Future of Indian Art</h1>
-        <p>We're building a platform by artists, for artists. Your honest answers will shape how we serve the Indian art community.</p>
+        <div class="survey-badge">Artist Community Research 2026</div>
+        <h1>Help Shape the Future of Indian Art</h1>
+        <p>We're researching what Indian artists truly need. Your honest answers will help build better tools and platforms for the art community.</p>
         <div class="time-estimate">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             3-4 minutes to complete
@@ -694,7 +680,7 @@
                 </div>
 
                 <div class="question-group">
-                    <label>Your Name <span class="hint">(optional - will be kept confidential)</span></label>
+                    <label>Your Name <span class="hint">(optional - kept confidential)</span></label>
                     <input type="text" name="name" placeholder="Enter your name">
                 </div>
 
@@ -726,35 +712,58 @@
                 </div>
 
                 <div class="question-group">
-                    <label>Your Primary Art Medium <span class="required">*</span></label>
+                    <label>Art mediums you work in <span class="required">*</span></label>
+                    <p class="hint">Select all that apply</p>
                     <div class="option-cards">
                         <label class="option-card">
-                            <input type="radio" name="medium" value="Oil/Acrylic Painting" required>
-                            <span class="card-label"><span class="card-radio"></span> Oil / Acrylic Painting</span>
+                            <input type="checkbox" name="medium" value="Oil/Acrylic Painting">
+                            <span class="card-label"><span class="card-check"></span> Oil / Acrylic Painting</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="medium" value="Watercolor">
-                            <span class="card-label"><span class="card-radio"></span> Watercolor</span>
+                            <input type="checkbox" name="medium" value="Watercolor">
+                            <span class="card-label"><span class="card-check"></span> Watercolor</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="medium" value="Sketching/Drawing">
-                            <span class="card-label"><span class="card-radio"></span> Sketching / Drawing</span>
+                            <input type="checkbox" name="medium" value="Sketching/Drawing">
+                            <span class="card-label"><span class="card-check"></span> Sketching / Drawing</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="medium" value="Digital Art">
-                            <span class="card-label"><span class="card-radio"></span> Digital Art</span>
+                            <input type="checkbox" name="medium" value="Digital Art">
+                            <span class="card-label"><span class="card-check"></span> Digital Art</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="medium" value="Sculpture/Mixed Media">
-                            <span class="card-label"><span class="card-radio"></span> Sculpture / Mixed Media</span>
+                            <input type="checkbox" name="medium" value="Sculpture/Mixed Media">
+                            <span class="card-label"><span class="card-check"></span> Sculpture / Mixed Media</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="medium" value="Photography">
-                            <span class="card-label"><span class="card-radio"></span> Photography</span>
+                            <input type="checkbox" name="medium" value="Photography">
+                            <span class="card-label"><span class="card-check"></span> Photography</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="medium" value="Other">
-                            <span class="card-label"><span class="card-radio"></span> Other</span>
+                            <input type="checkbox" name="medium" value="Traditional/Folk Art">
+                            <span class="card-label"><span class="card-check"></span> Traditional / Folk Art</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="medium" value="Other">
+                            <span class="card-label"><span class="card-check"></span> Other</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label>Art is your... <span class="required">*</span></label>
+                    <div class="option-cards">
+                        <label class="option-card">
+                            <input type="radio" name="art_type" value="Full-time career" required>
+                            <span class="card-label"><span class="card-radio"></span> Full-time career</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="art_type" value="Part-time alongside other work">
+                            <span class="card-label"><span class="card-radio"></span> Part-time alongside other work</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="art_type" value="Hobby/passion project">
+                            <span class="card-label"><span class="card-radio"></span> Hobby / passion project</span>
                         </label>
                     </div>
                 </div>
@@ -786,16 +795,16 @@
                 </div>
             </div>
 
-            <!-- Section 2: Selling Art Today -->
+            <!-- Section 2: Your Art Practice -->
             <div class="survey-section" id="section2">
                 <div class="section-header">
                     <div class="section-number">Section 2 of 5</div>
-                    <h2>Selling Art Today</h2>
-                    <p>Help us understand your current experience selling art</p>
+                    <h2>Your Art Practice</h2>
+                    <p>Help us understand your current experience as an artist</p>
                 </div>
 
                 <div class="question-group">
-                    <label>How do you currently sell your art? <span class="required">*</span></label>
+                    <label>How do you currently sell or showcase your art? <span class="required">*</span></label>
                     <p class="hint">Select all that apply</p>
                     <div class="option-cards">
                         <label class="option-card">
@@ -819,6 +828,10 @@
                             <span class="card-label"><span class="card-check"></span> Direct / Word of Mouth</span>
                         </label>
                         <label class="option-card">
+                            <input type="checkbox" name="current_channels" value="Own Website/Portfolio">
+                            <span class="card-label"><span class="card-check"></span> Own Website / Portfolio</span>
+                        </label>
+                        <label class="option-card">
                             <input type="checkbox" name="current_channels" value="Not selling yet">
                             <span class="card-label"><span class="card-check"></span> Not selling yet (want to start)</span>
                         </label>
@@ -833,50 +846,59 @@
                             <span class="card-label"><span class="card-radio"></span> No income from art yet</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="income" value="Under ₹5,000">
-                            <span class="card-label"><span class="card-radio"></span> Under ₹5,000/month</span>
+                            <input type="radio" name="income" value="Less than ₹5,000">
+                            <span class="card-label"><span class="card-radio"></span> Less than ₹5,000/month</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="income" value="₹5,000 - ₹20,000">
-                            <span class="card-label"><span class="card-radio"></span> ₹5,000 - ₹20,000/month</span>
+                            <input type="radio" name="income" value="₹5,000 - ₹15,000">
+                            <span class="card-label"><span class="card-radio"></span> ₹5,000 - ₹15,000/month</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="income" value="₹20,000 - ₹50,000">
-                            <span class="card-label"><span class="card-radio"></span> ₹20,000 - ₹50,000/month</span>
+                            <input type="radio" name="income" value="₹15,000 - ₹30,000">
+                            <span class="card-label"><span class="card-radio"></span> ₹15,000 - ₹30,000/month</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="income" value="₹50,000+">
-                            <span class="card-label"><span class="card-radio"></span> ₹50,000+ /month</span>
+                            <input type="radio" name="income" value="₹30,000 - ₹50,000">
+                            <span class="card-label"><span class="card-radio"></span> ₹30,000 - ₹50,000/month</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="income" value="More than ₹50,000">
+                            <span class="card-label"><span class="card-radio"></span> More than ₹50,000/month</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label>What is your BIGGEST frustration selling art today? <span class="required">*</span></label>
+                    <label>What are your biggest challenges as an artist? <span class="required">*</span></label>
+                    <p class="hint">Select all that apply</p>
                     <div class="option-cards">
                         <label class="option-card">
-                            <input type="radio" name="frustration" value="Finding buyers is hard" required>
-                            <span class="card-label"><span class="card-radio"></span> Finding buyers is very hard</span>
+                            <input type="checkbox" name="challenges" value="Finding buyers">
+                            <span class="card-label"><span class="card-check"></span> Finding buyers for my work</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="frustration" value="Galleries take too much commission">
-                            <span class="card-label"><span class="card-radio"></span> Galleries/platforms take too much commission</span>
+                            <input type="checkbox" name="challenges" value="High commission/fees on platforms">
+                            <span class="card-label"><span class="card-check"></span> High commission / fees on platforms</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="frustration" value="People copy my art">
-                            <span class="card-label"><span class="card-radio"></span> People copy/steal my art online</span>
+                            <input type="checkbox" name="challenges" value="Art theft/copying">
+                            <span class="card-label"><span class="card-check"></span> Art theft / people copying my work</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="frustration" value="No trust in online buyers">
-                            <span class="card-label"><span class="card-radio"></span> Buyers don't trust online art purchases</span>
+                            <input type="checkbox" name="challenges" value="Lack of buyer trust online">
+                            <span class="card-label"><span class="card-check"></span> Buyers don't trust online art purchases</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="frustration" value="Pricing my art is confusing">
-                            <span class="card-label"><span class="card-radio"></span> Don't know how to price my art</span>
+                            <input type="checkbox" name="challenges" value="Pricing artwork fairly">
+                            <span class="card-label"><span class="card-check"></span> Knowing how to price my art</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="frustration" value="Art is not my full-time income">
-                            <span class="card-label"><span class="card-radio"></span> Can't make art a full-time career</span>
+                            <input type="checkbox" name="challenges" value="Making art sustainable">
+                            <span class="card-label"><span class="card-check"></span> Making art financially sustainable</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="challenges" value="Getting exposure/visibility">
+                            <span class="card-label"><span class="card-check"></span> Getting exposure and visibility</span>
                         </label>
                     </div>
                 </div>
@@ -887,111 +909,81 @@
                 </div>
             </div>
 
-            <!-- Section 3: Platform & Pricing -->
+            <!-- Section 3: Platform & Features -->
             <div class="survey-section" id="section3">
                 <div class="section-header">
                     <div class="section-number">Section 3 of 5</div>
-                    <h2>Platform & Pricing</h2>
-                    <p>What would you value in an art marketplace?</p>
+                    <h2>Platform & Features</h2>
+                    <p>What would matter most to you in an art platform?</p>
                 </div>
 
                 <div class="question-group">
-                    <label>If a platform charged only 10-15% commission (vs 40% on others), how likely would you be to try it? <span class="required">*</span></label>
-                    <div class="rating-scale">
-                        <label><input type="radio" name="commission_appeal" value="1" required><span class="rating-btn">1</span></label>
-                        <label><input type="radio" name="commission_appeal" value="2"><span class="rating-btn">2</span></label>
-                        <label><input type="radio" name="commission_appeal" value="3"><span class="rating-btn">3</span></label>
-                        <label><input type="radio" name="commission_appeal" value="4"><span class="rating-btn">4</span></label>
-                        <label><input type="radio" name="commission_appeal" value="5"><span class="rating-btn">5</span></label>
-                        <label><input type="radio" name="commission_appeal" value="6"><span class="rating-btn">6</span></label>
-                        <label><input type="radio" name="commission_appeal" value="7"><span class="rating-btn">7</span></label>
-                        <label><input type="radio" name="commission_appeal" value="8"><span class="rating-btn">8</span></label>
-                        <label><input type="radio" name="commission_appeal" value="9"><span class="rating-btn">9</span></label>
-                        <label><input type="radio" name="commission_appeal" value="10"><span class="rating-btn">10</span></label>
-                    </div>
-                    <div class="rating-labels">
-                        <span>Not interested</span>
-                        <span>Definitely would try</span>
-                    </div>
-                </div>
-
-                <div class="question-group">
-                    <label>Would you pay ₹499/month for a platform that helps you sell art, protects your work, and provides a digital certificate of authenticity? <span class="required">*</span></label>
+                    <label>What's the maximum commission you'd be comfortable paying to an online art platform? <span class="required">*</span></label>
                     <div class="option-cards">
                         <label class="option-card">
-                            <input type="radio" name="pay_499" value="Yes, definitely" required>
-                            <span class="card-label"><span class="card-radio"></span> Yes, definitely worth it</span>
+                            <input type="radio" name="max_commission" value="Less than 10%" required>
+                            <span class="card-label"><span class="card-radio"></span> Less than 10%</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_499" value="Maybe, need to see value first">
-                            <span class="card-label"><span class="card-radio"></span> Maybe, if I see the value first</span>
+                            <input type="radio" name="max_commission" value="10-15%">
+                            <span class="card-label"><span class="card-radio"></span> 10% - 15%</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_499" value="Only if free trial available">
-                            <span class="card-label"><span class="card-radio"></span> Only if there's a free trial</span>
+                            <input type="radio" name="max_commission" value="15-20%">
+                            <span class="card-label"><span class="card-radio"></span> 15% - 20%</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_499" value="No, should be free">
-                            <span class="card-label"><span class="card-radio"></span> No, this should be free</span>
+                            <input type="radio" name="max_commission" value="20-30%">
+                            <span class="card-label"><span class="card-radio"></span> 20% - 30%</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_499" value="Would pay more for premium">
-                            <span class="card-label"><span class="card-radio"></span> I'd pay even more for premium features</span>
+                            <input type="radio" name="max_commission" value="Doesn't matter if they bring buyers">
+                            <span class="card-label"><span class="card-radio"></span> Doesn't matter if they bring me buyers</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label>What features would you PAY for? <span class="required">*</span></label>
-                    <p class="hint">Select your top 3</p>
+                    <label>Which features would matter most to you in an art platform? <span class="required">*</span></label>
+                    <p class="hint">Select your top 3-4</p>
                     <div class="option-cards">
                         <label class="option-card">
-                            <input type="checkbox" name="paid_features" value="Art theft protection & monitoring">
-                            <span class="card-label"><span class="card-check"></span> Art theft protection & 24/7 monitoring</span>
+                            <input type="checkbox" name="important_features" value="Art theft protection & monitoring">
+                            <span class="card-label"><span class="card-check"></span> Art theft protection & monitoring</span>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" name="paid_features" value="Digital certificate of authenticity">
-                            <span class="card-label"><span class="card-check"></span> Digital certificate of authenticity (blockchain)</span>
+                            <input type="checkbox" name="important_features" value="Digital certificate of authenticity">
+                            <span class="card-label"><span class="card-check"></span> Digital certificate of authenticity</span>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" name="paid_features" value="Featured/promoted listings">
+                            <input type="checkbox" name="important_features" value="Low commission marketplace">
+                            <span class="card-label"><span class="card-check"></span> Low commission marketplace</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="checkbox" name="important_features" value="Featured/promoted listings">
                             <span class="card-label"><span class="card-check"></span> Featured / promoted listings</span>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" name="paid_features" value="Analytics & buyer insights">
+                            <input type="checkbox" name="important_features" value="Analytics & buyer insights">
                             <span class="card-label"><span class="card-check"></span> Analytics & buyer insights</span>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" name="paid_features" value="Hotel/corporate gallery display">
+                            <input type="checkbox" name="important_features" value="Display art in hotels/offices">
                             <span class="card-label"><span class="card-check"></span> Display my art in hotels & offices</span>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" name="paid_features" value="IP licensing & print-on-demand">
-                            <span class="card-label"><span class="card-check"></span> IP licensing (prints, merchandise from my art)</span>
+                            <input type="checkbox" name="important_features" value="IP licensing & merchandise">
+                            <span class="card-label"><span class="card-check"></span> IP licensing (prints, merchandise)</span>
                         </label>
                         <label class="option-card">
-                            <input type="checkbox" name="paid_features" value="Legal protection for my art">
+                            <input type="checkbox" name="important_features" value="Legal/copyright support">
                             <span class="card-label"><span class="card-check"></span> Legal protection & copyright support</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="nav-buttons">
-                    <button type="button" class="btn btn-secondary" onclick="prevSection(3)">← Back</button>
-                    <button type="button" class="btn btn-primary" onclick="nextSection(3)">Continue →</button>
-                </div>
-            </div>
-
-            <!-- Section 4: Authentication & Rental -->
-            <div class="survey-section" id="section4">
-                <div class="section-header">
-                    <div class="section-number">Section 4 of 5</div>
-                    <h2>Authentication & Art Rental</h2>
-                    <p>Two unique ideas we're building for Indian artists</p>
-                </div>
-
                 <div class="question-group">
-                    <label>Have you ever experienced someone copying or stealing your artwork? <span class="required">*</span></label>
+                    <label>Have you experienced someone copying or stealing your artwork? <span class="required">*</span></label>
                     <div class="option-cards">
                         <label class="option-card">
                             <input type="radio" name="art_theft" value="Yes, multiple times" required>
@@ -1013,40 +1005,84 @@
                 </div>
 
                 <div class="question-group">
-                    <label>Would you pay ₹299 per artwork for a tamper-proof digital certificate that proves YOU are the original creator? <span class="required">*</span></label>
+                    <label>How much would you be comfortable spending monthly on a platform that helps you sell art and protects your work? <span class="required">*</span></label>
                     <div class="option-cards">
                         <label class="option-card">
-                            <input type="radio" name="pay_certificate" value="Yes, for all my artworks" required>
-                            <span class="card-label"><span class="card-radio"></span> Yes, for all my artworks</span>
+                            <input type="radio" name="monthly_budget" value="Free only" required>
+                            <span class="card-label"><span class="card-radio"></span> I'd only use a free version</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_certificate" value="Yes, for expensive pieces only">
-                            <span class="card-label"><span class="card-radio"></span> Yes, but only for expensive pieces</span>
+                            <input type="radio" name="monthly_budget" value="Less than ₹500/month">
+                            <span class="card-label"><span class="card-radio"></span> Less than ₹500/month</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_certificate" value="Maybe, if it's really tamper-proof">
-                            <span class="card-label"><span class="card-radio"></span> Maybe, if it's really tamper-proof</span>
+                            <input type="radio" name="monthly_budget" value="₹500 - ₹1,000/month">
+                            <span class="card-label"><span class="card-radio"></span> ₹500 - ₹1,000/month</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_certificate" value="No, too expensive">
-                            <span class="card-label"><span class="card-radio"></span> No, ₹299 is too expensive per artwork</span>
+                            <input type="radio" name="monthly_budget" value="₹1,000 - ₹2,000/month">
+                            <span class="card-label"><span class="card-radio"></span> ₹1,000 - ₹2,000/month</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="pay_certificate" value="No, not interested">
-                            <span class="card-label"><span class="card-radio"></span> No, don't see the need</span>
+                            <input type="radio" name="monthly_budget" value="More than ₹2,000/month">
+                            <span class="card-label"><span class="card-radio"></span> More than ₹2,000/month</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="prevSection(3)">← Back</button>
+                    <button type="button" class="btn btn-primary" onclick="nextSection(3)">Continue →</button>
+                </div>
+            </div>
+
+            <!-- Section 4: Authenticity & Art Rental -->
+            <div class="survey-section" id="section4">
+                <div class="section-header">
+                    <div class="section-number">Section 4 of 5</div>
+                    <h2>Authenticity & Art Rental</h2>
+                    <p>Your thoughts on protecting and monetizing your art</p>
+                </div>
+
+                <div class="question-group">
+                    <label>How much would you pay for a tamper-proof digital certificate that proves you are the original creator of an artwork? <span class="required">*</span></label>
+                    <div class="option-cards">
+                        <label class="option-card">
+                            <input type="radio" name="certificate_budget" value="Should be free/included" required>
+                            <span class="card-label"><span class="card-radio"></span> It should be free / included</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="certificate_budget" value="Less than ₹300 per artwork">
+                            <span class="card-label"><span class="card-radio"></span> Less than ₹300 per artwork</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="certificate_budget" value="₹300 - ₹500 per artwork">
+                            <span class="card-label"><span class="card-radio"></span> ₹300 - ₹500 per artwork</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="certificate_budget" value="₹500 - ₹1,000 per artwork">
+                            <span class="card-label"><span class="card-radio"></span> ₹500 - ₹1,000 per artwork</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="certificate_budget" value="More than ₹1,000 per artwork">
+                            <span class="card-label"><span class="card-radio"></span> More than ₹1,000 per artwork</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="certificate_budget" value="Not interested">
+                            <span class="card-label"><span class="card-radio"></span> Not interested in certificates</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label>Would you be interested in RENTING your art to hotels, restaurants, and offices for monthly income? <span class="required">*</span></label>
+                    <label>Would you be interested in renting your art to hotels, restaurants, and offices for monthly income? <span class="required">*</span></label>
                     <div class="option-cards">
                         <label class="option-card">
                             <input type="radio" name="rental_interest" value="Very interested" required>
-                            <span class="card-label"><span class="card-radio"></span> Very interested - great passive income!</span>
+                            <span class="card-label"><span class="card-radio"></span> Very interested</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="rental_interest" value="Interested but concerned">
+                            <input type="radio" name="rental_interest" value="Interested but concerned about damage">
                             <span class="card-label"><span class="card-radio"></span> Interested, but worried about damage</span>
                         </label>
                         <label class="option-card">
@@ -1061,23 +1097,23 @@
                 </div>
 
                 <div class="question-group">
-                    <label>What monthly rent would you expect per artwork in a hotel/restaurant? <span class="required">*</span></label>
+                    <label>What monthly rent would you expect per artwork displayed in a hotel or restaurant? <span class="required">*</span></label>
                     <div class="option-cards grid">
                         <label class="option-card">
-                            <input type="radio" name="expected_rent" value="₹500-1,000" required>
-                            <span class="card-label"><span class="card-radio"></span> ₹500-1,000</span>
+                            <input type="radio" name="expected_rent" value="Less than ₹1,000" required>
+                            <span class="card-label"><span class="card-radio"></span> Less than ₹1,000</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="expected_rent" value="₹1,000-2,500">
-                            <span class="card-label"><span class="card-radio"></span> ₹1,000-2,500</span>
+                            <input type="radio" name="expected_rent" value="₹1,000 - ₹2,500">
+                            <span class="card-label"><span class="card-radio"></span> ₹1,000 - ₹2,500</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="expected_rent" value="₹2,500-5,000">
-                            <span class="card-label"><span class="card-radio"></span> ₹2,500-5,000</span>
+                            <input type="radio" name="expected_rent" value="₹2,500 - ₹5,000">
+                            <span class="card-label"><span class="card-radio"></span> ₹2,500 - ₹5,000</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="expected_rent" value="₹5,000+">
-                            <span class="card-label"><span class="card-radio"></span> ₹5,000+</span>
+                            <input type="radio" name="expected_rent" value="More than ₹5,000">
+                            <span class="card-label"><span class="card-radio"></span> More than ₹5,000</span>
                         </label>
                     </div>
                 </div>
@@ -1097,50 +1133,45 @@
                 </div>
 
                 <div class="question-group">
-                    <label>How important is it for you that an art platform is Indian-focused (understands Indian art, ₹ pricing, local logistics)? <span class="required">*</span></label>
+                    <label>How important is it that an art platform understands Indian art, supports ₹ pricing, and handles local logistics? <span class="required">*</span></label>
                     <div class="rating-scale">
                         <label><input type="radio" name="india_focus" value="1" required><span class="rating-btn">1</span></label>
                         <label><input type="radio" name="india_focus" value="2"><span class="rating-btn">2</span></label>
                         <label><input type="radio" name="india_focus" value="3"><span class="rating-btn">3</span></label>
                         <label><input type="radio" name="india_focus" value="4"><span class="rating-btn">4</span></label>
                         <label><input type="radio" name="india_focus" value="5"><span class="rating-btn">5</span></label>
-                        <label><input type="radio" name="india_focus" value="6"><span class="rating-btn">6</span></label>
-                        <label><input type="radio" name="india_focus" value="7"><span class="rating-btn">7</span></label>
-                        <label><input type="radio" name="india_focus" value="8"><span class="rating-btn">8</span></label>
-                        <label><input type="radio" name="india_focus" value="9"><span class="rating-btn">9</span></label>
-                        <label><input type="radio" name="india_focus" value="10"><span class="rating-btn">10</span></label>
                     </div>
                     <div class="rating-labels">
-                        <span>Doesn't matter</span>
+                        <span>Not important</span>
                         <span>Very important</span>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label>Would you join a platform early if it gave you a "Founding Artist" badge and lifetime benefits? <span class="required">*</span></label>
+                    <label>If a new art platform offered special benefits to its earliest members, would you be interested in joining early? <span class="required">*</span></label>
                     <div class="option-cards">
                         <label class="option-card">
-                            <input type="radio" name="founding_artist" value="Yes, love being early" required>
-                            <span class="card-label"><span class="card-radio"></span> Yes! I love being an early adopter</span>
+                            <input type="radio" name="early_adopter" value="Yes, I enjoy being an early user" required>
+                            <span class="card-label"><span class="card-radio"></span> Yes, I enjoy being an early user</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="founding_artist" value="Yes, if benefits are real">
-                            <span class="card-label"><span class="card-radio"></span> Yes, if the benefits are truly valuable</span>
+                            <input type="radio" name="early_adopter" value="Yes, if the benefits are worthwhile">
+                            <span class="card-label"><span class="card-radio"></span> Yes, if the benefits are worthwhile</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="founding_artist" value="Maybe, need more details">
-                            <span class="card-label"><span class="card-radio"></span> Maybe, need to know more</span>
+                            <input type="radio" name="early_adopter" value="Maybe, would need more details">
+                            <span class="card-label"><span class="card-radio"></span> Maybe, would need more details</span>
                         </label>
                         <label class="option-card">
-                            <input type="radio" name="founding_artist" value="No, prefer established platforms">
+                            <input type="radio" name="early_adopter" value="No, I prefer established platforms">
                             <span class="card-label"><span class="card-radio"></span> No, I prefer established platforms</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="question-group">
-                    <label>What's the ONE thing that would make you switch to a new art platform?</label>
-                    <textarea name="one_thing" placeholder="e.g. Lower commission, more buyers, better protection for my art, easy to use..."></textarea>
+                    <label>What's the ONE thing that would make you try a new art platform?</label>
+                    <textarea name="one_thing" placeholder="e.g. More buyers, lower fees, better protection, easy to use..."></textarea>
                 </div>
 
                 <div class="question-group">
@@ -1165,8 +1196,8 @@
         <div class="success-screen" id="successScreen">
             <div class="success-icon">🎨</div>
             <h2>Thank You, Artist!</h2>
-            <p>Your responses will help us build a platform that truly serves Indian artists. We're building this for <strong>you</strong>.</p>
-            <p style="font-size: 13px; color: var(--text-muted);">If you know fellow artists, please share this survey with them!</p>
+            <p>Your responses will help build better tools and platforms for the Indian art community. We truly appreciate your time.</p>
+            <p style="font-size: 13px; color: var(--text-muted);">Know fellow artists? Please share this survey with them!</p>
             <a href="#" class="success-share" id="shareBtn" onclick="shareOnWhatsApp(event)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Share on WhatsApp
@@ -1175,16 +1206,15 @@
     </div>
 
     <footer class="survey-footer" id="surveyFooter">
-        <p>Arthentix - India's Art Marketplace | <a href="https://arthentix.com" target="_blank">arthentix.com</a></p>
+        <p>Indian Artist Community Research 2026</p>
         <p style="margin-top: 6px;">Your data is confidential and used only for research purposes.</p>
     </footer>
 
     <script>
         // ============================================================
-        // CONFIGURATION - Set your Google Sheets Script URL here
+        // CONFIGURATION - Google Sheets Script URL
         // ============================================================
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzMZZJJ3p6sdys-nCMO5iyBOikYhSs-1VMLTUrx7nCEKowhLo9vDl2CKySzK_tJv6JTlw/exec'; // Paste your Google Apps Script URL here
-        // If empty, responses are saved to localStorage only
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzMZZJJ3p6sdys-nCMO5iyBOikYhSs-1VMLTUrx7nCEKowhLo9vDl2CKySzK_tJv6JTlw/exec';
         // ============================================================
 
         const TOTAL_SECTIONS = 5;
@@ -1231,7 +1261,6 @@
             for (let name in requiredRadios) {
                 const checked = section.querySelector(`input[name="${name}"]:checked`);
                 if (!checked) {
-                    // Find the question group and highlight it
                     const firstRadio = section.querySelector(`input[name="${name}"]`);
                     if (firstRadio) {
                         const group = firstRadio.closest('.question-group');
@@ -1249,6 +1278,32 @@
                     return false;
                 }
             }
+
+            // Check required checkbox groups (at least one must be selected)
+            const checkboxGroups = {};
+            section.querySelectorAll('.question-group').forEach(group => {
+                const hint = group.querySelector('.hint');
+                if (hint && hint.textContent.includes('Select all')) {
+                    const checkboxes = group.querySelectorAll('input[type="checkbox"]');
+                    if (checkboxes.length > 0) {
+                        const name = checkboxes[0].name;
+                        const anyChecked = group.querySelector(`input[type="checkbox"]:checked`);
+                        if (!anyChecked) {
+                            group.style.background = 'rgba(255, 82, 82, 0.05)';
+                            group.style.borderRadius = '10px';
+                            group.style.padding = '12px';
+                            group.style.margin = '-12px -12px 28px';
+                            group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            setTimeout(() => {
+                                group.style.background = '';
+                                group.style.padding = '';
+                                group.style.margin = '';
+                            }, 3000);
+                            return false;
+                        }
+                    }
+                }
+            });
 
             return true;
         }
@@ -1270,7 +1325,7 @@
             const form = document.getElementById('surveyForm');
             const data = {};
 
-            // Text, email, tel, number inputs
+            // Text, email, tel, number inputs & textarea
             form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea').forEach(input => {
                 if (input.name) data[input.name] = input.value.trim();
             });
@@ -1292,19 +1347,19 @@
 
             // Add metadata
             data.timestamp = new Date().toISOString();
-            data.source = 'Arthentix Survey 2026';
+            data.source = 'Artist Survey 2026';
 
             return data;
         }
 
         function saveToLocal(data) {
-            let responses = JSON.parse(localStorage.getItem('arthentix_survey_responses') || '[]');
+            let responses = JSON.parse(localStorage.getItem('artist_survey_responses') || '[]');
             responses.push(data);
-            localStorage.setItem('arthentix_survey_responses', JSON.stringify(responses));
+            localStorage.setItem('artist_survey_responses', JSON.stringify(responses));
         }
 
         async function submitToGoogleSheets(data) {
-            if (!GOOGLE_SCRIPT_URL) return true; // Skip if no URL configured
+            if (!GOOGLE_SCRIPT_URL) return true;
 
             try {
                 const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -1350,7 +1405,7 @@
             e.preventDefault();
             const surveyUrl = window.location.href;
             const message = encodeURIComponent(
-                `🎨 Fellow artists! Arthentix is building an art marketplace specifically for Indian artists with only 10-15% commission (vs 40% elsewhere).\n\nPlease take 3 mins to fill this survey - your voice matters!\n\n👉 ${surveyUrl}\n\nLet's shape the future of Indian art together! 🇮🇳`
+                `🎨 Fellow artists! A research team is studying what Indian artists need to grow their careers.\n\nPlease take 3 mins to fill this survey - your voice matters!\n\n👉 ${surveyUrl}\n\nLet's help shape the future of Indian art together! 🇮🇳`
             );
             window.open(`https://wa.me/?text=${message}`, '_blank');
         }
@@ -1358,7 +1413,6 @@
         function setLang(lang) {
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
-            // Hindi translations can be added here in future
             if (lang === 'hi') {
                 alert('Hindi version coming soon! For now, please fill in English. 🙏');
                 document.querySelector('.lang-btn').classList.add('active');
@@ -1373,14 +1427,14 @@
         // ADMIN: View responses (open console and run viewResponses())
         // ============================================================
         function viewResponses() {
-            const responses = JSON.parse(localStorage.getItem('arthentix_survey_responses') || '[]');
+            const responses = JSON.parse(localStorage.getItem('artist_survey_responses') || '[]');
             console.table(responses);
             console.log(`Total responses: ${responses.length}`);
             return responses;
         }
 
         function exportCSV() {
-            const responses = JSON.parse(localStorage.getItem('arthentix_survey_responses') || '[]');
+            const responses = JSON.parse(localStorage.getItem('artist_survey_responses') || '[]');
             if (responses.length === 0) {
                 alert('No responses yet!');
                 return;
@@ -1401,7 +1455,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `arthentix_survey_${new Date().toISOString().split('T')[0]}.csv`;
+            a.download = `artist_survey_${new Date().toISOString().split('T')[0]}.csv`;
             a.click();
             URL.revokeObjectURL(url);
         }
