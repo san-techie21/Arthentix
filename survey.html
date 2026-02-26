@@ -1345,8 +1345,19 @@
                 data[name] = checkboxGroups[name].join(', ');
             }
 
-            // Add metadata
-            data.timestamp = new Date().toISOString();
+            // Add metadata - Format timestamp in IST (Indian Standard Time)
+            const now = new Date();
+            const istOptions = {
+                timeZone: 'Asia/Kolkata',
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            data.timestamp = now.toLocaleString('en-IN', istOptions) + ' IST';
             data.source = 'Artist Survey 2026';
 
             return data;
