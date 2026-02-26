@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indian Artist Community Research 2026</title>
+
+    <!-- Open Graph meta tags for WhatsApp/social media preview -->
+    <meta property="og:title" content="Indian Artist Community Research 2026">
+    <meta property="og:description" content="🎨 Help shape the future of Indian art! Take this 3-minute survey and share your voice as an artist.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tinyurl.com/indian-artist-survey">
+    <meta property="og:image" content="https://san-techie21.github.io/Arthentix/og-survey.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_IN">
+    <meta name="description" content="Help shape the future of Indian art! Take this 3-minute survey about the Indian artist community.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -1414,7 +1426,7 @@
 
         function shareOnWhatsApp(e) {
             e.preventDefault();
-            const surveyUrl = window.location.href;
+            const surveyUrl = 'https://tinyurl.com/indian-artist-survey';
             const message = encodeURIComponent(
                 `🎨 Fellow artists! A research team is studying what Indian artists need to grow their careers.\n\nPlease take 3 mins to fill this survey - your voice matters!\n\n👉 ${surveyUrl}\n\nLet's help shape the future of Indian art together! 🇮🇳`
             );
